@@ -18,3 +18,23 @@ C:\Users\270155294\OneDrive - UP Education\Documents\programs\LoginSignUp\LoginS
 C:\Users\270155294\OneDrive - UP Education\Documents\programs\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountSignUp.g.cs
 C:\Users\270155294\OneDrive - UP Education\Documents\programs\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountSignUp.baml
 C:\Users\270155294\OneDrive - UP Education\Documents\programs\LoginSignUp\LoginSignUp\bin\Debug\Database\UserAccountData.csv
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\bin\Debug\Database\UserAccountData.csv
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\bin\Debug\LoginSignUp.exe.config
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\bin\Debug\LoginSignUp.exe
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\bin\Debug\LoginSignUp.pdb
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.csprojAssemblyReference.cache
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\MainWindow.g.cs
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountLogin.g.cs
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountSignUp.g.cs
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\App.g.cs
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp_MarkupCompile.cache
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp_MarkupCompile.lref
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\MainWindow.baml
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountLogin.baml
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountSignUp.baml
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.g.resources
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.Properties.Resources.resources
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.csproj.GenerateResource.cache
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.csproj.CoreCompileInputs.cache
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.exe
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.pdb

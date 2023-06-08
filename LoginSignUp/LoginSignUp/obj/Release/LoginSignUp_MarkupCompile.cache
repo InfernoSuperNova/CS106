@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Debug\
+C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\obj\Release\
 LoginSignUp
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginSignUp\App.xaml
 3-1573982993
 
@@ -16,5 +16,5 @@ C:\Users\270155294\OneDrive - UP Education\Documents\CS106 vs\LoginSignUp\LoginS
 13-1505183044
 MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;
 
-False
+True
 
