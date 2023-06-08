@@ -1,0 +1,29 @@
+﻿<Page x:Class="LoginSignUp.pages.AccountSignUp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LoginSignUp.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" Width="500" MinWidth="450"
+      Title="AccountSignUp">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <TextBox Name ="SignUpUserName" Height="30" Margin="5" Background="#9899A6" Foreground="#001011"
+                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                     ></TextBox>
+            <TextBox Name ="SignUpPassword" Height="30" Margin="5" Background="#9899A6" Foreground="#001011"
+                     VerticalContentAlignment="Center"
+                     ></TextBox>
+            <Button Name="SignUpBtn" Click="SignUpBtn_Click"  Padding="10" Margin="5" Background="#F4FDAF" Foreground="#001011" FontSize="20">
+                <Bold>Sign Up</Bold>
+            </Button>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Name ="NavigateLoginPage" Click="NavigateLoginPage_Click"  Padding="10" Background="#00000000" BorderThickness="0" Foreground="AliceBlue">
+                    <TextBlock HorizontalAlignment="Center">Already have an account? <Bold> Log In </Bold></TextBlock>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
