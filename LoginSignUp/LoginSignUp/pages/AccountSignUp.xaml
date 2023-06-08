@@ -14,7 +14,7 @@
                      VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                      ></TextBox>
             <TextBox Name ="SignUpPassword" Height="30" Margin="5" Background="#9899A6" Foreground="#001011"
-                     VerticalContentAlignment="Center"
+                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                      ></TextBox>
             <Button Name="SignUpBtn" Click="SignUpBtn_Click"  Padding="10" Margin="5" Background="#F4FDAF" Foreground="#001011" FontSize="20">
                 <Bold>Sign Up</Bold>

@@ -1,2 +1,4 @@
-﻿UserName,Password
-Bob,YourUncle
+UserName,Password,type
+Bob,YourUncle,admin
+test,testpassword,dev
+hey,what's goin on

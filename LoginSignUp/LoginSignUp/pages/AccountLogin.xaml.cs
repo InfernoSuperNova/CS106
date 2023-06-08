@@ -46,15 +46,19 @@ namespace LoginSignUp.pages
             if(inputUserName == "" || inputPassword == "")
             {
                 MessageBox.Show("Please enter both username and password");
+                return;
             }
-            else if (existingUserNameData.Contains(inputUserName) && existingPasswordData.Contains(inputPassword))
+            //may need to add an else here if guard clause is removed for whatever reason
+            for (int i = 0; i < existingUserNameData.Count(); i++)
             {
-                MessageBox.Show("Successful login");
+                if (inputUserName == existingUserNameData.ElementAt(i) && inputPassword == existingPasswordData.ElementAt(i))
+                {
+                    MessageBox.Show("Successful login");
+                    return;
+                }
             }
-            else
-            {
-                MessageBox.Show("Username or password incorrect");
-            }
+            //Will only get here if it doesn't match and isn't empty
+            MessageBox.Show("Username or password incorrect");
         }
 
         
