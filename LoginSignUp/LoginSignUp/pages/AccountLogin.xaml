@@ -8,19 +8,38 @@
       d:DesignHeight="700" Width="500" MinWidth="450"
       Title="AccountLogin">
 
-    <Grid>
+    <Grid Background="#DBDBDB">
+        
+        
         <StackPanel VerticalAlignment="Center">
-            <TextBox Name ="LoginUserName" Height="30" Margin="5" Background="#9899A6" Foreground="#001011"
-                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     ></TextBox>
-            <TextBox Name ="LoginPassword" Height="30" Margin="5" Background="#9899A6" Foreground="#001011"
-                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     ></TextBox>
-            <Button Name="LoginBtn" Click="LoginBtn_Click" Padding="10" Margin="5" Background="#F4FDAF" Foreground="#001011" FontSize="20">
-                <Bold>Log In</Bold>
-            </Button>
+            <TextBlock HorizontalAlignment="Center" FontSize="26" FontFamily="Montserrat">LogIn</TextBlock>
+            
+            <Border CornerRadius="10" BorderBrush="Black" BorderThickness="1" Padding="5" Background="#FFFFFF">
+                <TextBox Name ="LoginUserName" Height="20" Background="Transparent" Foreground="#001011"
+                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                </TextBox>
+            </Border>
+            
+            <TextBox Name ="LoginPassword" Height="20" Margin="5" Background="#FFFFFF" Foreground="#001011"
+                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                
+            </TextBox>
+            <Border>
+                <Grid>
+                    <Button x:Name="LoginBtn" Click="LoginBtn_Click" Padding="6" Margin="0,5,5,5" Background="#1CA500" Foreground="#FFFFFF" FontSize="12" FontFamily="Montserrat" HorizontalAlignment="Right" Width="150" Height="23">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1.4" CornerRadius="8">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Run Text="Log In"/>
+                    </Button>
+                </Grid>
+            </Border>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Name ="NavigateSignUpPage" Click="NavigateSignUpPage_Click" Padding="10" Background="#00000000" BorderThickness="0" Foreground="AliceBlue">
+                <Button Name ="NavigateSignUpPage" Click="NavigateSignUpPage_Click" Padding="10" Background="#00000000" BorderThickness="0" Foreground="Black">
                     <TextBlock HorizontalAlignment="Center">Don't have an account? <Bold> Sign Up </Bold></TextBlock>
                 </Button>
             </StackPanel>
