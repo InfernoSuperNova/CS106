@@ -5,11 +5,87 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LoginSignUp.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="150" d:DesignWidth="500">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>   
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="0.15*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Foreground="White" FontSize="30">Project One</TextBlock>
+            <Line Grid.Row="1" X1="10" Y1="10"
+                  X2="175" Y2="10"
+                  Stroke="White"
+                  StrokeThickness="2"/>
+            <TextBlock Grid.Row="2" FontSize="15" Foreground="White" HorizontalAlignment="Center"
+                       VerticalAlignment="Center">Active bugs</TextBlock>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Width="100" Height="50" Background="#407D3F" Foreground="White" 
+                    FontSize="15" Padding="10" Margin="0 5 0 0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+
+                <Bold>Add Bug</Bold> 
+            </Button>
+            <Button Grid.Row="1" Width="100" Height="50" Background="#407D3F" 
+                    Foreground="White" FontSize="15" Margin="0 0 0 5">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <Bold>Create Bug
+                    <LineBreak /> Report
+                </Bold>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="0" Foreground="White" Background="#407D3F"
+                    Width="100" Height="50" FontSize="15" Padding="10" Margin="0 5 0 0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+
+                <Bold>Edit Bugs</Bold>
+            </Button>
+            <Button Grid.Row="1" Foreground="White" Background="#407D3F" Width="100"
+                    Height="50" FontSize="15" Margin="0 0 0 5">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <Bold>Manage
+                    <LineBreak /> Employees
+                </Bold>
+            </Button>
+        </Grid>
+        <Image Width="50" Grid.Column="3" Source="/Icons/bin.png"></Image>
     </Grid>
 </UserControl>

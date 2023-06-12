@@ -10,11 +10,11 @@ none
 false
 TRACE
 C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\App.xaml
-3-1573982993
+5-296964352
 
-72116758647
+9-768733470
 13-1505183044
-MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;
+MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;pages\AdminMenu.xaml;UserControls\Project Field.xaml;
 
 True
 
