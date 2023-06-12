@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSignUp\App.xaml
-3-1573982993
+4-737058966
 
-81274399280
+9529709803
 13-1505183044
-MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;
+MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;pages\AdminBugMenu.xaml;
 
 True
 
