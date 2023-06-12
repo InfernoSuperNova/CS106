@@ -14,7 +14,7 @@
         <StackPanel VerticalAlignment="Center" >
             <TextBlock HorizontalAlignment="Center" FontSize="26" FontFamily="Montserrat" FontStyle="Normal" Margin="5 5 5 5">LogIn</TextBlock>
 
-            <Border CornerRadius="10" BorderBrush="Black" Width="500" Margin="3 3 3 3" BorderThickness="1" Padding="5" Background="#FFFFFF">
+            <Border CornerRadius="10" BorderBrush="Black" Width="500" Margin="5 5 5 5" BorderThickness="1" Padding="5" Background="#FFFFFF">
                 <Border.Effect>
                     <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5"/>
                 </Border.Effect>
