@@ -5,23 +5,51 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LoginSignUp.pages"
       mc:Ignorable="d" 
-      d:DesignHeight="700" Width="500" MinWidth="450"
+      d:DesignHeight="1080" Width="1920" MinWidth="450"
       Title="AccountSignUp">
 
-    <Grid>
-        <StackPanel VerticalAlignment="Center">
-            <TextBox Name ="SignUpUserName" Height="30" Margin="5" Background="#9899A6" Foreground="#001011"
-                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     ></TextBox>
-            <TextBox Name ="SignUpPassword" Height="30" Margin="5" Background="#9899A6" Foreground="#001011"
-                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     ></TextBox>
-            <Button Name="SignUpBtn" Click="SignUpBtn_Click"  Padding="10" Margin="5" Background="#F4FDAF" Foreground="#001011" FontSize="20">
-                <Bold>Sign Up</Bold>
-            </Button>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Name ="NavigateLoginPage" Click="NavigateLoginPage_Click"  Padding="10" Background="#00000000" BorderThickness="0" Foreground="AliceBlue">
-                    <TextBlock HorizontalAlignment="Center">Already have an account? <Bold> Log In </Bold></TextBlock>
+    <Grid Background="#DBDBDB">
+
+        <StackPanel VerticalAlignment="Center" >
+            <TextBlock HorizontalAlignment="Center" FontSize="26" FontFamily="Montserrat" FontStyle="Normal" Margin="5 5 5 5">Sign Up</TextBlock>
+
+            <Border CornerRadius="10" BorderBrush="Black" Width="500" Margin="5 5 5 5" BorderThickness="1" Padding="5" Background="#FFFFFF">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5"/>
+                </Border.Effect>
+                <TextBox Name="SignUpUserName" Height="20" Background="#FFFFFF" Foreground="#001011"
+                VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                BorderThickness="0" BorderBrush="Transparent">
+                </TextBox>
+
+            </Border>
+
+            <Border CornerRadius="10" BorderBrush="Black" Width="500" Margin="3 3 3 3" BorderThickness="1" Padding="5" Background="#FFFFFF">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5"/>
+                </Border.Effect>
+                <TextBox Name="SignUpPassword" Height="20" Background="#FFFFFF" Foreground="#001011"
+                VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                BorderThickness="0" BorderBrush="Transparent">
+                </TextBox>
+
+            </Border>
+
+            <Border Margin="380 0 0 0">
+                <Button x:Name="SignUpBtn" Click="SignUpBtn_Click" Padding="5" Margin="5 5 5 5" Background="#1CA500" Foreground="#FFFFFF" FontSize="12" FontFamily="Montserrat" FontStyle="Normal" HorizontalAlignment="Center" Width="125" Height="25">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="#1CA500" BorderBrush="Black" BorderThickness="1.4" CornerRadius="8">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Run Text="Sign Up"/>
+                </Button>
+            </Border>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <Button Name ="NavigateLogInPage" Click="NavigateLoginPage_Click" Padding="10" Background="#00000000" BorderThickness="0" Foreground="Black" Margin="0 0 0 5">
+                    <TextBlock HorizontalAlignment="Center" FontFamily="Montserrat">Have An Account? <Bold> Log In </Bold></TextBlock>
                 </Button>
             </StackPanel>
         </StackPanel>
