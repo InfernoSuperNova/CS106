@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace LoginSignUp.UserControls
 {
     /// <summary>
-    /// Interaction logic for Project_Field.xaml
+    /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class Project_Field : UserControl
+    public partial class AdminProject : UserControl
     {
-        public Project_Field()
+        public AdminProject()
         {
             InitializeComponent();
         }

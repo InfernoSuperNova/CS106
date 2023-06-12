@@ -55,8 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UserControls\Project Field.xaml.cs">
-      <DependentUpon>Project Field.xaml</DependentUpon>
+    <Compile Include="UserControls\AdminProject.xaml.cs">
+      <DependentUpon>AdminProject.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -82,7 +82,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\Project Field.xaml">
+    <Page Include="UserControls\AdminProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,7 +125,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icons\Plus.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\bin.png" />
   </ItemGroup>
