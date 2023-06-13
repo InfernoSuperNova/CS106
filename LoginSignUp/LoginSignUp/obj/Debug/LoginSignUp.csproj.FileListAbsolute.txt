@@ -63,3 +63,33 @@ C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignU
 C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\UserControls\AdminProject.g.cs
 C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\UserControls\AdminProject.baml
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\bin\Debug\Database\UserAccountData.csv
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\bin\Debug\LoginSignUp.exe.config
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\bin\Debug\LoginSignUp.exe
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\bin\Debug\LoginSignUp.pdb
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.csproj.AssemblyReference.cache
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.csproj.SuggestedBindingRedirects.cache
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\MainWindow.g.cs
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountLogin.g.cs
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountSignUp.g.cs
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\pages\AdminMenu.g.cs
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\pages\UserMenu.g.cs
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\AdminProject.g.cs
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\UserProject.g.cs
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\App.g.cs
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp_MarkupCompile.cache
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp_MarkupCompile.lref
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\MainWindow.baml
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountLogin.baml
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountSignUp.baml
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\pages\AdminMenu.baml
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\pages\UserMenu.baml
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\AdminProject.baml
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\UserProject.baml
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.g.resources
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.Properties.Resources.resources
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.csproj.GenerateResource.cache
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.csproj.CoreCompileInputs.cache
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.exe
+C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.pdb

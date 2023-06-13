@@ -12,9 +12,9 @@ DEBUG;TRACE
 C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\App.xaml
 71995132424
 
-111190071490
+12-892017128
 13-1310406943
 MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;pages\AdminMenu.xaml;pages\UserMenu.xaml;UserControls\AdminProject.xaml;UserControls\UserProject.xaml;
 
-False
+True
 
