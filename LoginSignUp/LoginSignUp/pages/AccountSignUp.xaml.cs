@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -13,10 +13,10 @@ namespace LoginSignUp.pages
     {
         //login instead button
         public delegate void NavigateToLoginPageBtnClick(object sender, RoutedEventArgs e);
-        public event NavigateToLoginPageBtnClick navigateToLoginPageBtnClick;
+        public event NavigateToLoginPageBtnClick _NavigateToLoginPageBtnClick;
         //sign up successful
         public delegate void SuccessfulSignup(object sender, RoutedEventArgs e);
-        public event SuccessfulSignup successfulSignup;
+        public event SuccessfulSignup _SuccessfulSignup;
 
         public AccountSignUp()
         {
