@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="classes\Config.cs" />
     <Compile Include="classes\Helpers.cs" />
     <Compile Include="pages\UserMenu.xaml.cs">
       <DependentUpon>UserMenu.xaml</DependentUpon>
