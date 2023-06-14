@@ -26,7 +26,7 @@ namespace LoginSignUp.pages
         //Entrypoint functions
         private void NavigateLoginPage_Click(object sender, RoutedEventArgs e)
         {
-            navigateToLoginPageBtnClick(sender, e);
+            _NavigateToLoginPageBtnClick(sender, e);
         }
 
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
@@ -45,14 +45,14 @@ namespace LoginSignUp.pages
         {
             string inputUserName = SignUpUserName.Text;
             string inputPassword = SignUpPassword.Text;
-            string[] lines = Helpers.ReadDataBase();
-            var existingUsernameData = Helpers.EnumerateUserNames(lines);
+            string[] lines = UserDatabase.ReadDatabase();
+            var existingUsernameData = UserDatabase.EnumerateUserNames(lines);
 
             if (!CompareUsernameData(existingUsernameData, inputUserName, inputPassword)) { return; }
 
             WriteNewLogin(inputUserName, inputPassword, lines);
 
-            successfulSignup(sender, e);
+            _SuccessfulSignup(sender, e);
         }
         /// <summary>
         /// Checks if the UserName and Password meet a set of arbitrary conditions.
