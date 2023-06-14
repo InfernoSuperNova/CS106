@@ -81,6 +81,16 @@ namespace LoginSignUp.pages
                 SignUpPassword.Text = null;
                 return false;
             }
+            if (!UserInput.ValidateString(inputUserName))
+            {
+                SignUpPassword.Text = null;
+                return false;
+            }
+            if (!UserInput.ValidateString(inputPassword))
+            {
+                SignUpPassword.Text = null;
+                return false;
+            }
             MessageBox.Show("Username " + inputUserName + " successfully registered!");
             return true;
         }
