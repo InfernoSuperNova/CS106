@@ -4,13 +4,22 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Release\
+=======
+C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSignUp\obj\Release\
+>>>>>>> Dylan
 LoginSignUp
 none
 false
 TRACE
+<<<<<<< HEAD
 C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\App.xaml
 5-1196070620
+=======
+C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSignUp\App.xaml
+3-1573982993
+>>>>>>> Dylan
 
 9528563999
 13-1505183044

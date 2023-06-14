@@ -37,7 +37,7 @@ namespace LoginSignUp.pages
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
             string inputUserName = LoginUserName.Text;
-            string inputPassword = LoginPassword.Text;
+            string inputPassword = LoginPassWord.Text;
 
             string[] lines = File.ReadAllLines(@".\Database\UserAccountData.csv");
             var existingUserNameData = lines.Skip(1).Select(row => row.Split(',')[0]).ToList();

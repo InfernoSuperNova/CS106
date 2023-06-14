@@ -70,6 +70,11 @@ namespace LoginSignUp.pages
 
         }
 
+        private void SignUpBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         //Test Change
     }
 }
