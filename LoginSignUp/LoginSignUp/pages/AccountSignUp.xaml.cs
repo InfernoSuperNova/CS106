@@ -84,7 +84,12 @@ namespace LoginSignUp.pages
             MessageBox.Show("Username " + inputUserName + " successfully registered!");
             return true;
         }
-
+        /// <summary>
+        /// Writes a new UserName/Password pair to the database.
+        /// </summary>
+        /// <param name="inputUserName"></param>
+        /// <param name="inputPassword"></param>
+        /// <param name="lines"></param>
         private void WriteNewLogin(string inputUserName, string inputPassword, string[] lines)
         {
             string addedData = $"{inputUserName}" + "," + $"{inputPassword}";
