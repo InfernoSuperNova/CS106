@@ -92,7 +92,7 @@ namespace LoginSignUp.pages
         /// <param name="lines"></param>
         private void WriteNewLogin(string inputUserName, string inputPassword, string[] lines)
         {
-            string addedData = $"{inputUserName}" + "," + $"{inputPassword}";
+            string addedData = $"{inputUserName}" + "," + $"{inputPassword}" + ",user";
             lines = lines.Append(addedData).ToArray();
             File.WriteAllLines(@".\Database\UserAccountData.csv", lines);
             SignUpUserName.Text = null;
