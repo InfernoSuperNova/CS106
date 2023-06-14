@@ -23,25 +23,32 @@ namespace LoginSignUp
     {
         public AccountLogin AccountLogin;
         public AccountSignUp AccountSignUp;
+        public UserMenu UserMenu;
         public MainWindow()
         {
             AccountLogin = new AccountLogin();
             AccountSignUp = new AccountSignUp();
+            UserMenu = new UserMenu();
             InitializeComponent();
 
             MainWindowFrame.Content = AccountLogin;
 
-            AccountLogin.navigateToSignUpPageBtnClick += NavigateToSignUpPage;
-            AccountSignUp.navigateToLoginPageBtnClick += NavigateToLoginPage;
+            AccountLogin.navigateToSignUpPageBtnClick += PageSignUp;
+            AccountSignUp.navigateToLoginPageBtnClick += PageLogin;
+            AccountSignUp.successfulSignup += PageUserMenu;
         }
 
-        public void NavigateToSignUpPage(object sender, RoutedEventArgs e)
+        public void PageSignUp(object sender, RoutedEventArgs e)
         {
             MainWindowFrame.Content = AccountSignUp;
         }
-        public void NavigateToLoginPage(object sender, RoutedEventArgs e)
+        public void PageLogin(object sender, RoutedEventArgs e)
         {
             MainWindowFrame.Content = AccountLogin;
+        }
+        public void PageUserMenu(object sender, RoutedEventArgs e)
+        {
+            MainWindowFrame.Content = UserMenu;
         }
     }
 }
