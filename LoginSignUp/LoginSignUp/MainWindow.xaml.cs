@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using LoginSignUp.classes;
 namespace LoginSignUp
 {
     /// <summary>
@@ -24,20 +24,40 @@ namespace LoginSignUp
         public AccountLogin AccountLogin;
         public AccountSignUp AccountSignUp;
         public UserMenu UserMenu;
+        public AdminMenu AdminMenu;
         public MainWindow()
         {
             AccountLogin = new AccountLogin();
             AccountSignUp = new AccountSignUp();
             UserMenu = new UserMenu();
+            AdminMenu = new AdminMenu();
             InitializeComponent();
 
             MainWindowFrame.Content = AccountLogin;
 
-            AccountLogin.navigateToSignUpPageBtnClick += PageSignUp;
-            AccountSignUp.navigateToLoginPageBtnClick += PageLogin;
-            AccountSignUp.successfulSignup += PageUserMenu;
+            AccountLogin._NavigateToSignUpPageBtnClick += PageSignUp;
+            //needs to be more complex to support admin accounts
+            AccountLogin._SuccessfulLogin += GetUserAccountType;
+            AccountSignUp._NavigateToLoginPageBtnClick += PageLogin;
+            AccountSignUp._SuccessfulSignup += PageUserMenu;
         }
-
+        public void GetUserAccountType(object sender, RoutedEventArgs e, List<string> UserNames, string UserName)
+        {
+            int index = UserDatabase.GetUserIndexByUserName(UserNames, UserName);
+            string userType = UserDatabase.GetUserTypeByIndex(index);
+            switch (userType)
+            {
+                case "user":
+                    PageUserMenu(sender, e);
+                    break;
+                case "admin":
+                    PageAdminMenu(sender, e);
+                    break;
+                case "dev":
+                    PageAdminMenu(sender, e);
+                    break;
+            }
+        }
         public void PageSignUp(object sender, RoutedEventArgs e)
         {
             MainWindowFrame.Content = AccountSignUp;
@@ -49,6 +69,10 @@ namespace LoginSignUp
         public void PageUserMenu(object sender, RoutedEventArgs e)
         {
             MainWindowFrame.Content = UserMenu;
+        }
+        public void PageAdminMenu(object sender, RoutedEventArgs e)
+        {
+            MainWindowFrame.Content = AdminMenu;
         }
     }
 }
