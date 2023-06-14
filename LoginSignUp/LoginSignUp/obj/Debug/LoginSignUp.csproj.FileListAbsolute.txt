@@ -58,3 +58,21 @@ C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSig
 C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.csproj.CoreCompileInputs.cache
 C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.exe
 C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.pdb
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.csprojAssemblyReference.cache
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\MainWindow.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountLogin.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountSignUp.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\pages\AdminBugMenu.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\pages\AdminMenu.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\pages\ManageEmployees.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\pages\UserMenu.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\UserControls\AdminProject.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\UserControls\Employee.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\UserControls\Header.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\UserControls\UserProject.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\App.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp_MarkupCompile.cache
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp_MarkupCompile.lref
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.exe
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.pdb

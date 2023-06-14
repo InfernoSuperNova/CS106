@@ -4,30 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
-C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\
-=======
-C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSignUp\obj\Debug\
->>>>>>> Dylan
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\
 LoginSignUp
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\App.xaml
-71995132424
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\App.xaml
+121387653110
 
-12-892017128
-13-1310406943
-MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;pages\AdminMenu.xaml;pages\UserMenu.xaml;UserControls\AdminProject.xaml;UserControls\UserProject.xaml;
-=======
-C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSignUp\App.xaml
-4-737058966
-
-9529709803
+17-1269264907
 13-1505183044
-MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;pages\AdminBugMenu.xaml;
->>>>>>> Dylan
+MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;pages\AdminBugMenu.xaml;pages\AdminMenu.xaml;pages\ManageEmployees.xaml;pages\UserMenu.xaml;UserControls\AddEmployee.xaml;UserControls\AdminProject.xaml;UserControls\Employee.xaml;UserControls\Header.xaml;UserControls\UserProject.xaml;
 
 True
 

@@ -4,26 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
 C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Release\
-=======
-C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSignUp\obj\Release\
->>>>>>> Dylan
 LoginSignUp
 none
 false
 TRACE
-<<<<<<< HEAD
 C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\App.xaml
-5-1196070620
-=======
-C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSignUp\App.xaml
-3-1573982993
->>>>>>> Dylan
+11-938239191
 
-9528563999
+151829373355
 13-1505183044
-MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;pages\AdminMenu.xaml;UserControls\AdminProject.xaml;
+MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;pages\AdminBugMenu.xaml;pages\AdminMenu.xaml;pages\ManageEmployees.xaml;pages\UserMenu.xaml;UserControls\AdminProject.xaml;UserControls\Employee.xaml;UserControls\Header.xaml;UserControls\UserProject.xaml;
 
 True
 

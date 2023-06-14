@@ -1,20 +1,20 @@
-LoginSignUp
+﻿LoginSignUp
 
 
 winexe
 C#
 .cs
-C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\obj\Debug\
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\
 LoginSignUp
 none
 false
 DEBUG;TRACE
-C:\Users\mrlim\OneDrive\Documents\CS106\LoginSignUp\LoginSignUp\App.xaml
-71995132424
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\App.xaml
+121387653110
 
-111190071490
-13-1310406943
-MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;pages\AdminMenu.xaml;pages\UserMenu.xaml;UserControls\AdminProject.xaml;UserControls\UserProject.xaml;
+16-426905540
+13-1505183044
+MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;pages\AdminBugMenu.xaml;pages\AdminMenu.xaml;pages\ManageEmployees.xaml;pages\UserMenu.xaml;UserControls\AddEmployee.xaml;UserControls\AdminProject.xaml;UserControls\Employee.xaml;UserControls\Header.xaml;UserControls\UserProject.xaml;
 
-False
+True
 
