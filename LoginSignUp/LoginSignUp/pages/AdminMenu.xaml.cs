@@ -24,5 +24,10 @@ namespace LoginSignUp.pages
         {
             InitializeComponent();
         }
+
+        private void AdminProject_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
