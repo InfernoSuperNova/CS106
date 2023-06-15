@@ -23,6 +23,9 @@ namespace LoginSignUp.pages
         public ManageEmployees()
         {
             InitializeComponent();
+
+            
         }
+
     }
 }
