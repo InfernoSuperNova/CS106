@@ -10,11 +10,11 @@ none
 false
 TRACE
 C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\App.xaml
-11-938239191
+121387653110
 
-151829373355
+16-426905540
 13-1505183044
-MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;pages\AdminBugMenu.xaml;pages\AdminMenu.xaml;pages\ManageEmployees.xaml;pages\UserMenu.xaml;UserControls\AdminProject.xaml;UserControls\Employee.xaml;UserControls\Header.xaml;UserControls\UserProject.xaml;
+MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;pages\AdminBugMenu.xaml;pages\AdminMenu.xaml;pages\ManageEmployees.xaml;pages\UserMenu.xaml;UserControls\AddEmployee.xaml;UserControls\AdminProject.xaml;UserControls\Employee.xaml;UserControls\Header.xaml;UserControls\UserProject.xaml;
 
 True
 

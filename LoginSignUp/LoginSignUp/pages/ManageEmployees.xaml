@@ -30,13 +30,14 @@
             </ScrollViewer>
 
             <Grid Grid.Column="1">
-                <Border BorderBrush="#838383" BorderThickness="3" Margin="30" CornerRadius="20" 
+                <Border BorderBrush="#838383" BorderThickness="3" Padding="30" CornerRadius="20" 
                         Background="#262626">
                     <ScrollViewer>
                         <StackPanel HorizontalAlignment="Center">
-                            <local1:Employee Width="900" Height="200"></local1:Employee>
-                            <local1:Employee Width="900" Height="200"></local1:Employee>
-                            <local1:Employee Width="900" Height="200"></local1:Employee>
+                            <local1:Employee Width="850" Height="150" Margin="0 0 0 30"></local1:Employee>
+                            <local1:Employee Width="850" Height="150" Margin="0 0 0 30"></local1:Employee>
+                            <local1:Employee Width="850" Height="150" Margin="0 0 0 30"></local1:Employee>
+                            <local1:AddEmployee Width="850" Height="150"></local1:AddEmployee>
                         </StackPanel>
                     </ScrollViewer>
                     

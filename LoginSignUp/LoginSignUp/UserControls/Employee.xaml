@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LoginSignUp.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="900">
+             d:DesignHeight="150" d:DesignWidth="900">
     <Grid>
-        <Border BorderBrush="#838383" BorderThickness="3" Margin="30" CornerRadius="20" 
+        <Border BorderBrush="#838383" BorderThickness="3" CornerRadius="20" 
                 Background="#262626">
             <Grid VerticalAlignment="Center">
                 <TextBlock Foreground="White" FontSize="40" Padding="40 0 0 0">John</TextBlock>
