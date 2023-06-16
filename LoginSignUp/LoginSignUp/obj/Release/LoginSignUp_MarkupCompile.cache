@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\CS106\LoginSignUp\LoginSignUp\obj\Release\
+C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSignUp\obj\Release\
 LoginSignUp
 none
 false
 TRACE
-C:\CS106\LoginSignUp\LoginSignUp\App.xaml
-9-1188389140
+C:\Users\270247080\OneDrive - UP Education\CS106 Assignment\LoginSignUp\LoginSignUp\App.xaml
+91869346729
 
-13-1013828070
-13-1310406943
+131217697922
+13-1505183044
 MainWindow.xaml;pages\AccountLogin.xaml;pages\AccountSignUp.xaml;UserControls\AdminBugEdit.xaml;pages\AdminBugMenu.xaml;pages\AdminMenu.xaml;pages\UserMenu.xaml;UserControls\AdminProject.xaml;UserControls\UserProject.xaml;
 
 True
