@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginSignUp.pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,5 +26,9 @@ namespace LoginSignUp.UserControls
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var parentPage = Window.GetWindow(this) as ManageEmployees;
+        }
     }
 }

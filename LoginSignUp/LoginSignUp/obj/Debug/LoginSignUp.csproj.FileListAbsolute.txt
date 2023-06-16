@@ -76,3 +76,6 @@ C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignU
 C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp_MarkupCompile.lref
 C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.exe
 C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\LoginSignUp.pdb
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\UserControls\AddEmployee.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\UserControls\AddEmployeeField.g.cs
+C:\Users\270242258\OneDrive - UP Education\Desktop\github\LoginSignUp\LoginSignUp\obj\Debug\UserControls\EmployeeDeletePrompt.g.cs

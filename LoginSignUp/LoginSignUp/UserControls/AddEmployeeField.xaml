@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="850">
     <Grid Background="#262626">
+        <Frame x:Name="addAnEmployee" Source="AddEmployeeField.xaml"/>
         <Border BorderBrush="#838383" BorderThickness="3" CornerRadius="20">
             <Grid>
                 <Grid.ColumnDefinitions>

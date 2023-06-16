@@ -64,11 +64,17 @@
     <Compile Include="UserControls\AddEmployee.xaml.cs">
       <DependentUpon>AddEmployee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AddEmployeeField.xaml.cs">
+      <DependentUpon>AddEmployeeField.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AdminProject.xaml.cs">
       <DependentUpon>AdminProject.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Employee.xaml.cs">
       <DependentUpon>Employee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmployeeDeletePrompt.xaml.cs">
+      <DependentUpon>EmployeeDeletePrompt.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Header.xaml.cs">
       <DependentUpon>Header.xaml</DependentUpon>
@@ -116,11 +122,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\AddEmployeeField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\AdminProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Employee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EmployeeDeletePrompt.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
