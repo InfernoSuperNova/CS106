@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 using LoginSignUp.classes;
 namespace LoginSignUp.classes
 {
@@ -134,5 +135,25 @@ namespace LoginSignUp.classes
             return true;
         }
 
+    }
+    public static class DelayedActionHelper
+    {
+        public static void DelayedAction(DispatcherPriority priority, TimeSpan delay, Action action)
+        {
+            DispatcherTimer timer = null;
+            var dispatcher = Application.Current.Dispatcher;
+
+            dispatcher.BeginInvoke(priority, new Action(() =>
+            {
+                var frame = new DispatcherFrame();
+                timer = new DispatcherTimer(delay, DispatcherPriority.Normal, (s, e) =>
+                {
+                    timer.Stop();
+                    frame.Continue = false;
+                    action.Invoke();
+                }, dispatcher);
+                Dispatcher.PushFrame(frame);
+            }));
+        }
     }
 }
