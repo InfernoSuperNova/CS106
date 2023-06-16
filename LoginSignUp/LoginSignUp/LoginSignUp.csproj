@@ -67,6 +67,9 @@
     <Compile Include="UserControls\AdminProject.xaml.cs">
       <DependentUpon>AdminProject.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\EditAddedBugAdmin.xaml.cs">
+      <DependentUpon>EditAddedBugAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserProject.xaml.cs">
       <DependentUpon>UserProject.xaml</DependentUpon>
     </Compile>
@@ -111,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\AdminProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EditAddedBugAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

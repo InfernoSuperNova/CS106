@@ -23,7 +23,7 @@
 
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" FontSize="28.5" Foreground="#D4D4D4" Padding="3 0 0 0">
+                <TextBlock Grid.Row="0" FontSize="28.5" Foreground="#D4D4D4" Padding="6 6 0 0">
                 Glitch in the controls 
                 <LineBreak/>
                 </TextBlock>
@@ -36,7 +36,7 @@
                         <!-- Image -->
                     </Grid.ColumnDefinitions>
 
-                    <Border Grid.Column="0" CornerRadius="10" BorderBrush="#407D3F" BorderThickness="2" HorizontalAlignment="Left" Margin="5 15 0 5" Background="#407D3F" Padding="20 5 20 10">
+                    <Border Grid.Column="0" CornerRadius="10" BorderBrush="#407D3F" BorderThickness="2" HorizontalAlignment="Left" Margin="10 15 0 5" Background="#407D3F" Padding="20 5 20 10">
                         <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" BorderBrush="#407D3F" BorderThickness="2"  Height="35" Background="#407D3F" Foreground="#D4D4D4">
                             <Button.Content>
                                 <TextBlock Text="Edit" Height="42" FontWeight="SemiBold"/>
@@ -44,7 +44,7 @@
                         </Button>
                     </Border>
                  
-                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="20 15 0 0">
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="15 15 0 0">
                         <Image Source="/Icons/bin.png" Width="60" Height="65" Margin="5 0 0 5"></Image>
                         <TextBlock Text="Needs Fixing ▼" FontSize="25" FontWeight="SemiBold" Margin="25 15 0 10" Foreground="#838383" Height="44"/>
                     </StackPanel>
@@ -62,10 +62,10 @@
                     <!--More option-->
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Padding="10 5 0 0" FontSize="22" Foreground="#D4D4D4">
+                <TextBlock Grid.Row="0" Padding="10 10 0 0" FontSize="22" Foreground="#D4D4D4">
                     Help, My controller keeps disconecting. 
-                    <LineBreak/>
-                    <LineBreak/> 
+                   
+                  
                 </TextBlock>
 
                 <TextBlock Grid.Row="1" Padding="5 5 10 0" FontSize="22" Foreground="#D4D4D4" FontWeight="SemiBold" HorizontalAlignment="Right">

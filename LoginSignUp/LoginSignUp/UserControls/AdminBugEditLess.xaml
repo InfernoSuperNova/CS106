@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LoginSignUp.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="280" d:DesignWidth="850">
+             d:DesignHeight="300" d:DesignWidth="850">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -14,8 +14,8 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="14*"></RowDefinition>
+            <RowDefinition Height="11*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Border Grid.Column="0" Background="#262626" Padding="8 3 0 0" Margin="0">
@@ -29,7 +29,7 @@
 
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" FontSize="28.5" Foreground="#D4D4D4" Padding="3 0 0 0">
+                <TextBlock Grid.Row="0" FontSize="28.5" Foreground="#D4D4D4" Padding="6 8 0 0">
                 Glitch in the controls 
                 <LineBreak/>
                 </TextBlock>
@@ -42,7 +42,7 @@
                         <!-- Image -->
                     </Grid.ColumnDefinitions>
 
-                    <Border Grid.Column="0" CornerRadius="10" BorderBrush="#407D3F" BorderThickness="2" HorizontalAlignment="Left" Margin="5 15 0 5" Background="#407D3F" Padding="20 5 20 10">
+                    <Border Grid.Column="0" CornerRadius="10" BorderBrush="#407D3F" BorderThickness="2" HorizontalAlignment="Left" Margin="5 15 0 10" Background="#407D3F" Padding="20 5 20 10">
                         <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" BorderBrush="#407D3F" BorderThickness="2"  Height="35" Background="#407D3F" Foreground="#D4D4D4">
                             <Button.Content>
                                 <TextBlock Text="Edit" Height="42" FontWeight="SemiBold"/>
@@ -51,7 +51,7 @@
                     </Border>
 
                     <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="20 15 0 0">
-                        <Image Source="/Icons/bin.png" Width="60" Height="65" Margin="5 0 0 5"/>
+                        <Image Source="/Icons/bin.png" Width="60" Height="65" Margin="5 0 0 10"/>
                         <TextBlock Text="Needs Fixing ▼" FontSize="25" FontWeight="SemiBold" Margin="25 15 0 10" Foreground="#838383" Height="44"/>
                     </StackPanel>
                 </Grid>
@@ -64,7 +64,7 @@
                     <RowDefinition Height="2*" ></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Padding="5 5 0 0" FontSize="22" Foreground="#D4D4D4">
+                <TextBlock Grid.Row="0" Padding="5 10 0 0" FontSize="22" Foreground="#D4D4D4">
                     Help, My controller keeps disconecting. 
                     <LineBreak/>
                     <LineBreak/>
@@ -79,16 +79,15 @@
 
         <Border Grid.Row="1" Grid.Column="0"  Background="#262626">
             <StackPanel>
-                <TextBlock Padding="10 12 0 0" FontSize="22" Foreground="#D4D4D4">Time Spent: <Bold><Underline>5 Hours</Underline></Bold></TextBlock>
-                <TextBlock Padding="10 10 0 0" FontSize="22" Foreground="#D4D4D4">Bug Priority: <Bold><Underline>High</Underline></Bold></TextBlock>
+                <TextBlock Padding="12 12 0 0" FontSize="22" Foreground="#D4D4D4">Time Spent: <Bold><Underline>5 Hours</Underline></Bold></TextBlock>
+                <TextBlock Padding="12 10 0 0" FontSize="22" Foreground="#D4D4D4">Bug Priority: <Bold><Underline>High</Underline></Bold></TextBlock>
             </StackPanel>
         </Border>
         <Border Grid.RowSpan="2" Grid.Column="0" Background="Gray" VerticalAlignment="Stretch" Margin="416,10,7,5"/>
 
         <Border Grid.Row="1" Grid.Column="1"  Background="#262626">
             <StackPanel>
-                <TextBlock Padding="10 10 0 0" FontSize="22" Foreground="#D4D4D4"><Bold><Underline>Steps To Precede:</Underline></Bold></TextBlock>
-
+                <TextBlock Padding="10 2 0 0" FontSize="22" Foreground="#D4D4D4" Height="42"><Bold><Underline><Run Text="Steps To Precede:"/></Underline></Bold></TextBlock>
             </StackPanel>
 
 
