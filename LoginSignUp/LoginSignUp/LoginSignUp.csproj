@@ -57,6 +57,9 @@
     </ApplicationDefinition>
     <Compile Include="classes\Config.cs" />
     <Compile Include="classes\Helpers.cs" />
+    <Compile Include="pages\Test Page.xaml.cs">
+      <DependentUpon>Test Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\UserMenu.xaml.cs">
       <DependentUpon>UserMenu.xaml</DependentUpon>
     </Compile>
@@ -94,9 +97,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pages\Test Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\UserMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\AdminProject.xaml">
       <SubType>Designer</SubType>
@@ -154,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Objects\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
