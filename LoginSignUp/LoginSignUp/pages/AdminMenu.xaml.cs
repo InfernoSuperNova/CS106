@@ -26,6 +26,16 @@ namespace LoginSignUp.pages
         public AdminMenu()
         {
             InitializeComponent();
+            string[] lines = ProjectList.Read();
+            foreach (string name in lines)
+            {
+                //store this project somewhere, otherwise it'll cause a memory leak
+                var project = new AdminProject();
+
+                // Add the dynamic object to the stack panel
+                ProjectField.Children.Add(project);
+                project.ProjectTitle.Text = name;
+            }
         }
     }
 }
