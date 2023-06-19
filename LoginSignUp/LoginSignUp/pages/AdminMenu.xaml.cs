@@ -23,6 +23,7 @@ namespace LoginSignUp.pages
     /// </summary>
     public partial class AdminMenu : Page
     {
+        static int projectCount = 0;
         public AdminMenu()
         {
             InitializeComponent();
@@ -36,6 +37,20 @@ namespace LoginSignUp.pages
                 ProjectField.Children.Add(project);
                 project.ProjectTitle.Text = name;
             }
+        }
+
+        private void NewProjectBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var project = new AdminProject();
+            ProjectField.Children.Add(project);
+            project.ProjectTitle.Text = "Project " + projectCount++;
+            //ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
+            DelayedActionHelper.DelayedAction(DispatcherPriority.Background, TimeSpan.FromMilliseconds(0), () =>
+            {
+                ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
+
+
+            });
         }
     }
 }
