@@ -5,8 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LoginSignUp.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="250" d:DesignWidth="800">
-    
+             d:DesignHeight="250" d:DesignWidth="800"
+             Width="850" Height="250" Margin="0 40 0 0"
+             >
+
     <Grid Background="#262626">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*"></ColumnDefinition>
@@ -21,7 +23,7 @@
                 <RowDefinition Height="0.15*"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" 
+            <TextBlock  Name ="ProjectTitle" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Foreground="White" FontSize="40">Project One</TextBlock>
             <Line Grid.Row="1" X1="10" Y1="10"
                   X2="290" Y2="10"

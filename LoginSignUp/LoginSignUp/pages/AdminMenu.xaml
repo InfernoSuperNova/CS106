@@ -20,9 +20,8 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <ScrollViewer>
-                <StackPanel Name="AdminMenuProjectField">
-                    <local1:AdminProject Width="850" Height="250" Margin="0 40 0 0"></local1:AdminProject>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" x:Name ="ProjectScrollField">
+                <StackPanel Name="ProjectField">
                 </StackPanel>
             </ScrollViewer>
 
@@ -53,7 +52,7 @@
                     </Button>
                 </StackPanel>
                 <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Width="200" Height="75" Background="#407D3F" Foreground="White">
+                    <Button Width="200" Height="75" Background="#407D3F" Foreground="White" Name ="NewProjectBtn" Click="NewProjectBtn_Click">
                         New Project
                     </Button>
                 </Grid>

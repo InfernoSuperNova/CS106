@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using LoginSignUp.classes;
 namespace LoginSignUp.pages
 {
     /// <summary>
@@ -21,46 +21,68 @@ namespace LoginSignUp.pages
     /// </summary>
     public partial class AccountLogin : Page
     {
+        //sign up instead button
         public delegate void NavigateToSignUpPageBtnClick(object sender, RoutedEventArgs e);
-        public event NavigateToSignUpPageBtnClick navigateToSignUpPageBtnClick;
-
+        public event NavigateToSignUpPageBtnClick _NavigateToSignUpPageBtnClick;
+        //login successful
+        public delegate void SuccessfulLogin(object sender, RoutedEventArgs e, List<string> UserNames, string UserName);
+        public event SuccessfulLogin _SuccessfulLogin;
+        
         public AccountLogin()
         {
             InitializeComponent();
         }
-
+        //Entrypoint functions
         private void NavigateSignUpPage_Click(object sender, RoutedEventArgs e)
         {
-            navigateToSignUpPageBtnClick(sender, e);
+            _NavigateToSignUpPageBtnClick(sender, e);
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
+            LoginProcess(sender, e);
+        }
+
+        //
+
+
+
+        private void LoginProcess(object sender, RoutedEventArgs e)
+        {
             string inputUserName = LoginUserName.Text;
             string inputPassword = LoginPassWord.Text;
 
-            string[] lines = File.ReadAllLines(@".\Database\UserAccountData.csv");
-            var existingUserNameData = lines.Skip(1).Select(row => row.Split(',')[0]).ToList();
-            var existingPasswordData = lines.Skip(1).Select(row => row.Split(',')[1]).ToList();
+            string[] lines = UserDatabase.Read();
+            var existingUserNameData = UserDatabase.EnumerateUserNames(lines);
+            var existingPasswordData = UserDatabase.EnumeratePasswords(lines);
 
-            if(inputUserName == "" || inputPassword == "")
+            if (LoginChecks(inputUserName, inputPassword, existingUserNameData, existingPasswordData))
+            {
+                //next steps here
+                LoginUserName.Text = null;
+                LoginPassWord.Text = null;
+                _SuccessfulLogin(sender, e, existingUserNameData, inputUserName);
+            }           
+           
+        }
+        private bool LoginChecks(string inputUserName, string inputPassword, List<string> existingUserNameData, List<string> existingPasswordData)
+        {
+            if (inputUserName == "" || inputPassword == "")
             {
                 MessageBox.Show("Please enter both username and password");
-                return;
+                return false;
             }
             //may need to add an else here if guard clause is removed for whatever reason
-            for (int i = 0; i < existingUserNameData.Count(); i++)
+            if (UserDatabase.CheckLogin(existingUserNameData, existingPasswordData, inputUserName, inputPassword))
             {
-                if (inputUserName == existingUserNameData.ElementAt(i) && inputPassword == existingPasswordData.ElementAt(i))
-                {
-                    MessageBox.Show("Successful login");
-                    return;
-                }
+                MessageBox.Show("Successful login");
+                return true;
             }
-            //Will only get here if it doesn't match and isn't empty
-            MessageBox.Show("Username or password incorrect");
+            else
+            {
+                MessageBox.Show("Username or password incorrect");
+                return false;
+            }            
         }
-
-        
     }
 }
