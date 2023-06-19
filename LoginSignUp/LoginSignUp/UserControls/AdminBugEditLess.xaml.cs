@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LoginSignUp.pages
+namespace LoginSignUp.UserControls
 {
     /// <summary>
-    /// Interaction logic for AdminBugMenu.xaml
+    /// Interaction logic for AdminBugEditLess.xaml
     /// </summary>
-    public partial class AdminBugMenu : Page
+    public partial class AdminBugEditLess : UserControl
     {
-        public AdminBugMenu()
+        public AdminBugEditLess()
         {
             InitializeComponent();
-        }
-
-        private void AddNewProjectBtn_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

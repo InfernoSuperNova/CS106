@@ -1,4 +1,4 @@
-﻿<Page x:Class="LoginSignUp.pages.UserMenu"
+<Page x:Class="LoginSignUp.pages.UserMenu"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -14,6 +14,10 @@
             <RowDefinition Height="6*"></RowDefinition>
         </Grid.RowDefinitions>
 
+        <Grid Grid.Row="0">
+            <local1:Header x:Name ="header"></local1:Header>
+        </Grid>
+        
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -38,7 +42,7 @@
                 </Border>
             </Grid>
         </Grid>
-
+<!--
         <Border BorderBrush="#838383" BorderThickness="0 0 0 3">
             <Grid Grid.Column="0" Grid.Row="0" Background="#262626">
                 <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
@@ -56,6 +60,6 @@
                     </Button>
                 </Grid>
             </Grid>
-        </Border>
+        </Border>-->
     </Grid>
 </Page>

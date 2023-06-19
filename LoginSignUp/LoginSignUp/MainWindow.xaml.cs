@@ -36,7 +36,6 @@ namespace LoginSignUp
             MainWindowFrame.Content = AccountLogin;
 
             AccountLogin._NavigateToSignUpPageBtnClick += PageSignUp;
-            //needs to be more complex to support admin accounts
             AccountLogin._SuccessfulLogin += GetUserAccountType;
             AccountSignUp._NavigateToLoginPageBtnClick += PageLogin;
             AccountSignUp._SuccessfulSignup += PageUserMenu;

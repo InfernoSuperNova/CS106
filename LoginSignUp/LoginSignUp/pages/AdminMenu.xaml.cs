@@ -27,6 +27,7 @@ namespace LoginSignUp.pages
         public AdminMenu()
         {
             InitializeComponent();
+            header._NewProject += NewProject;
             string[] lines = ProjectList.Read();
             foreach (string name in lines)
             {
@@ -39,7 +40,7 @@ namespace LoginSignUp.pages
             }
         }
 
-        private void NewProjectBtn_Click(object sender, RoutedEventArgs e)
+        private void NewProject(object sender, RoutedEventArgs e)
         {
             var project = new AdminProject();
             ProjectField.Children.Add(project);
@@ -51,6 +52,11 @@ namespace LoginSignUp.pages
 
 
             });
+        }
+
+        private void AdminProject_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

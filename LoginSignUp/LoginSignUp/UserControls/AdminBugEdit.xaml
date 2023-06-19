@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="LoginSignUp.pages.AdminBugEdit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LoginSignUp.pages" xmlns:local1="clr-namespace:LoginSignUp.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="170" d:DesignWidth="850">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#262626" Padding="8 3 0 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- TextBlock -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Button and Image -->
+
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" FontSize="28.5" Foreground="#D4D4D4" Padding="6 6 0 0">
+                Glitch in the controls 
+                <LineBreak/>
+                </TextBlock>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Button -->
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Image -->
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" CornerRadius="10" BorderBrush="#407D3F" BorderThickness="2" HorizontalAlignment="Left" Margin="10 15 0 5" Background="#407D3F" Padding="20 5 20 10">
+                        <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" BorderBrush="#407D3F" BorderThickness="2"  Height="35" Background="#407D3F" Foreground="#D4D4D4">
+                            <Button.Content>
+                                <TextBlock Text="Edit" Height="42" FontWeight="SemiBold"/>
+                            </Button.Content>
+                        </Button>
+                    </Border>
+                 
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="15 15 0 0">
+                        <Image Source="/Icons/bin.png" Width="60" Height="65" Margin="5 0 0 5"></Image>
+                        <TextBlock Text="Needs Fixing ▼" FontSize="25" FontWeight="SemiBold" Margin="25 15 0 10" Foreground="#838383" Height="44"/>
+                    </StackPanel>
+                </Grid>
+                <!-- Gray line -->
+                <Border Grid.RowSpan="2" Grid.Column="0" Background="Gray" Width="2" VerticalAlignment="Stretch" Margin="400 10 0 5"/>
+            </Grid>
+        </Border>
+        <Border Grid.Column="1" Background="#262626">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" ></RowDefinition>
+                    <!--text block-->
+                    <RowDefinition></RowDefinition>
+                    <!--More option-->
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Padding="10 10 0 0" FontSize="22" Foreground="#D4D4D4">
+                    Help, My controller keeps disconecting. 
+                   
+                  
+                </TextBlock>
+
+                <TextBlock Grid.Row="1" Padding="5 5 10 0" FontSize="22" Foreground="#D4D4D4" FontWeight="SemiBold" HorizontalAlignment="Right">
+                   <Underline>More</Underline> ▼
+                </TextBlock>
+
+            </Grid>
+
+        </Border>
+    </Grid>
+</UserControl>
