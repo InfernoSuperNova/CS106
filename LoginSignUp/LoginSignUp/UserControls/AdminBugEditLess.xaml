@@ -83,7 +83,7 @@
                 <TextBlock Padding="12 10 0 0" FontSize="22" Foreground="#D4D4D4">Bug Priority: <Bold><Underline>High</Underline></Bold></TextBlock>
             </StackPanel>
         </Border>
-        <Border Grid.RowSpan="2" Grid.Column="0" Background="Gray" VerticalAlignment="Stretch" Margin="416,10,7,5"/>
+        
 
         <Border Grid.Row="1" Grid.Column="1"  Background="#262626">
             <StackPanel>

@@ -5,8 +5,144 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LoginSignUp.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="890" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="93*"></RowDefinition>
+            <RowDefinition Height="352*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Column="0" Background="#262626" Padding="8 3 0 0" Margin="0">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- TextBlock -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Button and Image -->
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" FontSize="28.5" Foreground="#D4D4D4" Padding="6 8 0 0">
+                Glitch in the controls 
+                <LineBreak/>
+                </TextBlock>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Button -->
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Image -->
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" CornerRadius="10" BorderBrush="#407D3F" BorderThickness="2" HorizontalAlignment="Left" Margin="5 15 0 10" Background="#038100" Padding="20 5 20 10">
+                        <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" BorderBrush="#407D3F" BorderThickness="2"  Height="35" Background="#407D3F" Foreground="#D4D4D4">
+                            <Button.Content>
+                                <TextBlock Text="Edit" Height="42" FontWeight="SemiBold"/>
+                            </Button.Content>
+                        </Button>
+                    </Border>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="20 15 0 0">
+                        <Image Source="/Icons/bin.png" Width="60" Height="65" Margin="5 0 0 10"/>
+                        <TextBlock Text="Needs Fixing ▼" FontSize="25" FontWeight="SemiBold" Margin="10 15 0 10" Foreground="#838383" Height="44"/>
+                    </StackPanel>
+                </Grid>
+                <Border Grid.RowSpan="2" Grid.Column="0" Background="Gray" Width="2" VerticalAlignment="Stretch" Margin="380 10 0 5"/>
+            </Grid>
+        </Border>
+        <Border Grid.Column="1" Background="#262626">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" ></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Padding="5 10 0 0" FontSize="22" Foreground="#D4D4D4">
+                    Help, My controller keeps disconecting. 
+                    <LineBreak/>
+                    <LineBreak/>
+                </TextBlock>
+
+                <TextBlock Grid.Row="0" Padding="5 125 10 0" FontSize="22" Foreground="#D4D4D4" FontWeight="SemiBold" HorizontalAlignment="Right">
+                   <Underline>More</Underline> ▼
+                </TextBlock>
+
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#262626">
+            <TextBox VerticalAlignment="Top" Margin="35" Foreground="#757575" Background="#1E1E1E" BorderBrush="Black" BorderThickness="3"  Height="50">
+                <TextBox.Template>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+        </Border>
+
+        <Border Grid.Row="1">
+            <TextBox VerticalAlignment="Top" Margin="35 105 20 35" Foreground="#757575" Background="#1E1E1E" BorderBrush="Black" BorderThickness="3"  Height="50">
+                <TextBox.Template>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="1">
+            <TextBox VerticalAlignment="Top" Margin="20 105 35 35" Foreground="#757575" Background="#1E1E1E" BorderBrush="Black" BorderThickness="3"  Height="50">
+                <TextBox.Template>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+        </Border>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBox Margin="33,65,37,235" Foreground="#757575" Background="#1E1E1E" BorderBrush="Black" BorderThickness="3"  Height="175">
+                <TextBox.Template>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+        </Border>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBox Margin="33,370,34,154" Foreground="#757575" Background="#1E1E1E" BorderBrush="Black" BorderThickness="3"  Height="175">
+                <TextBox.Template>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+        </Border>
+
+        <Border Grid.ColumnSpan="2" Margin="0,10,0,0" CornerRadius="10" Grid.Row="1">
+            <Button Height="70" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" BorderBrush="#407D3F" BorderThickness="2" Background="#038100" Foreground="#D4D4D4" Margin="350,570,350,54">
+                <Button.Content>
+                    <TextBlock Text="Save" FontWeight="SemiBold"/>
+                </Button.Content>
+            </Button>
+        </Border>
+
     </Grid>
 </UserControl>
