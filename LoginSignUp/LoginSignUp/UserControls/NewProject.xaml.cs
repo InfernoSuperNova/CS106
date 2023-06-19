@@ -20,9 +20,20 @@ namespace LoginSignUp.UserControls
     /// </summary>
     public partial class NewProject : UserControl
     {
+
+       
+
         public NewProject()
         {
             InitializeComponent();
+        }
+
+        public delegate void AddNewProject(object sender, RoutedEventArgs e, string projectName);
+        public event AddNewProject _AddNewProject;
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+            string name = ProjectInputText.Text;
+            _AddNewProject(sender, e, name);
         }
     }
 }
