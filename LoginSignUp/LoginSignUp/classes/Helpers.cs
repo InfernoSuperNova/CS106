@@ -108,6 +108,10 @@ namespace LoginSignUp.classes
     }
     public static class ProjectList
     {
+        public static string[] Read()
+        {
+            return File.ReadAllLines(@".\Database\Projects.csv");
+        }
     }
     public static class UserInput
     {
