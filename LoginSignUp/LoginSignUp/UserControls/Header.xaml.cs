@@ -20,6 +20,9 @@ namespace LoginSignUp.UserControls
     /// </summary>
     public partial class Header : UserControl
     {
+
+        public delegate void NewProject(object sender, RoutedEventArgs e);
+        public event NewProject _NewProject;
         public Header()
         {
             InitializeComponent();
@@ -27,7 +30,7 @@ namespace LoginSignUp.UserControls
 
         private void AddNewProjectBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            _NewProject(sender, e);
         }
     }
 }
