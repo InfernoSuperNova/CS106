@@ -1,4 +1,4 @@
-﻿<Page x:Class="LoginSignUp.pages.AdminMenu"
+<Page x:Class="LoginSignUp.pages.AdminMenu"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -22,6 +22,7 @@
             </Grid.ColumnDefinitions>
             <ScrollViewer VerticalScrollBarVisibility="Auto" x:Name ="ProjectScrollField">
                 <StackPanel Name="ProjectField">
+                    <local1:AdminProject Width="850" Height="250" Margin="0 40 0 0" Loaded="AdminProject_Loaded"></local1:AdminProject>
                 </StackPanel>
             </ScrollViewer>
 
@@ -43,7 +44,7 @@
         <Border BorderBrush="#838383" BorderThickness="0 0 0 3">
             <Grid Grid.Column="0" Grid.Row="0" Background="#262626">
                 <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <TextBlock FontSize="60" Foreground="White" Margin="0 0 60 0">
+                    <TextBlock FontSize="40" Foreground="White" Margin="0 0 60 0">
                         <Bold>Admin</Bold>
                     </TextBlock>
                     <Button Background="Transparent" BorderBrush="Transparent" Foreground="Red" Width="150" FontSize="30" 

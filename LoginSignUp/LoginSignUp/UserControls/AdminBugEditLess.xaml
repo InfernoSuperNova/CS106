@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="LoginSignUp.UserControls.AdminBugEditLess"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LoginSignUp.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="850">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="14*"></RowDefinition>
+            <RowDefinition Height="11*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Column="0" Background="#262626" Padding="8 3 0 0" Margin="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- TextBlock -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Button and Image -->
+
+
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" FontSize="28.5" Foreground="#D4D4D4" Padding="6 8 0 0">
+                Glitch in the controls 
+                <LineBreak/>
+                </TextBlock>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Button -->
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Image -->
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" CornerRadius="10" BorderBrush="#407D3F" BorderThickness="2" HorizontalAlignment="Left" Margin="5 15 0 10" Background="#407D3F" Padding="20 5 20 10">
+                        <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" BorderBrush="#407D3F" BorderThickness="2"  Height="35" Background="#407D3F" Foreground="#D4D4D4">
+                            <Button.Content>
+                                <TextBlock Text="Edit" Height="42" FontWeight="SemiBold"/>
+                            </Button.Content>
+                        </Button>
+                    </Border>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="20 15 0 0">
+                        <Image Source="/Icons/bin.png" Width="60" Height="65" Margin="5 0 0 10"/>
+                        <TextBlock Text="Needs Fixing ▼" FontSize="25" FontWeight="SemiBold" Margin="25 15 0 10" Foreground="#838383" Height="44"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Border>
+        <Border Grid.Column="1" Background="#262626">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" ></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Padding="5 10 0 0" FontSize="22" Foreground="#D4D4D4">
+                    Help, My controller keeps disconecting. 
+                    <LineBreak/>
+                    <LineBreak/>
+                </TextBlock>
+
+                <TextBlock Grid.Row="0" Padding="5 125 10 0" FontSize="22" Foreground="#D4D4D4" FontWeight="SemiBold" HorizontalAlignment="Right">
+                   <Underline>Less</Underline> ▼
+                </TextBlock>
+
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="0"  Background="#262626">
+            <StackPanel>
+                <TextBlock Padding="12 12 0 0" FontSize="22" Foreground="#D4D4D4">Time Spent: <Bold><Underline>5 Hours</Underline></Bold></TextBlock>
+                <TextBlock Padding="12 10 0 0" FontSize="22" Foreground="#D4D4D4">Bug Priority: <Bold><Underline>High</Underline></Bold></TextBlock>
+            </StackPanel>
+        </Border>
+        
+
+        <Border Grid.Row="1" Grid.Column="1"  Background="#262626">
+            <StackPanel>
+                <TextBlock Padding="10 2 0 0" FontSize="22" Foreground="#D4D4D4" Height="42"><Bold><Underline><Run Text="Steps To Precede:"/></Underline></Bold></TextBlock>
+            </StackPanel>
+
+
+        </Border>
+
+    </Grid>
+
+
+</UserControl>

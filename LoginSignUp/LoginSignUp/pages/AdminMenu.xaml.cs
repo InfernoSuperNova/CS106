@@ -52,5 +52,10 @@ namespace LoginSignUp.pages
 
             });
         }
+
+        private void AdminProject_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
