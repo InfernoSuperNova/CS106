@@ -24,5 +24,10 @@ namespace LoginSignUp.UserControls
         {
             InitializeComponent();
         }
+
+        private void AddNewProjectBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
