@@ -44,13 +44,18 @@ namespace LoginSignUp.pages
 
         private void NewProject(object sender, RoutedEventArgs e)
         {
-            var project = new AdminProject();
-            ProjectField.Children.Add(project);
-            project.ProjectTitle.Text = "Project " + projectCount++;
+            //If a new project is already being made, then clear
+            if (newProject != null) { return; };
+            newProject = new NewProject();
+            ProjectField.Children.Add(newProject);
+
+            newProject._AddNewProject += AddNewProjectToList;
             //ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
             DelayedActionHelper.DelayedAction(DispatcherPriority.Background, TimeSpan.FromMilliseconds(0), () =>
             {
                 ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
+            });
+        }
 
         private void DeleteProject(object sender, RoutedEventArgs e, string name)
         {
