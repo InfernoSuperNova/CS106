@@ -26,5 +26,11 @@ namespace LoginSignUp.pages
 
             
         }
+
+        private void switchButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddEmployeeBtn.Visibility = Visibility.Collapsed;
+            AddEmployeeFieldBtn.Visibility = Visibility.Visible;
+        }
     }
 }

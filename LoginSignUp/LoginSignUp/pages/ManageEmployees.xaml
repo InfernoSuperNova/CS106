@@ -35,9 +35,11 @@
                     <ScrollViewer>
                         <StackPanel HorizontalAlignment="Center">
                             <local1:Employee Width="850" Height="150" Margin="0 0 0 30"></local1:Employee>
-                            <local1:Employee Width="850" Height="150" Margin="0 0 0 30"></local1:Employee>
-                            <local1:Employee Width="850" Height="150" Margin="0 0 0 30"></local1:Employee>
-                            <local1:AddEmployee Width="850" Height="150"></local1:AddEmployee>
+                            <Grid>
+                                <local1:AddEmployee Width="850" Height="150" x:Name="AddEmployeeBtn"></local1:AddEmployee>
+                                <Button x:Name="switchButton" Background="Transparent" Click="switchButton_Click" Panel.ZIndex="2"></Button>
+                                <local1:AddEmployeeField Width="850" Height="150" x:Name="AddEmployeeFieldBtn" Visibility="Collapsed"></local1:AddEmployeeField>
+                            </Grid>
                         </StackPanel>
                     </ScrollViewer>
                     
