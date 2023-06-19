@@ -1,4 +1,4 @@
-﻿using LoginSignUp.classes;
+using LoginSignUp.classes;
 using LoginSignUp.UserControls;
 using System;
 using System.Collections.Generic;
@@ -37,6 +37,8 @@ namespace LoginSignUp.pages
                 // Add the dynamic object to the stack panel
                 ProjectField.Children.Add(project);
                 project.ProjectTitle.Text = name;
+                project._DeleteProject += DeleteProject;
+                adminProjects.Add(project);
             }
         }
 
@@ -50,6 +52,27 @@ namespace LoginSignUp.pages
             {
                 ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
 
+        private void DeleteProject(object sender, RoutedEventArgs e, string name)
+        {
+            //Gets a pointer to the admin project element
+            AdminProject projectToRemove = adminProjects.Find(project => project.ProjectTitle.Text == name);
+            //Remove that from memory
+            adminProjects.Remove(projectToRemove);
+            ProjectField.Children.Remove(projectToRemove);
+
+            //Create a new string
+            string[] newLines = new string[0];
+            //Fill that with all of lines, sans name of project being removed
+            foreach (string oldName in lines)
+            {
+                if (name == oldName) { continue; }
+                newLines = newLines.Append(oldName).ToArray();
+            }
+            //Overwrite lines
+            lines = newLines;
+            //Overwrite the database
+            ProjectList.Write(lines);
+        }
 
             });
         }

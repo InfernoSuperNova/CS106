@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +23,19 @@ namespace LoginSignUp.UserControls
         public AdminProject()
         {
             InitializeComponent();
+        }
+
+
+        public delegate void DeleteProject(object sender, RoutedEventArgs e, string name);
+        public event DeleteProject _DeleteProject;
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            string name = ProjectTitle.Text;
+            _DeleteProject(sender, e, name);
         }
     }
 }
