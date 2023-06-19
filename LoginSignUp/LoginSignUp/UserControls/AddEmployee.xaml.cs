@@ -28,7 +28,7 @@ namespace LoginSignUp.UserControls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var parentPage = Window.GetWindow(this) as ManageEmployees;
+            
         }
     }
 }
