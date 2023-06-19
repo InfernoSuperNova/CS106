@@ -106,6 +106,9 @@ namespace LoginSignUp.classes
             return Users.ElementAt(index);
         }
     }
+    public static class ProjectList
+    {
+    }
     public static class UserInput
     {
         /// <summary>
