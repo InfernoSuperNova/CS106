@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -52,7 +52,7 @@ namespace LoginSignUp.pages
             string inputUserName = LoginUserName.Text;
             string inputPassword = LoginPassWord.Text;
 
-            string[] lines = UserDatabase.ReadDatabase();
+            string[] lines = UserDatabase.Read();
             var existingUserNameData = UserDatabase.EnumerateUserNames(lines);
             var existingPasswordData = UserDatabase.EnumeratePasswords(lines);
 

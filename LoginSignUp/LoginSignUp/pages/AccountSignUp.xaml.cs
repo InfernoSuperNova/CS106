@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -45,7 +45,7 @@ namespace LoginSignUp.pages
         {
             string inputUserName = SignUpUserName.Text;
             string inputPassword = SignUpPassword.Text;
-            string[] lines = UserDatabase.ReadDatabase();
+            string[] lines = UserDatabase.Read();
             var existingUsernameData = UserDatabase.EnumerateUserNames(lines);
 
             if (!CompareUsernameData(existingUsernameData, inputUserName, inputPassword)) { return; }

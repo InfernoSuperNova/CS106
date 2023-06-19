@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -53,10 +53,11 @@ namespace LoginSignUp.classes
         /// Breaks the database up into an array of rows.
         /// </summary>
         /// <returns>An array of rows.</returns>
-        public static string[] ReadDatabase()
+        public static string[] Read()
         {
             return File.ReadAllLines(@".\Database\UserAccountData.csv");
         }
+        
         /// <summary>
         /// Checks if the username and password match an entry in the database.
         /// </summary>
@@ -100,7 +101,7 @@ namespace LoginSignUp.classes
         /// <returns>The user type at the specified index.</returns>
         public static string GetUserTypeByIndex(int index)
         {
-            string[] DataBase = ReadDatabase();
+            string[] DataBase = Read();
             List<string> Users = EnumerateUserType(DataBase);
             return Users.ElementAt(index);
         }
