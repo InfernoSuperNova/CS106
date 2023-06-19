@@ -24,6 +24,7 @@ namespace LoginSignUp.pages
     public partial class AdminMenu : Page
     {
         static int projectCount = 0;
+        NewProject newProject;
         public AdminMenu()
         {
             InitializeComponent();
@@ -78,8 +79,16 @@ namespace LoginSignUp.pages
             //Overwrite the database
             ProjectList.Write(lines);
         }
+        private void AddNewProjectToList(object sender, RoutedEventArgs e, string projectName)
+        {
+            ProjectField.Children.Remove(newProject);
+            newProject = null;
 
-            });
+            AdminProject newAdminProject = new AdminProject();
+            newAdminProject.ProjectTitle.Text = projectName;
+            ProjectField.Children.Add(newAdminProject);
+            lines = lines.Append(projectName).ToArray();
+            ProjectList.Write(lines);
         }
 
         private void AdminProject_Loaded(object sender, RoutedEventArgs e)
