@@ -31,7 +31,7 @@ namespace LoginSignUp.pages
         {
             InitializeComponent();
 
-            for (; projectCount < 5; projectCount++)
+            for (; projectCount < 0; projectCount++)
             {
                 // Create your dynamic objects
                 var project = new UserProject();
@@ -44,6 +44,7 @@ namespace LoginSignUp.pages
 
         private void NewProjectBtn_Click(object sender, RoutedEventArgs e)
         {
+            //This button probably should not exist
             var project = new UserProject();
             ProjectField.Children.Add(project);
             project.ProjectTitle.Text = "Project " + projectCount++;
