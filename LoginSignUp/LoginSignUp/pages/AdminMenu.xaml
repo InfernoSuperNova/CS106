@@ -22,7 +22,6 @@
             </Grid.ColumnDefinitions>
             <ScrollViewer VerticalScrollBarVisibility="Auto" x:Name ="ProjectScrollField">
                 <StackPanel Name="ProjectField">
-                    <local1:AdminProject Width="850" Height="250" Margin="0 40 0 0"></local1:AdminProject>
                 </StackPanel>
             </ScrollViewer>
 
