@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <local1:Header></local1:Header>
+            <local1:Header x:Name ="header"></local1:Header>
         </Grid>
         
         <Grid Grid.Row="1">
@@ -26,7 +26,6 @@
             </Grid.ColumnDefinitions>
             <ScrollViewer VerticalScrollBarVisibility="Auto" x:Name ="ProjectScrollField">
                 <StackPanel Name="ProjectField">
-                    <local1:AdminProject Width="850" Height="250" Margin="0 40 0 0" Loaded="AdminProject_Loaded"></local1:AdminProject>
                 </StackPanel>
             </ScrollViewer>
 
@@ -44,7 +43,7 @@
             </Grid>
 
         </Grid>
-
+        
         <!--<Border BorderBrush="#838383" BorderThickness="0 0 0 3">
             <Grid Grid.Column="0" Grid.Row="0" Background="#262626">
                 <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">

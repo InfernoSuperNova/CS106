@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <local1:Header></local1:Header>
+            <local1:Header x:Name ="header"></local1:Header>
         </Grid>
         
         <Grid Grid.Row="1">

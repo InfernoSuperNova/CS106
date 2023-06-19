@@ -30,7 +30,7 @@ namespace LoginSignUp.pages
         public UserMenu()
         {
             InitializeComponent();
-
+            header._NewProject += NewProject;
             for (; projectCount < 0; projectCount++)
             {
                 // Create your dynamic objects
@@ -42,7 +42,7 @@ namespace LoginSignUp.pages
             }
         }
 
-        private void NewProjectBtn_Click(object sender, RoutedEventArgs e)
+        private void NewProject(object sender, RoutedEventArgs e)
         {
             //This button probably should not exist
             var project = new UserProject();
