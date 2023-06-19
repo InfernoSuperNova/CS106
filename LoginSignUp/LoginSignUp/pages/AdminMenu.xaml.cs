@@ -23,13 +23,16 @@ namespace LoginSignUp.pages
     /// </summary>
     public partial class AdminMenu : Page
     {
-        static int projectCount = 0;
+
+        private string[] lines;
+        private List<AdminProject> adminProjects;
         NewProject newProject;
         public AdminMenu()
         {
+            adminProjects = new List<AdminProject>();
             InitializeComponent();
             header._NewProject += NewProject;
-            string[] lines = ProjectList.Read();
+            lines = ProjectList.Read();
             foreach (string name in lines)
             {
                 //store this project somewhere, otherwise it'll cause a memory leak
