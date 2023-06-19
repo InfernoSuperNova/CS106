@@ -112,6 +112,10 @@ namespace LoginSignUp.classes
         {
             return File.ReadAllLines(@".\Database\Projects.csv");
         }
+        public static void Write(string[] lines)
+        {
+            File.WriteAllLines(@".\Database\Projects.csv", lines);
+        }
     }
     public static class UserInput
     {
