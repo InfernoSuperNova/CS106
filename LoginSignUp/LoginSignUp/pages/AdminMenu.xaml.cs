@@ -1,4 +1,4 @@
-using LoginSignUp.classes;
+﻿using LoginSignUp.classes;
 using LoginSignUp.UserControls;
 using System;
 using System.Collections.Generic;
