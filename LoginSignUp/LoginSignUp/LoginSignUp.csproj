@@ -78,6 +78,9 @@
     <Compile Include="UserControls\AddEmployeeField.xaml.cs">
       <DependentUpon>AddEmployeeField.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\NewProject.xaml.cs">
+      <DependentUpon>NewProject.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AdminProject.xaml.cs">
       <DependentUpon>AdminProject.xaml</DependentUpon>
     </Compile>
@@ -155,6 +158,10 @@
     <Page Include="UserControls\AddEmployeeField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\NewProject.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\AdminProject.xaml">
       <SubType>Designer</SubType>
