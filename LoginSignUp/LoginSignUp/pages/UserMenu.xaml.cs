@@ -45,20 +45,6 @@ namespace LoginSignUp.pages
             }
         }
 
-        private void NewProject(object sender, RoutedEventArgs e)
-        {
-            //This button probably should not exist
-            var project = new UserProject();
-            ProjectField.Children.Add(project);
-            project.ProjectTitle.Text = "Project " + projectCount++;
-            //ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
-            DelayedActionHelper.DelayedAction(DispatcherPriority.Background, TimeSpan.FromMilliseconds(0), () =>
-            {
-                ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
-
-
-            });
-        }
         public delegate void SignOutMain(object sender, RoutedEventArgs e);
         public event SignOutMain _SignOut;
         private void SignOut(object sender, RoutedEventArgs e)
@@ -67,3 +53,4 @@ namespace LoginSignUp.pages
         }
     }
 }
+
