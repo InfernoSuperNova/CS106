@@ -11,10 +11,10 @@
         <Border BorderBrush="#838383" BorderThickness="0 0 0 3">
             <Grid Grid.Column="0" Grid.Row="0" Background="#262626">
                 <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <TextBlock FontSize="60" Foreground="White" Margin="0 0 60 0">
+                    <TextBlock FontSize="60" Foreground="White" Margin="0 0 60 0" Name ="UserText">
                         <Bold>Admin</Bold>
                     </TextBlock>
-                    <Button Background="Transparent" BorderBrush="Transparent" Foreground="Red" Width="150" FontSize="30" 
+                    <Button Background="Transparent" BorderBrush="Transparent" Foreground="Red" Width="150" FontSize="30" Name ="SignOutBtn" Click="SignOutBtn_Click" 
                             Margin="0 0 60 0" FontFamily="Montserrat">
                         <Underline>Sign Out</Underline>
                     </Button>

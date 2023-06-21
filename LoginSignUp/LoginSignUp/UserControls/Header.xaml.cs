@@ -21,16 +21,24 @@ namespace LoginSignUp.UserControls
     public partial class Header : UserControl
     {
 
-        public delegate void NewProject(object sender, RoutedEventArgs e);
-        public event NewProject _NewProject;
+        
         public Header()
         {
             InitializeComponent();
         }
 
+        public delegate void NewProject(object sender, RoutedEventArgs e);
+        public event NewProject _NewProject;
         private void AddNewProjectBtn_Click(object sender, RoutedEventArgs e)
         {
             _NewProject(sender, e);
+        }
+
+        public delegate void SignOut(object sender, RoutedEventArgs e);
+        public event SignOut _SignOut;
+        private void SignOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _SignOut(sender, e);
         }
     }
 }
