@@ -1,4 +1,4 @@
-﻿UserName,Password,type
+﻿UserName,Password,type,assignedproj,assignedproj,assignedproj,...
 Bob,YourUncle,admin
 test,testpassword,dev
 William,Tetzlaff,user
