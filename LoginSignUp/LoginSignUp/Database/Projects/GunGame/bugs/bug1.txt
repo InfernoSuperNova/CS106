@@ -1,0 +1,4 @@
+﻿Stupid bug
+There is a stupid bug occuring
+Steps to reproduce
+Priority
