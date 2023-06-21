@@ -44,7 +44,14 @@ namespace LoginSignUp.pages
                 projectCount++;
             }
         }
-
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (projectCount != 0) { return; }
+            DelayedActionHelper.DelayedAction(DispatcherPriority.Background, TimeSpan.FromMilliseconds(0), () =>
+            {
+                MessageBox.Show("There are no projects available, contact your system administrator!");
+            });
+        }
         public delegate void SignOutMain(object sender, RoutedEventArgs e);
         public event SignOutMain _SignOut;
         private void SignOut(object sender, RoutedEventArgs e)
