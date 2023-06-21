@@ -80,8 +80,8 @@
 
                 <Bold>Edit Bugs</Bold>
             </Button>
-            <Button Grid.Row="1" Foreground="White" Background="#407D3F" Width="150"
-                    Height="75" FontSize="20" Margin="0 0 0 10">
+            <Button Name="ManageEmployeeBtn" Grid.Row="1" Foreground="White" Background="#407D3F" Width="150"
+                    Height="75" FontSize="20" Margin="0 0 0 10" Click="ManageEmployeeBtn_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="20"/>
