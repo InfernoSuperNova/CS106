@@ -24,21 +24,24 @@ namespace LoginSignUp.pages
     /// </summary>
     public partial class UserMenu : Page
     {
-        static int projectCount = 0;
-
-        public UserProject UserProject;
+        private string[] lines;
+        private int projectCount = 0;
         public UserMenu()
         {
             InitializeComponent();
-            header._NewProject += NewProject;
-            for (; projectCount < 0; projectCount++)
+            header._SignOut += SignOut;
+            header.AddNewProjectBtn.Visibility = Visibility.Hidden;
+            lines = ProjectList.Read();
+            
+            foreach (string name in lines)
             {
-                // Create your dynamic objects
+                //store this project somewhere, otherwise it'll cause a memory leak
                 var project = new UserProject();
 
                 // Add the dynamic object to the stack panel
                 ProjectField.Children.Add(project);
-                project.ProjectTitle.Text = "Project " + projectCount;
+                project.ProjectTitle.Text = name;
+                projectCount++;
             }
         }
 
