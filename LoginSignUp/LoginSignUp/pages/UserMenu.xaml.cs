@@ -1,4 +1,4 @@
-﻿using LoginSignUp.UserControls;
+using LoginSignUp.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,10 +56,11 @@ namespace LoginSignUp.pages
 
             });
         }
-
-        private void SignOutBtn_Click(object sender, RoutedEventArgs e)
+        public delegate void SignOutMain(object sender, RoutedEventArgs e);
+        public event SignOutMain _SignOut;
+        private void SignOut(object sender, RoutedEventArgs e)
         {
-
+            _SignOut(sender, e);
         }
     }
 }
