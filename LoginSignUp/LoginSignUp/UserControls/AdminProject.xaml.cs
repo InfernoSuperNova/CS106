@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using LoginSignUp.classes;
 namespace LoginSignUp.UserControls
 {
     /// <summary>
@@ -20,19 +20,30 @@ namespace LoginSignUp.UserControls
     /// </summary>
     public partial class AdminProject : UserControl
     {
+        private EmployeeDeletePrompt deletePrompt;
         public AdminProject()
         {
             InitializeComponent();
+            deletePrompt = new EmployeeDeletePrompt();
+            deletePrompt._CancelDelete += CancelDelete;
+            deletePrompt._ConfirmDelete += ConfirmDelete;
         }
+        
 
+        
+        
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteField.Children.Add(deletePrompt);
+        }
+        private void CancelDelete(object sender, RoutedEventArgs e)
+        {
+            DeleteField.Children.Remove(deletePrompt);
+        }
 
         public delegate void DeleteProject(object sender, RoutedEventArgs e, string name);
         public event DeleteProject _DeleteProject;
-        private void SubmitButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        private void Delete_Click(object sender, RoutedEventArgs e)
+        private void ConfirmDelete(object sender, RoutedEventArgs e)
         {
             string name = ProjectTitle.Text;
             _DeleteProject(sender, e, name);
