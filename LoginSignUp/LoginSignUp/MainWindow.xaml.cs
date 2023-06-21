@@ -48,12 +48,15 @@ namespace LoginSignUp
             {
                 case "user":
                     PageUserMenu(sender, e);
+                    UserMenu.header.UserText.Text = UserName + " : User";
                     break;
                 case "admin":
                     PageAdminMenu(sender, e);
+                    AdminMenu.header.UserText.Text = UserName + " : Admin";
                     break;
                 case "dev":
-                    PageAdminMenu(sender, e);
+                    PageUserMenu(sender, e);
+                    UserMenu.header.UserText.Text = UserName + " : Dev";
                     break;
             }
         }
