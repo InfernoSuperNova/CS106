@@ -69,19 +69,6 @@ namespace LoginSignUp.pages
             //Remove that from memory
             adminProjects.Remove(projectToRemove);
             ProjectField.Children.Remove(projectToRemove);
-
-            //Create a new string
-            string[] newLines = new string[0];
-            //Fill that with all of lines, sans name of project being removed
-            foreach (string oldName in lines)
-            {
-                if (name == oldName) { continue; }
-                newLines = newLines.Append(oldName).ToArray();
-            }
-            //Overwrite lines
-            lines = newLines;
-            //Overwrite the database
-            ProjectList.Write(lines);
         }
         private void AddNewProjectToList(object sender, RoutedEventArgs e, string projectName)
         {
