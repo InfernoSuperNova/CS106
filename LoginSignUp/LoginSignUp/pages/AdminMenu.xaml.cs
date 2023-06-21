@@ -78,9 +78,12 @@ namespace LoginSignUp.pages
 
             AdminProject newAdminProject = new AdminProject();
             newAdminProject.ProjectTitle.Text = projectName;
+            newAdminProject._DeleteProject += DeleteProject;
+            adminProjects.Add(newAdminProject);
             ProjectField.Children.Add(newAdminProject);
             lines = lines.Append(projectName).ToArray();
-            ProjectList.Write(lines);
+            ProjectDataBase.Write(lines);
+            ProjectDataBase.CreateProject(projectName);
         }
 
         private void AdminProject_Loaded(object sender, RoutedEventArgs e)
