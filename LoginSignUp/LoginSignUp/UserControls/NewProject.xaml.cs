@@ -18,24 +18,22 @@ namespace LoginSignUp.UserControls
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class AdminProject : UserControl
+    public partial class NewProject : UserControl
     {
-        public AdminProject()
+
+       
+
+        public NewProject()
         {
             InitializeComponent();
         }
 
-
-        public delegate void DeleteProject(object sender, RoutedEventArgs e, string name);
-        public event DeleteProject _DeleteProject;
+        public delegate void AddNewProject(object sender, RoutedEventArgs e, string projectName);
+        public event AddNewProject _AddNewProject;
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            
-        }
-        private void Delete_Click(object sender, RoutedEventArgs e)
-        {
-            string name = ProjectTitle.Text;
-            _DeleteProject(sender, e, name);
+            string name = ProjectInputText.Text;
+            _AddNewProject(sender, e, name);
         }
     }
 }

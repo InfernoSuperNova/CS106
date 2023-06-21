@@ -1,4 +1,4 @@
-﻿using LoginSignUp.classes;
+using LoginSignUp.classes;
 using LoginSignUp.UserControls;
 using System;
 using System.Collections.Generic;
@@ -23,12 +23,16 @@ namespace LoginSignUp.pages
     /// </summary>
     public partial class AdminMenu : Page
     {
-        static int projectCount = 0;
+
+        private string[] lines;
+        private List<AdminProject> adminProjects;
+        NewProject newProject;
         public AdminMenu()
         {
+            adminProjects = new List<AdminProject>();
             InitializeComponent();
             header._NewProject += NewProject;
-            string[] lines = ProjectList.Read();
+            lines = ProjectList.Read();
             foreach (string name in lines)
             {
                 //store this project somewhere, otherwise it'll cause a memory leak
@@ -37,21 +41,57 @@ namespace LoginSignUp.pages
                 // Add the dynamic object to the stack panel
                 ProjectField.Children.Add(project);
                 project.ProjectTitle.Text = name;
+                project._DeleteProject += DeleteProject;
+                adminProjects.Add(project);
             }
         }
 
         private void NewProject(object sender, RoutedEventArgs e)
         {
-            var project = new AdminProject();
-            ProjectField.Children.Add(project);
-            project.ProjectTitle.Text = "Project " + projectCount++;
+            //If a new project is already being made, then clear
+            if (newProject != null) { return; };
+            newProject = new NewProject();
+            ProjectField.Children.Add(newProject);
+
+            newProject._AddNewProject += AddNewProjectToList;
             //ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
             DelayedActionHelper.DelayedAction(DispatcherPriority.Background, TimeSpan.FromMilliseconds(0), () =>
             {
                 ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
-
-
             });
+        }
+
+        private void DeleteProject(object sender, RoutedEventArgs e, string name)
+        {
+            //Gets a pointer to the admin project element
+            AdminProject projectToRemove = adminProjects.Find(project => project.ProjectTitle.Text == name);
+            //Remove that from memory
+            adminProjects.Remove(projectToRemove);
+            ProjectField.Children.Remove(projectToRemove);
+
+            //Create a new string
+            string[] newLines = new string[0];
+            //Fill that with all of lines, sans name of project being removed
+            foreach (string oldName in lines)
+            {
+                if (name == oldName) { continue; }
+                newLines = newLines.Append(oldName).ToArray();
+            }
+            //Overwrite lines
+            lines = newLines;
+            //Overwrite the database
+            ProjectList.Write(lines);
+        }
+        private void AddNewProjectToList(object sender, RoutedEventArgs e, string projectName)
+        {
+            ProjectField.Children.Remove(newProject);
+            newProject = null;
+
+            AdminProject newAdminProject = new AdminProject();
+            newAdminProject.ProjectTitle.Text = projectName;
+            ProjectField.Children.Add(newAdminProject);
+            lines = lines.Append(projectName).ToArray();
+            ProjectList.Write(lines);
         }
 
         private void AdminProject_Loaded(object sender, RoutedEventArgs e)

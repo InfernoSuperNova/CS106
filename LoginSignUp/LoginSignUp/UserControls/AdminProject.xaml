@@ -89,6 +89,9 @@
                 </Bold>
             </Button>
         </Grid>
-        <Image Width="75" Grid.Column="3" Source="/Icons/bin.png"></Image>
+        <Button Name ="Delete" Grid.Column="3" Background="#00000000" Click="Delete_Click">
+            <Image Width="75" Source="/Icons/bin.png"></Image>
+        </Button>
+        
     </Grid>
 </UserControl>
