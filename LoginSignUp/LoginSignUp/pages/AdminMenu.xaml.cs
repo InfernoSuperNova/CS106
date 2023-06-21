@@ -64,6 +64,7 @@ namespace LoginSignUp.pages
 
         private void DeleteProject(object sender, RoutedEventArgs e, string name)
         {
+            ProjectDataBase.DeleteProject(name);
             //Gets a pointer to the admin project element
             AdminProject projectToRemove = adminProjects.Find(project => project.ProjectTitle.Text == name);
             //Remove that from memory
