@@ -22,7 +22,7 @@
                 </Grid>
 
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
-                    <Button Width="200" Height="50" Margin="0 0 70 0" Background="#407D3F"
+                    <Button Width="200" Height="50" Margin="0 0 70 0" Background="#407D3F" Name ="CancelBtn" Click="CancelBtn_Click"
                             FontSize="20" Foreground="White">
                         <Button.Resources>
                             <Style TargetType="Border">
@@ -31,7 +31,7 @@
                         </Button.Resources>
                         Cancel
                     </Button>
-                    <Button Width="200" Height="50" FontSize="20" Background="#DB0000"
+                    <Button Width="200" Height="50" FontSize="20" Background="#DB0000" Name ="ConfirmBtn" Click="ConfirmBtn_Click"
                             Foreground="White">
                         <Button.Resources>
                             <Style TargetType="Border">

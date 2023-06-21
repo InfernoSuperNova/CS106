@@ -32,7 +32,8 @@ namespace LoginSignUp.pages
             adminProjects = new List<AdminProject>();
             InitializeComponent();
             header._NewProject += NewProject;
-            lines = ProjectList.Read();
+            header._SignOut += SignOut;
+            lines = ProjectDataBase.ReadNoHeader();
             foreach (string name in lines)
             {
                 //store this project somewhere, otherwise it'll cause a memory leak
@@ -63,24 +64,12 @@ namespace LoginSignUp.pages
 
         private void DeleteProject(object sender, RoutedEventArgs e, string name)
         {
+            ProjectDataBase.DeleteProject(name);
             //Gets a pointer to the admin project element
             AdminProject projectToRemove = adminProjects.Find(project => project.ProjectTitle.Text == name);
             //Remove that from memory
             adminProjects.Remove(projectToRemove);
             ProjectField.Children.Remove(projectToRemove);
-
-            //Create a new string
-            string[] newLines = new string[0];
-            //Fill that with all of lines, sans name of project being removed
-            foreach (string oldName in lines)
-            {
-                if (name == oldName) { continue; }
-                newLines = newLines.Append(oldName).ToArray();
-            }
-            //Overwrite lines
-            lines = newLines;
-            //Overwrite the database
-            ProjectList.Write(lines);
         }
         private void AddNewProjectToList(object sender, RoutedEventArgs e, string projectName)
         {
@@ -89,14 +78,24 @@ namespace LoginSignUp.pages
 
             AdminProject newAdminProject = new AdminProject();
             newAdminProject.ProjectTitle.Text = projectName;
+            newAdminProject._DeleteProject += DeleteProject;
+            adminProjects.Add(newAdminProject);
             ProjectField.Children.Add(newAdminProject);
             lines = lines.Append(projectName).ToArray();
-            ProjectList.Write(lines);
+            ProjectDataBase.Write(lines);
+            ProjectDataBase.CreateProject(projectName);
         }
 
         private void AdminProject_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public delegate void SignOutMain(object sender, RoutedEventArgs e);
+        public event SignOutMain _SignOut;
+        private void SignOut(object sender, RoutedEventArgs e)
+        {
+            _SignOut(sender, e);
         }
     }
 }

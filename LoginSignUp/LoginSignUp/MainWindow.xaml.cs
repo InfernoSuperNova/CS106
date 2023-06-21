@@ -39,6 +39,10 @@ namespace LoginSignUp
             AccountLogin._SuccessfulLogin += GetUserAccountType;
             AccountSignUp._NavigateToLoginPageBtnClick += PageLogin;
             AccountSignUp._SuccessfulSignup += PageUserMenu;
+            AdminMenu._SignOut += PageLogin;
+            UserMenu._SignOut += PageLogin;
+
+            ProjectDataBase.InitializeDatabase();
         }
         public void GetUserAccountType(object sender, RoutedEventArgs e, List<string> UserNames, string UserName)
         {
@@ -48,12 +52,15 @@ namespace LoginSignUp
             {
                 case "user":
                     PageUserMenu(sender, e);
+                    UserMenu.header.UserText.Text = UserName + " : User";
                     break;
                 case "admin":
                     PageAdminMenu(sender, e);
+                    AdminMenu.header.UserText.Text = UserName + " : Admin";
                     break;
                 case "dev":
-                    PageAdminMenu(sender, e);
+                    PageUserMenu(sender, e);
+                    UserMenu.header.UserText.Text = UserName + " : Dev";
                     break;
             }
         }

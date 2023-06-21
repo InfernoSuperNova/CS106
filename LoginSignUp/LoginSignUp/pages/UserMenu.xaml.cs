@@ -1,4 +1,4 @@
-﻿using LoginSignUp.UserControls;
+using LoginSignUp.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,42 +24,40 @@ namespace LoginSignUp.pages
     /// </summary>
     public partial class UserMenu : Page
     {
-        static int projectCount = 0;
-
-        public UserProject UserProject;
+        private string[] lines;
+        private int projectCount = 0;
         public UserMenu()
         {
             InitializeComponent();
-            header._NewProject += NewProject;
-            for (; projectCount < 0; projectCount++)
+            header._SignOut += SignOut;
+            header.AddNewProjectBtn.Visibility = Visibility.Hidden;
+            lines = ProjectList.Read();
+            
+            foreach (string name in lines)
             {
-                // Create your dynamic objects
+                //store this project somewhere, otherwise it'll cause a memory leak
                 var project = new UserProject();
 
                 // Add the dynamic object to the stack panel
                 ProjectField.Children.Add(project);
-                project.ProjectTitle.Text = "Project " + projectCount;
+                project.ProjectTitle.Text = name;
+                projectCount++;
             }
         }
-
-        private void NewProject(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            //This button probably should not exist
-            var project = new UserProject();
-            ProjectField.Children.Add(project);
-            project.ProjectTitle.Text = "Project " + projectCount++;
-            //ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
+            if (projectCount != 0) { return; }
             DelayedActionHelper.DelayedAction(DispatcherPriority.Background, TimeSpan.FromMilliseconds(0), () =>
             {
-                ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
-
-
+                MessageBox.Show("There are no projects available, contact your system administrator!");
             });
         }
-
-        private void SignOutBtn_Click(object sender, RoutedEventArgs e)
+        public delegate void SignOutMain(object sender, RoutedEventArgs e);
+        public event SignOutMain _SignOut;
+        private void SignOut(object sender, RoutedEventArgs e)
         {
-
+            _SignOut(sender, e);
         }
     }
 }
+

@@ -75,7 +75,6 @@ namespace LoginSignUp.pages
             //may need to add an else here if guard clause is removed for whatever reason
             if (UserDatabase.CheckLogin(existingUserNameData, existingPasswordData, inputUserName, inputPassword))
             {
-                MessageBox.Show("Successful login");
                 return true;
             }
             else

@@ -24,5 +24,17 @@ namespace LoginSignUp.UserControls
         {
             InitializeComponent();
         }
+        public delegate void CancelDelete(object sender, RoutedEventArgs e);
+        public event CancelDelete _CancelDelete;
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _CancelDelete(sender, e);
+        }
+        public delegate void ConfirmDelete(object sender, RoutedEventArgs e);
+        public event ConfirmDelete _ConfirmDelete;
+        private void ConfirmBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _ConfirmDelete(sender, e);
+        }
     }
 }
