@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="classes\Config.cs" />
     <Compile Include="classes\Helpers.cs" />
+    <Compile Include="classes\ProjectDataBase.cs" />
     <Compile Include="pages\Test Page.xaml.cs">
       <DependentUpon>Test Page.xaml</DependentUpon>
     </Compile>
@@ -233,7 +234,12 @@
     <Resource Include="Icons\bin.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Database\Projects\TestProject1\" />
+    <Folder Include="Database\Projects\TestProject2\" />
     <Folder Include="Objects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Database\Projects\GunGame\bugs\bug1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
