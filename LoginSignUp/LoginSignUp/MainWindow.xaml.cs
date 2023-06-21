@@ -39,6 +39,10 @@ namespace LoginSignUp
             AccountLogin._SuccessfulLogin += GetUserAccountType;
             AccountSignUp._NavigateToLoginPageBtnClick += PageLogin;
             AccountSignUp._SuccessfulSignup += PageUserMenu;
+            AdminMenu._SignOut += PageLogin;
+            UserMenu._SignOut += PageLogin;
+
+            ProjectDataBase.InitializeDatabase();
         }
         public void GetUserAccountType(object sender, RoutedEventArgs e, List<string> UserNames, string UserName)
         {

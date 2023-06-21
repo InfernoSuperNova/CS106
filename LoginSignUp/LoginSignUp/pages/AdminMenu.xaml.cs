@@ -32,7 +32,8 @@ namespace LoginSignUp.pages
             adminProjects = new List<AdminProject>();
             InitializeComponent();
             header._NewProject += NewProject;
-            lines = ProjectList.Read();
+            header._SignOut += SignOut;
+            lines = ProjectDataBase.ReadNoHeader();
             foreach (string name in lines)
             {
                 //store this project somewhere, otherwise it'll cause a memory leak
@@ -97,6 +98,13 @@ namespace LoginSignUp.pages
         private void AdminProject_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public delegate void SignOutMain(object sender, RoutedEventArgs e);
+        public event SignOutMain _SignOut;
+        private void SignOut(object sender, RoutedEventArgs e)
+        {
+            _SignOut(sender, e);
         }
     }
 }
