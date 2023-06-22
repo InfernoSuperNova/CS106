@@ -80,7 +80,7 @@
 
                 <Bold>Edit Bugs</Bold>
             </Button>
-            <Button Name="ManageEmployeeBtn" Grid.Row="1" Foreground="White" Background="#407D3F" Width="150"
+            <!--<Button Name="ManageEmployeeBtn" Grid.Row="1" Foreground="White" Background="#407D3F" Width="150"
                     Height="75" FontSize="20" Margin="0 0 0 10" Click="ManageEmployeeBtn_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -90,7 +90,7 @@
                 <Bold>Manage
                     <LineBreak /> Employees
                 </Bold>
-            </Button>
+            </Button>-->
         </Grid>
         <Button Name ="Delete" Grid.Column="4" Background="#00000000" Click="Delete_Click">
             <Image Width="75" Source="/Icons/bin.png"></Image>

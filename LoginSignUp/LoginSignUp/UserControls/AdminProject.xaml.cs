@@ -49,13 +49,13 @@ namespace LoginSignUp.UserControls
             _DeleteProject(sender, e, name);
         }
 
-        public delegate void ManageEmployees(object sender, RoutedEventArgs e);
-        public event ManageEmployees _ManageEmployees;
+        /* public delegate void ManageEmployees(object sender, RoutedEventArgs e);
+         public event ManageEmployees _ManageEmployees;
 
-        private void ManageEmployeeBtn_Click(object sender, RoutedEventArgs e)
-        {
-            AddEmployeeBtn.Visibility = Visibility.Visible;
-            SelectOptionText.Visibility = Visibility.Collapsed;
-        }
+         private void ManageEmployeeBtn_Click(object sender, RoutedEventArgs e)
+         {
+             AddEmployeeBtn.Visibility = Visibility.Visible;
+             SelectOptionText.Visibility = Visibility.Collapsed;
+         }*/
     }
 }
