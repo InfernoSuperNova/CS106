@@ -55,7 +55,7 @@
                         <TextBlock Text="Needs Fixing ▼" FontSize="25" FontWeight="SemiBold" Margin="25 15 0 10" Foreground="#838383" Height="44"/>
                     </StackPanel>
                 </Grid>
-
+                
             </Grid>
         </Border>
         <Border Grid.Column="1" Background="#262626">
@@ -81,6 +81,7 @@
             <StackPanel>
                 <TextBlock Padding="12 12 0 0" FontSize="22" Foreground="#D4D4D4">Time Spent: <Bold><Underline>5 Hours</Underline></Bold></TextBlock>
                 <TextBlock Padding="12 10 0 0" FontSize="22" Foreground="#D4D4D4">Bug Priority: <Bold><Underline>High</Underline></Bold></TextBlock>
+            
             </StackPanel>
         </Border>
         
@@ -88,11 +89,12 @@
         <Border Grid.Row="1" Grid.Column="1"  Background="#262626">
             <StackPanel>
                 <TextBlock Padding="10 2 0 0" FontSize="22" Foreground="#D4D4D4" Height="42"><Bold><Underline><Run Text="Steps To Precede:"/></Underline></Bold></TextBlock>
+                
             </StackPanel>
 
 
         </Border>
-
+        <Border Grid.RowSpan="2" Grid.Column="0" Background="Gray" Width="2" VerticalAlignment="Stretch" Margin="400 10 0 5"/>
     </Grid>
 
 

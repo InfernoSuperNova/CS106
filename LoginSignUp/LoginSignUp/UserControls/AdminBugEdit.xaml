@@ -56,24 +56,33 @@
         <Border Grid.Column="1" Background="#262626">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="2*" ></RowDefinition>
-                    <!--text block-->
-                    <RowDefinition></RowDefinition>
-                    <!--More option-->
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Padding="10 10 0 0" FontSize="22" Foreground="#D4D4D4">
-                    Help, My controller keeps disconecting. 
-                   
-                  
-                </TextBlock>
+                <Border Grid.Row="0" Background="#262626">
+                    <TextBlock Padding="10" FontSize="22" Foreground="#D4D4D4">Help, My controller keeps disconnecting.</TextBlock>
+                </Border>
 
-                <TextBlock Grid.Row="1" Padding="5 5 10 0" FontSize="22" Foreground="#D4D4D4" FontWeight="SemiBold" HorizontalAlignment="Right">
-                   <Underline>More</Underline> ▼
-                </TextBlock>
+                <Border Grid.Row="1" Background="#262626">
+                    <StackPanel>
+                        <TextBlock Name="DropDownMenu" PreviewMouseDown="DropDownMenu_PreviewMouseDown" Padding="5 75 10 0" FontSize="22" Foreground="#D4D4D4" FontWeight="SemiBold" HorizontalAlignment="Right">
+                            <Underline>More</Underline> ▼
+                        </TextBlock>
 
+                        <Popup x:Name="popup" StaysOpen="False" PlacementTarget="{Binding ElementName=DropDownMenu}" IsOpen="False">
+                            <Border Background="#262626">
+                                <StackPanel>
+                                    <TextBlock Padding="12 12 0 0" FontSize="22" Foreground="#D4D4D4">Time Spent: <Bold><Underline>5 Hours</Underline></Bold></TextBlock>
+                                    <TextBlock Padding="12 10 0 0" FontSize="22" Foreground="#D4D4D4">Bug Priority: <Bold><Underline>High</Underline></Bold></TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </StackPanel>
+                </Border>
             </Grid>
 
         </Border>
+
     </Grid>
 </UserControl>

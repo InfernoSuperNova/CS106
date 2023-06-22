@@ -27,7 +27,20 @@ namespace LoginSignUp.pages
 
         private void AdminProject_Loaded(object sender, RoutedEventArgs e)
         {
+       
+        }
 
+        private void DropDownMenu_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // Show or hide the dropdown when the "More" option is clicked
+            if (popup.IsOpen)
+            {
+                popup.IsOpen = false;
+            }
+            else
+            {
+                popup.IsOpen = true;
+            }
         }
     }
 }
