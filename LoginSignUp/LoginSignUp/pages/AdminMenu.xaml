@@ -26,20 +26,22 @@
             </Grid.ColumnDefinitions>
             <ScrollViewer VerticalScrollBarVisibility="Auto" x:Name ="ProjectScrollField">
                 <StackPanel Name="ProjectField">
+                    <local1:AdminProject></local1:AdminProject>
                 </StackPanel>
             </ScrollViewer>
 
             <Grid Grid.Column="1">
                 <Border BorderBrush="#838383" BorderThickness="3" Margin="30" CornerRadius="20" 
                         Background="#262626">
-                    <Grid HorizontalAlignment="Center">
+                    <Grid x:Name="MenuField" HorizontalAlignment="Center">
                         <TextBlock x:Name="SelectOptionText" FontSize="30" Foreground="White" Margin="50"
                                    Visibility="Visible">
                             Select one of the options on one
                             <LineBreak/>
                             of the projects to get started
                         </TextBlock>
-                        <local1:AddEmployee x:Name="AddEmployeeBtn" Visibility="Collapsed"></local1:AddEmployee>
+                        <local1:AddEmployee x:Name="Testing"  Visibility="Collapsed"></local1:AddEmployee>
+                       
                     </Grid>
                 </Border>
             </Grid>

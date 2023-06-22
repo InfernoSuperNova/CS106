@@ -20,7 +20,7 @@ namespace LoginSignUp.UserControls
     /// Interaction logic for AddEmployee.xaml
     /// </summary>
     public partial class AddEmployee : UserControl
-    {
+    { 
         public AddEmployee()
         {
             InitializeComponent();

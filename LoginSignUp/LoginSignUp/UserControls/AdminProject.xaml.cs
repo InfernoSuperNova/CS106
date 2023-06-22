@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using LoginSignUp.UserControls;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,9 @@ namespace LoginSignUp.UserControls
     /// </summary>
     public partial class AdminProject : UserControl
     {
+        public object AddEmployeeBtn { get; private set; }
+        public event EventHandler ToggleVisability;
+
         public AdminProject()
         {
             InitializeComponent();
@@ -30,7 +34,7 @@ namespace LoginSignUp.UserControls
         public event DeleteProject _DeleteProject;
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
@@ -38,13 +42,17 @@ namespace LoginSignUp.UserControls
             _DeleteProject(sender, e, name);
         }
 
-        public delegate void ManageEmployees(object sender, RoutedEventArgs e);
-        public event ManageEmployees _ManageEmployees;
+       
 
-        private void ManageEmployeeBtn_Click(object sender, RoutedEventArgs e)
+        public void visabilityToggle_Click(object sender, RoutedEventArgs e)
         {
-            AddEmployeeBtn.Visibility = Visibility.Visible;
-            SelectOptionText.Visibility = Visibility.Collapsed;
+            MessageBox.Show("clicked");
+
+            ToggleVisability?.Invoke(sender, e);
+
+            
+
+            //visabilityToggle(sender, e);
         }
     }
 }

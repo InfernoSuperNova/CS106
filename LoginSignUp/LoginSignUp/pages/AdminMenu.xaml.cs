@@ -43,7 +43,23 @@ namespace LoginSignUp.pages
                 project.ProjectTitle.Text = name;
                 project._DeleteProject += DeleteProject;
                 adminProjects.Add(project);
+
+             
+
+
             }
+
+            
+        }
+       
+        //visability toggle
+        public void Testing_ToggleVisability(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("testing");
+            //this is the level where you can change visability.
+            //AddEmployeeBtn.Visibility = Visibility.Visible;
+            //SelectOptionText.Visibility = Visibility.Collapsed;
+
         }
 
         private void NewProject(object sender, RoutedEventArgs e)
