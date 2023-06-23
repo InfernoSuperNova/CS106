@@ -109,9 +109,21 @@ namespace LoginSignUp.classes
             {
                 DeepDelete(subdir);
             }
-            //Once empty, delete
-            try
-            { 
+           public static void CreateBug(string project, Bug bug)
+            {
+                string[] bugText = new string[0];
+                bugText = bugText.Append(bug.name).ToArray();
+                bugText = bugText.Append(bug.priority).ToArray();
+                bugText = bugText.Append(bug.timeSpent).ToArray();
+                bugText = bugText.Append(bug.description).ToArray();
+                bugText = bugText.Append(bug.stepsToReproduce).ToArray();
+                int bugIndex = GetNextBugIndex(project);
+                SetNextBugIndex(project, bugIndex);
+                string path = (Path.Combine(Config.ROOT_FOLDER, project));
+                UpdateManifest(path, bugIndex);
+                path = Path.Combine(path, "bugs", bugIndex.ToString() + ".txt");
+                File.WriteAllLines(path, bugText);
+            }
         private static class Helpers
         {
             public static void DeepDelete(string directory)
