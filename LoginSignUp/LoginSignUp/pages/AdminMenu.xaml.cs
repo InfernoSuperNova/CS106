@@ -107,5 +107,10 @@ namespace LoginSignUp.pages
         {
             _SignOut(sender, e);
         }
+
+        private void AddBugProject(object sender, RoutedEventArgs e, string projectName)
+        {
+            MessageBox.Show(projectName + " is triggering add bug project!");
+        }
     }
 }

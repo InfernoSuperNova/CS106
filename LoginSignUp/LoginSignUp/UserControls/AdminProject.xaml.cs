@@ -54,8 +54,16 @@ namespace LoginSignUp.UserControls
 
         private void ManageEmployeeBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddEmployeeBtn.Visibility = Visibility.Visible;
-            SelectOptionText.Visibility = Visibility.Collapsed;
+            //AddEmployeeBtn.Visibility = Visibility.Visible;
+            //SelectOptionText.Visibility = Visibility.Collapsed;
+        }
+
+        public delegate void AddBugProject(object sender, RoutedEventArgs e, string projectName);
+        public event AddBugProject _AddBugProject;
+
+        private void AddBugBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _AddBugProject(sender, e, ProjectTitle.Text);
         }
     }
 }
