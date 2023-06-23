@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -82,31 +82,37 @@ namespace LoginSignUp.classes
         }
         private static void DeleteDirectory(string project)
         {
-            DeepDelete(Path.Combine(@".\Database\Projects", project));
+            Helpers.DeepDelete(Path.Combine(@".\Database\Projects", project));
         }
         //recursively called
-        private static void DeepDelete(string directory)
+
+        public static class Bugs
         {
-            //Get a list of files
-            var files = Directory.GetFiles(directory);
-            //Delete the files
-            foreach (string file in files)
+            public class Bug
             {
-                try
-                {
-                    File.Delete(file);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occured: {ex.Message}");
-                }
+                public string name;
+                public string priority;
+                public string timeSpent;
+                public string description;
+                public string stepsToReproduce;
+                
             }
-            //Get a list of folders
-            var directories = Directory.GetDirectories(directory);
-            //Else, recursively run DeepDelete on those folders
-            foreach (string subdir in directories)
+            private static int GetNextBugIndex(string project)
             {
-                DeepDelete(subdir);
+
+                string path = Path.Combine(Config.ROOT_FOLDER, project, "nextBugIndex.txt");
+                return int.Parse(File.ReadAllText(path));
+            }
+            private static void SetNextBugIndex(string project, int index)
+            {
+                string path = Path.Combine(Config.ROOT_FOLDER, project, "nextBugIndex.txt");
+                File.WriteAllText(path, (++index).ToString());
+            }
+            private static void UpdateManifest(string path, int bugIndex)
+            {
+                string[] currentManifest = File.ReadAllLines(Path.Combine(path, "bugManifest.csv"));
+                currentManifest = currentManifest.Append(bugIndex.ToString()).ToArray();
+                File.WriteAllLines(Path.Combine(path, "bugManifest.csv"), currentManifest);
             }
            public static void CreateBug(string project, Bug bug)
             {
@@ -123,6 +129,7 @@ namespace LoginSignUp.classes
                 path = Path.Combine(path, "bugs", bugIndex.ToString() + ".txt");
                 File.WriteAllLines(path, bugText);
             }
+        }
         private static class Helpers
         {
             public static void DeepDelete(string directory)
