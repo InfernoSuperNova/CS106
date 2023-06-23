@@ -47,7 +47,17 @@ namespace LoginSignUp.classes
             {
                 Directory.CreateDirectory(directory);
                 Directory.CreateDirectory(bugsDirectory);
-                File.Create(Path.Combine(directory, "bugManifest.csv")).Close();
+                if (!File.Exists(Path.Combine(directory, "bugManifest.csv")))
+                {
+                    File.Create(Path.Combine(directory, "bugManifest.csv")).Close();
+                }
+                if (!File.Exists(Path.Combine(directory, "nextBugIndex.txt")))
+                {
+                    File.WriteAllText(Path.Combine(directory, "nextBugIndex.txt"), "0");
+                }
+                   
+                //It's probably inefficient to create the file, open it, close it, then open it again to write, then close it again
+                
             }
             catch (Exception ex)
             {
