@@ -28,9 +28,8 @@ namespace LoginSignUp.classes
         }
         public static void InitializeDatabase()
         {
-            List<string> projects = EnumerateFileColumn(ReadNoHeader(), 0);
-            string rootFolder = @".\Database\Projects";
-            foreach(string project in projects)
+            List<string> projects = EnumerateFileColumn(Read(), 0);
+            foreach (string project in projects)
             {
                 CreateDirectory(Config.ROOT_FOLDER, project);
             }
