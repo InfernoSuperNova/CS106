@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LoginSignUp.pages
+namespace LoginSignUp.UserControls
 {
     /// <summary>
     /// Interaction logic for AdminBugEdit.xaml

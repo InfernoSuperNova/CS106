@@ -43,8 +43,21 @@ namespace LoginSignUp.pages
                 ProjectField.Children.Add(project);
                 project.ProjectTitle.Text = name;
                 project._DeleteProject += DeleteProject;
+                project._EditBugMenu += EditBugVisiblilty;
                 adminProjects.Add(project);
             }
+
+            // linking eventhandler
+            //var editBug = new AdminProject();
+
+            //editBug._EditBugMenu += EditBugVisiblilty;
+        }
+
+        private void EditBugVisiblilty(object sender, EventArgs e)
+        {
+            MessageBox.Show("Button Clicked");
+            adminBugEdit.Visibility = Visibility.Visible;
+
         }
 
         private void NewProject(object sender, RoutedEventArgs e)
@@ -97,5 +110,10 @@ namespace LoginSignUp.pages
         {
             _SignOut(sender, e);
         }
+
+        
+
+        
+
     }
 }
