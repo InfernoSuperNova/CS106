@@ -95,12 +95,6 @@ namespace LoginSignUp.pages
             ProjectField.Children.Remove(projectToRemove);
         }
         
-
-        private void AdminProject_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         public delegate void SignOutMain(object sender, RoutedEventArgs e);
         public event SignOutMain _SignOut;
         private void SignOut(object sender, RoutedEventArgs e)
