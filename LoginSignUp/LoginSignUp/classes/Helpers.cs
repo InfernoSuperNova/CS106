@@ -127,7 +127,7 @@ namespace LoginSignUp.classes
         public static bool ValidateString(string input)
         {
 
-            foreach(char disallowed in Config.DisallowedCharacters)
+            foreach(char disallowed in Config.DISALLOWED_CHARS)
             {
                 if (input.Contains(disallowed))
                 {
@@ -135,14 +135,14 @@ namespace LoginSignUp.classes
                     return false;
                 }
             }
-            if (input.Length < Config.MinChars)
+            if (input.Length < Config.MIN_CHARS)
             {
-                MessageBox.Show($"Input must be at least {Config.MinChars} characters");
+                MessageBox.Show($"Input must be at least {Config.MIN_CHARS} characters");
                 return false;
             }
-            if (input.Length > Config.MaxChars)
+            if (input.Length > Config.MAX_CHARS)
             {
-                MessageBox.Show($"Input must be at most {Config.MaxChars} characters");
+                MessageBox.Show($"Input must be at most {Config.MAX_CHARS} characters");
             }
             return true;
         }

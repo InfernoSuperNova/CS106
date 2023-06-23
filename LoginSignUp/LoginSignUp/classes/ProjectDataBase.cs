@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,15 +32,13 @@ namespace LoginSignUp.classes
             string rootFolder = @".\Database\Projects";
             foreach(string project in projects)
             {
-                CreateDirectory(rootFolder, project);
+                CreateDirectory(Config.ROOT_FOLDER, project);
             }
         }
         public static void CreateProject(string newName)
         {
-            string rootFolder = @".\Database\Projects";
-            CreateDirectory(rootFolder, newName);
+            CreateDirectory(Config.ROOT_FOLDER, newName);
         }
-
         private static void CreateDirectory(string rootFolder, string project)
         {
             string directory = Path.Combine(rootFolder, project);
