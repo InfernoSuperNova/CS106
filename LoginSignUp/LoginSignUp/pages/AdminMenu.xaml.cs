@@ -104,7 +104,8 @@ namespace LoginSignUp.pages
 
         private void AddBugProject(object sender, RoutedEventArgs e, string projectName)
         {
-            MessageBox.Show(projectName + " is triggering add bug project!");
+            ProjectDataBase.Bugs.Bug bug = new ProjectDataBase.Bugs.Bug();
+            ProjectDataBase.Bugs.CreateBug(projectName, bug);
         }
     }
 }
