@@ -30,7 +30,6 @@ namespace LoginSignUp.classes
         {
             List<string> projects = EnumerateFileColumn(ReadNoHeader(), 0);
             string rootFolder = @".\Database\Projects";
-            MessageBox.Show(rootFolder);
             foreach(string project in projects)
             {
                 CreateDirectory(rootFolder, project);
