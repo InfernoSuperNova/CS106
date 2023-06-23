@@ -112,11 +112,40 @@ namespace LoginSignUp.classes
             //Once empty, delete
             try
             { 
-                Directory.Delete(directory);
-            }
-            catch (Exception ex)
+        private static class Helpers
+        {
+            public static void DeepDelete(string directory)
             {
-                MessageBox.Show($"An error occured: {ex.Message}");
+                //Get a list of files
+                var files = Directory.GetFiles(directory);
+                //Delete the files
+                foreach (string file in files)
+                {
+                    try
+                    {
+                        File.Delete(file);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occured: {ex.Message}");
+                    }
+                }
+                //Get a list of folders
+                var directories = Directory.GetDirectories(directory);
+                //Else, recursively run DeepDelete on those folders
+                foreach (string subdir in directories)
+                {
+                    DeepDelete(subdir);
+                }
+                //Once empty, delete
+                try
+                {
+                    Directory.Delete(directory);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occured: {ex.Message}");
+                }
             }
         }
     }
