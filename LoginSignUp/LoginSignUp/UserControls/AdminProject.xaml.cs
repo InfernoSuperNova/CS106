@@ -21,14 +21,11 @@ namespace LoginSignUp.UserControls
     /// </summary>
     public partial class AdminProject : UserControl
     {
-        public object AddEmployeeBtn { get; private set; }
-        public event EventHandler ToggleVisability;
 
         public AdminProject()
         {
             InitializeComponent();
         }
-
 
         public delegate void DeleteProject(object sender, RoutedEventArgs e, string name);
         public event DeleteProject _DeleteProject;
@@ -42,17 +39,16 @@ namespace LoginSignUp.UserControls
             _DeleteProject(sender, e, name);
         }
 
-       
+        //Creating a public event handler
+        public event EventHandler ToggleVisibilityClicked;
 
-        public void visabilityToggle_Click(object sender, RoutedEventArgs e)
+        //Function to handle click
+        private void visabilityToggle_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("clicked");
-
-            ToggleVisability?.Invoke(sender, e);
-
-            
-
-            //visabilityToggle(sender, e);
+            //here we are using a null operator once the click is activated it will try run code
+            //when this happens the value is no longer null so it will execute functionality
+            ToggleVisibilityClicked?.Invoke(this, e);
         }
     }
 }
