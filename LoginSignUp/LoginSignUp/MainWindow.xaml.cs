@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LoginSignUp.classes;
+using LoginSignUp.UserControls;
+
 namespace LoginSignUp
 {
     /// <summary>
@@ -31,9 +33,10 @@ namespace LoginSignUp
             AccountSignUp = new AccountSignUp();
             UserMenu = new UserMenu();
             AdminMenu = new AdminMenu();
+            AddBug test = new AddBug();
             InitializeComponent();
 
-            MainWindowFrame.Content = AccountLogin;
+            MainWindowFrame.Content = test;
 
             AccountLogin._NavigateToSignUpPageBtnClick += PageSignUp;
             AccountLogin._SuccessfulLogin += GetUserAccountType;
