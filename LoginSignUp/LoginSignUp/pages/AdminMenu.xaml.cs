@@ -144,6 +144,11 @@ namespace LoginSignUp.pages
         {
             ProjectDataBase.Bugs.CreateBug(projectName, bug);
             HideAll();
+        private void UpdateProjectBugCount(string projectName)
+        {
+            AdminProject projectToUpdate = adminProjects.Find(project => project.ProjectTitle.Text == projectName);
+            int bugCount = ProjectDataBase.Bugs.GetBugCount(projectName);
+            projectToUpdate.ActiveBugs.Text = "Active Bugs: " + bugCount;
         }
         private void HideAll()
         {
