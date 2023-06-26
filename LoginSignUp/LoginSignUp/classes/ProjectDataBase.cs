@@ -28,20 +28,16 @@ namespace LoginSignUp.classes
         }
         public static void InitializeDatabase()
         {
-            List<string> projects = EnumerateFileColumn(ReadNoHeader(), 0);
-            string rootFolder = @".\Database\Projects";
-            MessageBox.Show(rootFolder);
-            foreach(string project in projects)
+            List<string> projects = EnumerateFileColumn(Read(), 0);
+            foreach (string project in projects)
             {
-                CreateDirectory(rootFolder, project);
+                CreateDirectory(Config.ROOT_FOLDER, project);
             }
         }
         public static void CreateProject(string newName)
         {
-            string rootFolder = @".\Database\Projects";
-            CreateDirectory(rootFolder, newName);
+            CreateDirectory(Config.ROOT_FOLDER, newName);
         }
-
         private static void CreateDirectory(string rootFolder, string project)
         {
             string directory = Path.Combine(rootFolder, project);
@@ -50,7 +46,17 @@ namespace LoginSignUp.classes
             {
                 Directory.CreateDirectory(directory);
                 Directory.CreateDirectory(bugsDirectory);
-                File.Create(Path.Combine(directory, "bugManifest.csv")).Close();
+                if (!File.Exists(Path.Combine(directory, "bugManifest.csv")))
+                {
+                    File.Create(Path.Combine(directory, "bugManifest.csv")).Close();
+                }
+                if (!File.Exists(Path.Combine(directory, "nextBugIndex.txt")))
+                {
+                    File.WriteAllText(Path.Combine(directory, "nextBugIndex.txt"), "0");
+                }
+                   
+                //It's probably inefficient to create the file, open it, close it, then open it again to write, then close it again
+                
             }
             catch (Exception ex)
             {
@@ -76,40 +82,88 @@ namespace LoginSignUp.classes
         }
         private static void DeleteDirectory(string project)
         {
-            DeepDelete(Path.Combine(@".\Database\Projects", project));
+            Helpers.DeepDelete(Path.Combine(@".\Database\Projects", project));
         }
         //recursively called
-        private static void DeepDelete(string directory)
+
+        public static class Bugs
         {
-            //Get a list of files
-            var files = Directory.GetFiles(directory);
-            //Delete the files
-            foreach (string file in files)
+            public class Bug
             {
+                public string name;
+                public string priority;
+                public string timeSpent;
+                public string description;
+                public string stepsToReproduce;
+                
+            }
+            private static int GetNextBugIndex(string project)
+            {
+
+                string path = Path.Combine(Config.ROOT_FOLDER, project, "nextBugIndex.txt");
+                return int.Parse(File.ReadAllText(path));
+            }
+            private static void SetNextBugIndex(string project, int index)
+            {
+                string path = Path.Combine(Config.ROOT_FOLDER, project, "nextBugIndex.txt");
+                File.WriteAllText(path, (++index).ToString());
+            }
+            private static void UpdateManifest(string path, int bugIndex)
+            {
+                string[] currentManifest = File.ReadAllLines(Path.Combine(path, "bugManifest.csv"));
+                currentManifest = currentManifest.Append(bugIndex.ToString()).ToArray();
+                File.WriteAllLines(Path.Combine(path, "bugManifest.csv"), currentManifest);
+            }
+           public static void CreateBug(string project, Bug bug)
+            {
+                string[] bugText = new string[0];
+                bugText = bugText.Append(bug.name).ToArray();
+                bugText = bugText.Append(bug.priority).ToArray();
+                bugText = bugText.Append(bug.timeSpent).ToArray();
+                bugText = bugText.Append(bug.description).ToArray();
+                bugText = bugText.Append(bug.stepsToReproduce).ToArray();
+                int bugIndex = GetNextBugIndex(project);
+                SetNextBugIndex(project, bugIndex);
+                string path = (Path.Combine(Config.ROOT_FOLDER, project));
+                UpdateManifest(path, bugIndex);
+                path = Path.Combine(path, "bugs", bugIndex.ToString() + ".txt");
+                File.WriteAllLines(path, bugText);
+            }
+        }
+        private static class Helpers
+        {
+            public static void DeepDelete(string directory)
+            {
+                //Get a list of files
+                var files = Directory.GetFiles(directory);
+                //Delete the files
+                foreach (string file in files)
+                {
+                    try
+                    {
+                        File.Delete(file);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occured: {ex.Message}");
+                    }
+                }
+                //Get a list of folders
+                var directories = Directory.GetDirectories(directory);
+                //Else, recursively run DeepDelete on those folders
+                foreach (string subdir in directories)
+                {
+                    DeepDelete(subdir);
+                }
+                //Once empty, delete
                 try
                 {
-                    File.Delete(file);
+                    Directory.Delete(directory);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"An error occured: {ex.Message}");
                 }
-            }
-            //Get a list of folders
-            var directories = Directory.GetDirectories(directory);
-            //Else, recursively run DeepDelete on those folders
-            foreach (string subdir in directories)
-            {
-                DeepDelete(subdir);
-            }
-            //Once empty, delete
-            try
-            { 
-                Directory.Delete(directory);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occured: {ex.Message}");
             }
         }
     }

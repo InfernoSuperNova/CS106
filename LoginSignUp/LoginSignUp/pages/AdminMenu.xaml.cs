@@ -29,14 +29,17 @@ namespace LoginSignUp.pages
         NewProject newProject;
         public AdminMenu()
         {
-            adminProjects = new List<AdminProject>();
+
             InitializeComponent();
+
+
+            adminProjects = new List<AdminProject>();
+            AddBugMenu._AddBugBtn += AddBug;
             header._NewProject += NewProject;
             header._SignOut += SignOut;
             lines = ProjectDataBase.ReadNoHeader();
             foreach (string name in lines)
             {
-                //store this project somewhere, otherwise it'll cause a memory leak
                 var project = new AdminProject();
 
                 // Add the dynamic object to the stack panel
@@ -44,35 +47,71 @@ namespace LoginSignUp.pages
                 project.ProjectTitle.Text = name;
                 project._DeleteProject += DeleteProject;
                 project._EditBugMenu += EditBugVisiblilty;
+                project._AddBugProject += OpenBugMenu;
+                //Store the project in array
                 adminProjects.Add(project);
+
             }
 
-            // linking eventhandler
-            //var editBug = new AdminProject();
+            //event handler connection
+            var employee = new AdminProject();
+            employee.ToggleVisibilityClicked += Testing_ToggleVisibility;
 
-            //editBug._EditBugMenu += EditBugVisiblilty;
         }
 
         private void EditBugVisiblilty(object sender, EventArgs e)
         {
             MessageBox.Show("Button Clicked");
-            adminBugEdit.Visibility = Visibility.Visible;
-
+            SetVisible(Fields.EditBug);
         }
 
+        //visability toggle run whatever code here
+        private void Testing_ToggleVisibility(object sender, EventArgs e)
+        {
+            MessageBox.Show("Button clicked!");
+            SetVisible(Fields.ExampleToggle);
+        }
+        private void ExampleToggle_Click(object sender, RoutedEventArgs e)
+        {
+            ExampleToggle.Visibility = Visibility.Hidden;
+            AddEmployee.Visibility = Visibility.Visible;
+        }
+        //Creates a "New Project" object that lets you put in the name and confirm
         private void NewProject(object sender, RoutedEventArgs e)
         {
-            //If a new project is already being made, then clear
+            //Don't go any further if a new project object already exists
             if (newProject != null) { return; };
+            //Create a new project object and put it into the UI
             newProject = new NewProject();
             ProjectField.Children.Add(newProject);
-
+            //Define callback for finalizing the construction of the project
             newProject._AddNewProject += AddNewProjectToList;
-            //ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
+            //Trigger scroll with minimal delay (effective delay of 1 frame)
             DelayedActionHelper.DelayedAction(DispatcherPriority.Background, TimeSpan.FromMilliseconds(0), () =>
             {
                 ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
             });
+        }
+        //Adds a new project to the database, array, and UI, and creates the necessary file structure
+        private void AddNewProjectToList(object sender, RoutedEventArgs e, string projectName)
+        {
+            //destroy the placeholder project
+            ProjectField.Children.Remove(newProject);
+            newProject = null;
+
+            //Define new project
+            AdminProject newAdminProject = new AdminProject();
+            newAdminProject.ProjectTitle.Text = projectName;
+            newAdminProject._DeleteProject += DeleteProject;
+            newAdminProject._AddBugProject += OpenBugMenu;
+            //Add the project to the list, and the UI
+            adminProjects.Add(newAdminProject);
+            ProjectField.Children.Add(newAdminProject);
+            //Add the project to the database
+            lines = lines.Append(projectName).ToArray();
+            ProjectDataBase.Write(lines);
+            //Generate the files associated with the project
+            ProjectDataBase.CreateProject(projectName);
         }
 
         private void DeleteProject(object sender, RoutedEventArgs e, string name)
@@ -84,25 +123,6 @@ namespace LoginSignUp.pages
             adminProjects.Remove(projectToRemove);
             ProjectField.Children.Remove(projectToRemove);
         }
-        private void AddNewProjectToList(object sender, RoutedEventArgs e, string projectName)
-        {
-            ProjectField.Children.Remove(newProject);
-            newProject = null;
-
-            AdminProject newAdminProject = new AdminProject();
-            newAdminProject.ProjectTitle.Text = projectName;
-            newAdminProject._DeleteProject += DeleteProject;
-            adminProjects.Add(newAdminProject);
-            ProjectField.Children.Add(newAdminProject);
-            lines = lines.Append(projectName).ToArray();
-            ProjectDataBase.Write(lines);
-            ProjectDataBase.CreateProject(projectName);
-        }
-
-        private void AdminProject_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         public delegate void SignOutMain(object sender, RoutedEventArgs e);
         public event SignOutMain _SignOut;
@@ -111,9 +131,61 @@ namespace LoginSignUp.pages
             _SignOut(sender, e);
         }
 
-        
+        private void OpenBugMenu(object sender, RoutedEventArgs e, string projectName)
+        {
+            HideAll();
+            OptionHint.Visibility = Visibility.Hidden;
+            AddBugMenu.Enable(projectName);
+            
 
-        
-
+        }
+        private void AddBug(object sender, RoutedEventArgs e, ProjectDataBase.Bugs.Bug bug, string projectName)
+        {
+            ProjectDataBase.Bugs.CreateBug(projectName, bug);
+            HideAll();
+        }
+        private void HideAll()
+        {
+            AddEmployee.Visibility = Visibility.Hidden;
+            AddEmployeeBtn.Visibility = Visibility.Hidden;
+            ExampleToggle.Visibility = Visibility.Hidden;
+            adminBugEdit.Visibility = Visibility.Hidden;
+            AddBugMenu.Disable();
+            OptionHint.Visibility = Visibility.Visible;
+        }
+        private void SetVisible(Fields field)
+        {
+            HideAll();
+            OptionHint.Visibility = Visibility.Hidden;
+            switch (field)
+            {
+                case Fields.AddBug:
+                    // Use AddBug's specific initializer instead
+                    break;
+                case Fields.EditBug:
+                    adminBugEdit.Visibility = Visibility.Visible;
+                    break;
+                case Fields.AddEmployeeBtn:
+                    AddEmployeeBtn.Visibility = Visibility.Visible;
+                    break;
+                case Fields.AddEmployee:
+                    AddEmployee.Visibility = Visibility.Visible;
+                    break;
+                case Fields.ExampleToggle:
+                    ExampleToggle.Visibility = Visibility.Visible;
+                    break;
+                default:
+                    // Handle other cases or throw an exception if necessary
+                    break;
+            }
+        }
+        enum Fields
+        {
+            AddBug,
+            EditBug,
+            AddEmployeeBtn,
+            AddEmployee,
+            ExampleToggle,
+        }
     }
 }

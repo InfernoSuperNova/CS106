@@ -41,8 +41,8 @@
                         </Button.Resources>
                         Add
                     </Button>
-                    <Button Width="150" Height="50" Background="#DB0000" Foreground="White" 
-                    Margin="0 0 30 20" FontSize="20">
+                    <Button Name="CancelBtn" Width="150" Height="50" Background="#DB0000" Foreground="White" 
+                    Margin="0 0 30 20" FontSize="20" Click="CancelBtn_Click">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>

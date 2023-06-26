@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LoginSignUp.classes;
+using LoginSignUp.UserControls;
+
 namespace LoginSignUp
 {
     /// <summary>

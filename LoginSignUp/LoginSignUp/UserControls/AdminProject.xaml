@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="LoginSignUp.UserControls.AdminProject"
+<UserControl x:Class="LoginSignUp.UserControls.AdminProject"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -36,7 +36,7 @@
                 <RowDefinition Height="0.15*"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock  Name ="ProjectTitle" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" 
+            <TextBlock Name ="ProjectTitle" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Foreground="White" FontSize="40">Project One</TextBlock>
             <Line Grid.Row="1" X1="10" Y1="10"
                   X2="290" Y2="10"
@@ -51,7 +51,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Width="150" Height="75" Background="#407D3F" Foreground="White" 
+            <Button Name ="AddBugBtn" Click="AddBugBtn_Click" Grid.Row="0" Width="150" Height="75" Background="#407D3F" Foreground="White" 
                     FontSize="20" Padding="10" Margin="0 10 0 0">
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -90,8 +90,8 @@
 
                 <Bold>Edit Bugs</Bold>
             </Button>
-            <!--<Button Name="ManageEmployeeBtn" Grid.Row="1" Foreground="White" Background="#407D3F" Width="150"
-                    Height="75" FontSize="20" Margin="0 0 0 10" Click="ManageEmployeeBtn_Click">
+            <Button Name="visabilityToggle" Grid.Row="1" Foreground="White" Background="#407D3F" Width="150"
+                    Height="75" FontSize="20" Margin="0 0 0 10" Click="visabilityToggle_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="20"/>
@@ -100,7 +100,7 @@
                 <Bold>Manage
                     <LineBreak /> Employees
                 </Bold>
-            </Button>-->
+            </Button>
         </Grid>
         <Button Name ="Delete" Grid.Column="4" Background="#00000000" BorderBrush="Transparent" Click="Delete_Click">
             <Image Width="70" Source="/Icons/bin.png"></Image>

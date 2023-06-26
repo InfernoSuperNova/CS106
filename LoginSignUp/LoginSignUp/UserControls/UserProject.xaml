@@ -37,7 +37,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Width="150" Height="75" Background="#407D3F" Foreground="White" 
+            <Button Name ="AddBugBtn" Click="AddBugBtn_Click"  Grid.Row="0" Width="150" Height="75" Background="#407D3F" Foreground="White" 
                     FontSize="20" Padding="10" Margin="0 10 0 0">
                 <Button.Resources>
                     <Style TargetType="Border">

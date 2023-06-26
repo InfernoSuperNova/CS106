@@ -37,7 +37,7 @@
                 <Border.Effect>
                     <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5"/>
                 </Border.Effect>
-                <TextBox Name="LoginUserName" Height="20" Background="#FFFFFF" Foreground="#001011"
+                <TextBox Name="ProjectInputText" Height="20" Background="#FFFFFF" Foreground="#001011"
                 VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
                 BorderThickness="0" BorderBrush="Transparent" Margin="0,-2,0,-3">
                 </TextBox>

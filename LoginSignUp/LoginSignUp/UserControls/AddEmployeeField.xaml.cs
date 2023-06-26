@@ -24,5 +24,12 @@ namespace LoginSignUp.UserControls
         {
             InitializeComponent();
         }
+
+        public event EventHandler CloseAddEmployeeField;
+
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CloseAddEmployeeField?.Invoke(this, e);
+        }
     }
 }

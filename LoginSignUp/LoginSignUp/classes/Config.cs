@@ -8,9 +8,11 @@ namespace LoginSignUp.classes
 {
     static class Config
     {
-        public static readonly char[] DisallowedCharacters = { ',' };
+        public static readonly char[] DISALLOWED_CHARS = { ',', '\n' };
 
-        public const int MaxChars = 32;
-        public const int MinChars = 5;
+        public const int MAX_CHARS = 32;
+        public const int MIN_CHARS = 5;
+
+        public const string ROOT_FOLDER = @".\Database\Projects";
     }
 }
