@@ -33,10 +33,9 @@ namespace LoginSignUp
             AccountSignUp = new AccountSignUp();
             UserMenu = new UserMenu();
             AdminMenu = new AdminMenu();
-            AddBug test = new AddBug();
             InitializeComponent();
 
-            MainWindowFrame.Content = test;
+            MainWindowFrame.Content = AccountLogin;
 
             AccountLogin._NavigateToSignUpPageBtnClick += PageSignUp;
             AccountLogin._SuccessfulLogin += GetUserAccountType;
