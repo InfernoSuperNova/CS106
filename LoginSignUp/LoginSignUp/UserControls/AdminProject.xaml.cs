@@ -50,25 +50,15 @@ namespace LoginSignUp.UserControls
             _DeleteProject(sender, e, name);
         }
 
-        public delegate void EditBugMenu(object sender, RoutedEventArgs e);
+        public delegate void EditBugMenu(object sender, RoutedEventArgs e, string projectName);
         public event EditBugMenu _EditBugMenu;
         private void EditBugButton_Click(object sender, RoutedEventArgs e)
 
         {
-            MessageBox.Show("Clicked");
-            _EditBugMenu(sender, e);
+            _EditBugMenu(sender, e, ProjectTitle.Text);
         }
                 //Creating a public event handler
-        public event EventHandler ToggleVisibilityClicked;
 
-        //Function to handle click
-        private void visabilityToggle_Click(object sender, RoutedEventArgs e)
-                {
-            MessageBox.Show("clicked");
-            //here we are using a null operator once the click is activated it will try run code
-            //when this happens the value is no longer null so it will execute functionality
-            ToggleVisibilityClicked?.Invoke(this, e);
-        }
 
         public delegate void AddBugProject(object sender, RoutedEventArgs e, string projectName);
         public event AddBugProject _AddBugProject;
@@ -77,5 +67,24 @@ namespace LoginSignUp.UserControls
         {
             _AddBugProject(sender, e, ProjectTitle.Text);
         }
+
+        public delegate void ToggleEmployees(object sender, RoutedEventArgs e, string projectName);
+        public event ToggleEmployees _ToggleEmployees;
+        private void ToggleEmployeesVisibility_Click(object sender, RoutedEventArgs e)
+        {
+            _ToggleEmployees(sender, e, ProjectTitle.Text);
+        }
+
+
+        //public event EventHandler ToggleVisibilityClicked;
+
+        ////Function to handle click
+        //private void visabilityToggle_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBox.Show("clicked");
+        //    //here we are using a null operator once the click is activated it will try run code
+        //    //when this happens the value is no longer null so it will execute functionality
+        //    ToggleVisibilityClicked?.Invoke(this, e);
+        //}
     }
 }
