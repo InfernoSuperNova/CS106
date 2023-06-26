@@ -49,7 +49,26 @@ namespace LoginSignUp.pages
                 project._AddBugProject += OpenBugMenu;
                 //Store the project in array
                 adminProjects.Add(project);
+
             }
+
+            //event handler connection
+            var employee = new AdminProject();
+            employee.ToggleVisibilityClicked += Testing_ToggleVisibility;
+
+        }
+
+        //visability toggle run whatever code here
+        private void Testing_ToggleVisibility(object sender, EventArgs e)
+        {
+            MessageBox.Show("Button clicked!");
+            ExampleToggle.Visibility = Visibility.Visible;
+            OptionHint.Visibility = Visibility.Hidden;
+        }
+        private void ExampleToggle_Click(object sender, RoutedEventArgs e)
+        {
+            ExampleToggle.Visibility = Visibility.Hidden;
+            AddEmployee.Visibility = Visibility.Visible;
         }
         //Creates a "New Project" object that lets you put in the name and confirm
         private void NewProject(object sender, RoutedEventArgs e)

@@ -79,9 +79,6 @@
     <Compile Include="UserControls\AdminBugEdit.xaml.cs">
       <DependentUpon>AdminBugEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\ManageEmployees.xaml.cs">
-      <DependentUpon>ManageEmployees.xaml</DependentUpon>
-    </Compile>
     <Compile Include="pages\UserMenu.xaml.cs">
       <DependentUpon>UserMenu.xaml</DependentUpon>
     </Compile>
@@ -147,10 +144,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\Test Page.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages\ManageEmployees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

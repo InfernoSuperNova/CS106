@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using LoginSignUp.UserControls;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,13 +50,16 @@ namespace LoginSignUp.UserControls
             _DeleteProject(sender, e, name);
         }
 
-        public delegate void ManageEmployees(object sender, RoutedEventArgs e);
-        public event ManageEmployees _ManageEmployees;
+        //Creating a public event handler
+        public event EventHandler ToggleVisibilityClicked;
 
-        private void ManageEmployeeBtn_Click(object sender, RoutedEventArgs e)
+        //Function to handle click
+        private void visabilityToggle_Click(object sender, RoutedEventArgs e)
         {
-            //AddEmployeeBtn.Visibility = Visibility.Visible;
-            //SelectOptionText.Visibility = Visibility.Collapsed;
+            MessageBox.Show("clicked");
+            //here we are using a null operator once the click is activated it will try run code
+            //when this happens the value is no longer null so it will execute functionality
+            ToggleVisibilityClicked?.Invoke(this, e);
         }
 
         public delegate void AddBugProject(object sender, RoutedEventArgs e, string projectName);
