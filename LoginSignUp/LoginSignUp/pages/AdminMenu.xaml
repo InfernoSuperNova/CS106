@@ -33,7 +33,14 @@
             </ScrollViewer>
 
             <Grid Grid.Column="1" >
-                <Border BorderBrush="#838383" BorderThickness="3" Margin="30" CornerRadius="20" 
+                <Border Name ="BugList" Visibility="Hidden" Margin ="30">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" >
+                        <StackPanel Name="BugContainer">
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+                <Border Name ="PrimaryDropdown"  BorderBrush="#838383" BorderThickness="3" Margin="30" CornerRadius="20" 
                         Background="#262626">
                     <Grid HorizontalAlignment="Center">
                         <TextBlock HorizontalAlignment="Center" x:Name="OptionHint" FontSize="30" Foreground="White" Margin="50"
@@ -44,7 +51,6 @@
                         </TextBlock>
                         <local1:AddEmployee x:Name="AddEmployeeBtn" Visibility="Collapsed"></local1:AddEmployee>
                         <local1:AddBug x:Name="AddBugMenu" Visibility="Collapsed"></local1:AddBug>
-                        <local1:AdminBugEdit x:Name="adminBugEdit" Visibility="Hidden"></local1:AdminBugEdit>
                         <local1:AddEmployeeField x:Name="AddEmployee" VerticalAlignment="Bottom" Visibility="Hidden" Width="850"
                                                  Height="150"></local1:AddEmployeeField>
 
