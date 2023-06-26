@@ -152,12 +152,14 @@ namespace LoginSignUp.pages
         }
         private void HideAll()
         {
+            CloseEditBugMenu();
             AddEmployee.Visibility = Visibility.Hidden;
             AddEmployeeBtn.Visibility = Visibility.Hidden;
-            //ExampleToggle.Visibility = Visibility.Hidden;
-            adminBugEdit.Visibility = Visibility.Hidden;
+            ExampleToggle.Visibility = Visibility.Hidden;
+            BugList.Visibility = Visibility.Hidden;
             AddBugMenu.Disable();
             OptionHint.Visibility = Visibility.Visible;
+            PrimaryDropdown.Visibility = Visibility.Visible;
         }
         private void SetVisible(Fields field)
         {
