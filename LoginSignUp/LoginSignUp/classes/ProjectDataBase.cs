@@ -129,6 +129,21 @@ namespace LoginSignUp.classes
                 path = Path.Combine(path, "bugs", bugIndex.ToString() + ".txt");
                 File.WriteAllLines(path, bugText);
             }
+            public static void DeleteBug(string project, int index)
+            {
+                string path = Path.Combine(Config.ROOT_FOLDER, project);
+                string[] newManifest = new string[0];
+                string[] currentManifest = File.ReadAllLines(Path.Combine(path, "bugManifest.csv"));
+                foreach (string reference in currentManifest)
+                {
+                    if (reference != index.ToString())
+                    {
+                        newManifest = newManifest.Append(reference).ToArray();
+                    }
+                }
+                File.WriteAllLines(Path.Combine(path, "bugManifest.csv"), newManifest);
+                File.Delete(Path.Combine(path, "bugs", index + ".txt"));
+            }
         }
         private static class Helpers
         {
