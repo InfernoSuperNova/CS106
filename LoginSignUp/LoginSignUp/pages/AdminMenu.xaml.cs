@@ -29,8 +29,12 @@ namespace LoginSignUp.pages
         NewProject newProject;
         public AdminMenu()
         {
-            adminProjects = new List<AdminProject>();
+
             InitializeComponent();
+
+
+            adminProjects = new List<AdminProject>();
+            AddBugMenu._AddBugBtn += AddBug;
             header._NewProject += NewProject;
             header._SignOut += SignOut;
             lines = ProjectDataBase.ReadNoHeader();
@@ -42,7 +46,7 @@ namespace LoginSignUp.pages
                 ProjectField.Children.Add(project);
                 project.ProjectTitle.Text = name;
                 project._DeleteProject += DeleteProject;
-                project._AddBugProject += AddBugProject;
+                project._AddBugProject += OpenBugMenu;
                 //Store the project in array
                 adminProjects.Add(project);
             }
@@ -74,7 +78,7 @@ namespace LoginSignUp.pages
             AdminProject newAdminProject = new AdminProject();
             newAdminProject.ProjectTitle.Text = projectName;
             newAdminProject._DeleteProject += DeleteProject;
-            newAdminProject._AddBugProject += AddBugProject;
+            newAdminProject._AddBugProject += OpenBugMenu;
             //Add the project to the list, and the UI
             adminProjects.Add(newAdminProject);
             ProjectField.Children.Add(newAdminProject);
@@ -102,10 +106,18 @@ namespace LoginSignUp.pages
             _SignOut(sender, e);
         }
 
-        private void AddBugProject(object sender, RoutedEventArgs e, string projectName)
+        private void OpenBugMenu(object sender, RoutedEventArgs e, string projectName)
         {
-            ProjectDataBase.Bugs.Bug bug = new ProjectDataBase.Bugs.Bug();
+            AddBugMenu.Enable(projectName);
+            OptionHint.Visibility = Visibility.Hidden;
+
+        }
+        private void AddBug(object sender, RoutedEventArgs e, ProjectDataBase.Bugs.Bug bug, string projectName)
+        {
             ProjectDataBase.Bugs.CreateBug(projectName, bug);
+            AddBugMenu.Disable();
+            OptionHint.Visibility = Visibility.Visible;
+
         }
     }
 }
