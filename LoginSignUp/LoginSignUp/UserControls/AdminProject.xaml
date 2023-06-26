@@ -8,7 +8,17 @@
              d:DesignHeight="250" d:DesignWidth="800"
              Width="850" Height="250" Margin="0 40 0 0"
              >
-    <Grid Background="#262626">
+    <UserControl.Template>
+        <ControlTemplate TargetType="UserControl">
+            <Border Background="#262626"
+                    BorderBrush="Black"
+                    BorderThickness="3"
+                    CornerRadius="50">
+                <ContentPresenter/>
+            </Border>
+        </ControlTemplate>
+    </UserControl.Template>
+    <Grid Background="Transparent">
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"></ColumnDefinition>
@@ -92,8 +102,8 @@
                 </Bold>
             </Button>-->
         </Grid>
-        <Button Name ="Delete" Grid.Column="4" Background="#00000000" Click="Delete_Click">
-            <Image Width="75" Source="/Icons/bin.png"></Image>
+        <Button Name ="Delete" Grid.Column="4" Background="#00000000" BorderBrush="Transparent" Click="Delete_Click">
+            <Image Width="70" Source="/Icons/bin.png"></Image>
         </Button>
         
     </Grid>

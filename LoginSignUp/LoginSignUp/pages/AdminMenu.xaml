@@ -30,12 +30,12 @@
             </ScrollViewer>
 
             <Grid Grid.Column="1">
-                <Border BorderBrush="#838383" BorderThickness="3" Margin="30" CornerRadius="20" 
+                <Border BorderBrush="#838383"  BorderThickness="3" Margin="30" CornerRadius="20" 
                         Background="#262626">
                     <Grid HorizontalAlignment="Center">
-                        <TextBlock x:Name="SelectOptionText" FontSize="30" Foreground="White" Margin="50"
+                        <TextBlock HorizontalAlignment="Center" x:Name="SelectOptionText" FontSize="30" Foreground="White" Margin="50"
                                    Visibility="Visible">
-                            Select one of the options on one
+                            Select one of the options on one 
                             <LineBreak/>
                             of the projects to get started
                         </TextBlock>

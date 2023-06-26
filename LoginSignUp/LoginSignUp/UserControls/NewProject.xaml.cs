@@ -32,8 +32,8 @@ namespace LoginSignUp.UserControls
         public event AddNewProject _AddNewProject;
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            string name = ProjectInputText.Text;
-            _AddNewProject(sender, e, name);
+            //string name = ProjectInputText.Text;
+            //_AddNewProject(sender, e, name);
         }
     }
 }
