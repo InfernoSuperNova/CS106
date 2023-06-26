@@ -24,8 +24,10 @@ namespace LoginSignUp.pages
     public partial class AdminMenu : Page
     {
 
+        private string currentProject = "";
         private string[] lines;
         private List<AdminProject> adminProjects;
+        private List<AdminBugEdit> openBugs;
         NewProject newProject;
         public AdminMenu()
         {
@@ -34,6 +36,7 @@ namespace LoginSignUp.pages
 
 
             adminProjects = new List<AdminProject>();
+            openBugs = new List<AdminBugEdit>();
             AddBugMenu._AddBugBtn += AddBug;
             header._NewProject += NewProject;
             header._SignOut += SignOut;
@@ -45,30 +48,22 @@ namespace LoginSignUp.pages
                 // Add the dynamic object to the stack panel
                 ProjectField.Children.Add(project);
                 project.ProjectTitle.Text = name;
+                project.ActiveBugs.Text = "Active Bugs: " + ProjectDataBase.Bugs.GetBugCount(name).ToString();
                 project._DeleteProject += DeleteProject;
-                project._EditBugMenu += EditBugVisiblilty;
-                project._AddBugProject += OpenBugMenu;
+                project._EditBugMenu += OpenEditBugMenu;
+                project._AddBugProject += OpenNewBugMenu;
+                project._ToggleEmployees += Testing_ToggleVisibility;
                 //Store the project in array
                 adminProjects.Add(project);
 
             }
 
-            //event handler connection
-            var employee = new AdminProject();
-            employee.ToggleVisibilityClicked += Testing_ToggleVisibility;
-
         }
 
-        private void EditBugVisiblilty(object sender, EventArgs e)
-        {
-            MessageBox.Show("Button Clicked");
-            SetVisible(Fields.EditBug);
-        }
 
         //visability toggle run whatever code here
-        private void Testing_ToggleVisibility(object sender, EventArgs e)
+        private void Testing_ToggleVisibility(object sender, EventArgs e, string project)
         {
-            MessageBox.Show("Button clicked!");
             SetVisible(Fields.ExampleToggle);
         }
         private void ExampleToggle_Click(object sender, RoutedEventArgs e)
@@ -104,13 +99,14 @@ namespace LoginSignUp.pages
             AdminProject newAdminProject = new AdminProject();
             newAdminProject.ProjectTitle.Text = projectName;
             newAdminProject._DeleteProject += DeleteProject;
-            newAdminProject._AddBugProject += OpenBugMenu;
+            newAdminProject._EditBugMenu += OpenEditBugMenu;
+            newAdminProject._AddBugProject += OpenNewBugMenu;
             //Add the project to the list, and the UI
             adminProjects.Add(newAdminProject);
             ProjectField.Children.Add(newAdminProject);
             //Add the project to the database
             lines = lines.Append(projectName).ToArray();
-            ProjectDataBase.Write(lines);
+            ProjectDataBase.Write(lines.Prepend("Project Name").ToArray());
             //Generate the files associated with the project
             ProjectDataBase.CreateProject(projectName);
         }
@@ -131,19 +127,59 @@ namespace LoginSignUp.pages
         {
             _SignOut(sender, e);
         }
-
-        private void OpenBugMenu(object sender, RoutedEventArgs e, string projectName)
+        private void OpenNewBugMenu(object sender, RoutedEventArgs e, string projectName)
         {
             HideAll();
             OptionHint.Visibility = Visibility.Hidden;
             AddBugMenu.Enable(projectName);
+        }
+        private void OpenEditBugMenu(object sender, RoutedEventArgs e, string projectName)
+        {
+            CloseEditBugMenu();
+            currentProject = projectName;
+            PrimaryDropdown.Visibility = Visibility.Hidden;
+            BugList.Visibility = Visibility.Visible;
             
+            //Populate the bug list with bugs
 
+
+            List<ProjectDataBase.Bugs.Bug> bugs = ProjectDataBase.Bugs.GetBugList(projectName);
+
+            foreach (ProjectDataBase.Bugs.Bug bug in bugs)
+            {
+                AdminBugEdit bugEdit = new AdminBugEdit(bug.reference);
+                bugEdit.Title.Text = bug.name;
+                bugEdit.Description.Text = bug.description;
+                bugEdit.TimeSpent.Text = bug.timeSpent;
+                bugEdit.Priority.Text = bug.priority;
+                bugEdit._Delete += DeleteBug;
+                BugContainer.Children.Add(bugEdit);
+                openBugs.Add(bugEdit);
+            }
+        }
+
+        private void DeleteBug(object sender, RoutedEventArgs e, string reference)
+        {
+
+            ProjectDataBase.Bugs.DeleteBug(currentProject, reference);
+            AdminBugEdit bugToRemove = openBugs.Find(project => project.reference == reference);
+            BugContainer.Children.Remove(bugToRemove);
+            openBugs.Remove(bugToRemove);
+            UpdateProjectBugCount(currentProject);
+        }
+        private void CloseEditBugMenu()
+        {
+            currentProject = "";
+            BugContainer.Children.Clear();
+            openBugs.Clear();
         }
         private void AddBug(object sender, RoutedEventArgs e, ProjectDataBase.Bugs.Bug bug, string projectName)
         {
             ProjectDataBase.Bugs.CreateBug(projectName, bug);
-            HideAll();
+            OpenEditBugMenu(sender, e, projectName);
+            UpdateProjectBugCount(projectName);
+        }
+
         private void UpdateProjectBugCount(string projectName)
         {
             AdminProject projectToUpdate = adminProjects.Find(project => project.ProjectTitle.Text == projectName);
