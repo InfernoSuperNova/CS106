@@ -33,11 +33,13 @@
                 <Border BorderBrush="#838383" BorderThickness="3" Margin="30" CornerRadius="20" 
                         Background="#262626">
                     <StackPanel HorizontalAlignment="Center">
-                        <TextBlock FontSize="30" Foreground="White" Margin="50">
+                        <TextBlock x:Name="OptionHint"  FontSize="30" Foreground="White" Margin="50">
                             Select one of the options on one
                             <LineBreak/>
                             of the projects to get started
                         </TextBlock>
+                        <local1:AddBug x:Name="AddBugMenu" Visibility="Collapsed"></local1:AddBug>
+                        <local1:AddEmployee x:Name="AddEmployeeBtn" Visibility="Collapsed"></local1:AddEmployee>
                     </StackPanel>
                 </Border>
             </Grid>
