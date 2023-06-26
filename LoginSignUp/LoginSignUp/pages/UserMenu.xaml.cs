@@ -31,8 +31,9 @@ namespace LoginSignUp.pages
             InitializeComponent();
             header._SignOut += SignOut;
             header.AddNewProjectBtn.Visibility = Visibility.Hidden;
-            lines = ProjectList.Read();
-            
+            AddBugMenu._AddBugBtn += AddBug;
+            lines = ProjectDataBase.ReadNoHeader();
+
             foreach (string name in lines)
             {
                 //store this project somewhere, otherwise it'll cause a memory leak
@@ -41,6 +42,7 @@ namespace LoginSignUp.pages
                 // Add the dynamic object to the stack panel
                 ProjectField.Children.Add(project);
                 project.ProjectTitle.Text = name;
+                project._AddBugProject += OpenBugMenu;
                 projectCount++;
             }
         }
@@ -57,6 +59,20 @@ namespace LoginSignUp.pages
         private void SignOut(object sender, RoutedEventArgs e)
         {
             _SignOut(sender, e);
+        }
+
+        private void OpenBugMenu(object sender, RoutedEventArgs e, string projectName)
+        {
+            AddBugMenu.Enable(projectName);
+            OptionHint.Visibility = Visibility.Hidden;
+        }
+        private void AddBug(object sender, RoutedEventArgs e, ProjectDataBase.Bugs.Bug bug, string projectName)
+        {
+            ProjectDataBase.Bugs.CreateBug(projectName, bug);
+            AddBugMenu.Disable();
+            //Do we want to unhide it?
+            OptionHint.Visibility = Visibility.Visible;
+
         }
     }
 }
