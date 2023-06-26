@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -95,7 +95,7 @@ namespace LoginSignUp.classes
                 public string timeSpent;
                 public string description;
                 public string stepsToReproduce;
-                
+                public string reference;
             }
             private static int GetNextBugIndex(string project)
             {
@@ -114,6 +114,14 @@ namespace LoginSignUp.classes
                 currentManifest = currentManifest.Append(bugIndex.ToString()).ToArray();
                 File.WriteAllLines(Path.Combine(path, "bugManifest.csv"), currentManifest);
             }
+            public static string[] GetProjectBugManifest(string project)
+            {
+                return File.ReadAllLines(Path.Combine(Config.ROOT_FOLDER, project, "bugManifest.csv"));
+            }
+            public static string[] GetBug(string project, string reference)
+            {
+                return File.ReadAllLines(Path.Combine(Config.ROOT_FOLDER, project, "bugs", reference + ".txt"));
+            }
            public static void CreateBug(string project, Bug bug)
             {
                 string[] bugText = new string[0];
@@ -129,20 +137,44 @@ namespace LoginSignUp.classes
                 path = Path.Combine(path, "bugs", bugIndex.ToString() + ".txt");
                 File.WriteAllLines(path, bugText);
             }
-            public static void DeleteBug(string project, int index)
+            public static void DeleteBug(string project, string index)
             {
                 string path = Path.Combine(Config.ROOT_FOLDER, project);
                 string[] newManifest = new string[0];
                 string[] currentManifest = File.ReadAllLines(Path.Combine(path, "bugManifest.csv"));
                 foreach (string reference in currentManifest)
                 {
-                    if (reference != index.ToString())
+                    if (reference != index)
                     {
                         newManifest = newManifest.Append(reference).ToArray();
                     }
                 }
                 File.WriteAllLines(Path.Combine(path, "bugManifest.csv"), newManifest);
                 File.Delete(Path.Combine(path, "bugs", index + ".txt"));
+            }
+            public static int GetBugCount(string projectName)
+            {
+                string[] manifest = GetProjectBugManifest(projectName);
+
+                return manifest.Length;
+            }
+            public static List<Bug> GetBugList(string projectName)
+            {
+                List<Bug> bugs = new List<Bug>();
+                string[] manifest = GetProjectBugManifest(projectName);
+                foreach (string reference in manifest)
+                {
+                    string[] bug = GetBug(projectName, reference);
+                    Bug compiledBug = new Bug();
+                    compiledBug.name = bug[0];
+                    compiledBug.priority = bug[1];
+                    compiledBug.timeSpent = bug[2];
+                    compiledBug.description = bug[3];
+                    compiledBug.stepsToReproduce = bug[4];
+                    compiledBug.reference = reference;
+                    bugs.Add(compiledBug);
+                }
+                return bugs;
             }
         }
         private static class Helpers
