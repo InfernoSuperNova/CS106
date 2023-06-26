@@ -20,8 +20,10 @@ namespace LoginSignUp.UserControls
     /// </summary>
     public partial class AdminBugEdit : UserControl
     {
-        public AdminBugEdit()
+        public string reference = "";
+        public AdminBugEdit(string _reference)
         {
+            reference = _reference;
             InitializeComponent();
         }
 
@@ -41,6 +43,13 @@ namespace LoginSignUp.UserControls
             {
                 popup.IsOpen = true;
             }
+        }
+
+        public delegate void Delete (object sender, RoutedEventArgs e, string reference);
+        public event Delete _Delete;
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _Delete(sender, e, reference);
         }
     }
 }
