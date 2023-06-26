@@ -164,7 +164,8 @@ namespace LoginSignUp.pages
                     // Use AddBug's specific initializer instead
                     break;
                 case Fields.EditBug:
-                    adminBugEdit.Visibility = Visibility.Visible;
+                    PrimaryDropdown.Visibility = Visibility.Hidden;
+                    BugList.Visibility = Visibility.Visible;
                     break;
                 case Fields.AddEmployeeBtn:
                     AddEmployeeBtn.Visibility = Visibility.Visible;
