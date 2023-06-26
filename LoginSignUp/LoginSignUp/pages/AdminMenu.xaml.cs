@@ -73,8 +73,9 @@ namespace LoginSignUp.pages
         }
         private void ExampleToggle_Click(object sender, RoutedEventArgs e)
         {
-            ExampleToggle.Visibility = Visibility.Hidden;
-            AddEmployee.Visibility = Visibility.Visible;
+            //ProjectDataBase.Bugs.DeleteBug("GunGame", 2);
+            //ExampleToggle.Visibility = Visibility.Hidden;
+            //AddEmployee.Visibility = Visibility.Visible;
         }
         //Creates a "New Project" object that lets you put in the name and confirm
         private void NewProject(object sender, RoutedEventArgs e)
@@ -148,7 +149,7 @@ namespace LoginSignUp.pages
         {
             AddEmployee.Visibility = Visibility.Hidden;
             AddEmployeeBtn.Visibility = Visibility.Hidden;
-            ExampleToggle.Visibility = Visibility.Hidden;
+            //ExampleToggle.Visibility = Visibility.Hidden;
             adminBugEdit.Visibility = Visibility.Hidden;
             AddBugMenu.Disable();
             OptionHint.Visibility = Visibility.Visible;
