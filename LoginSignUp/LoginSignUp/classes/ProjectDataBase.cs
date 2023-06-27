@@ -12,15 +12,15 @@ namespace LoginSignUp.classes
     {
         public static string[] Read()
         {
-            return File.ReadAllLines(@".\Database\Projects.csv");
+            return SafeIO.ReadAllLines(@".\Database\Projects.csv");
         }
         public static string[] ReadNoHeader()
         {
-            return File.ReadAllLines(@".\Database\Projects.csv").Skip(1).ToArray();
+            return SafeIO.ReadAllLines(@".\Database\Projects.csv").Skip(1).ToArray();
         }
         public static void Write(string[] lines)
         {
-            File.WriteAllLines(@".\Database\Projects.csv", lines);
+            SafeIO.WriteAllLines(@".\Database\Projects.csv", lines);
         }
         private static List<string> EnumerateFileColumn(string[] database, int column)
         {
@@ -42,31 +42,23 @@ namespace LoginSignUp.classes
         {
             string directory = Path.Combine(rootFolder, project);
             string bugsDirectory = Path.Combine(directory, "bugs");
-            try
+
+            SafeIO.CreateDirectory(directory);
+            SafeIO.CreateDirectory(bugsDirectory);
+            if (!File.Exists(Path.Combine(directory, "bugManifest.csv")))
             {
-                Directory.CreateDirectory(directory);
-                Directory.CreateDirectory(bugsDirectory);
-                if (!File.Exists(Path.Combine(directory, "bugManifest.csv")))
-                {
-                    File.Create(Path.Combine(directory, "bugManifest.csv")).Close();
-                }
-                if (!File.Exists(Path.Combine(directory, "nextBugIndex.txt")))
-                {
-                    File.WriteAllText(Path.Combine(directory, "nextBugIndex.txt"), "0");
-                }
-                   
-                //It's probably inefficient to create the file, open it, close it, then open it again to write, then close it again
-                
+                File.Create(Path.Combine(directory, "bugManifest.csv")).Close();
             }
-            catch (Exception ex)
+            if (!File.Exists(Path.Combine(directory, "nextBugIndex.txt")))
             {
-                MessageBox.Show($"An error occured: {ex.Message}");
+                SafeIO.WriteAllText(Path.Combine(directory, "nextBugIndex.txt"), "0");
             }
+
         }
 
         public static void DeleteProject(string name)
         {
-            string[] existingProjects = Read();
+            string[] existingProjects = ReadNoHeader();
             //Create a new string
             string[] newLines = new string[0];
             //Fill that with all of lines, sans name of project being removed
@@ -101,27 +93,30 @@ namespace LoginSignUp.classes
             {
 
                 string path = Path.Combine(Config.ROOT_FOLDER, project, "nextBugIndex.txt");
-                return int.Parse(File.ReadAllText(path));
+                return int.Parse(SafeIO.ReadAllText(path));
             }
             private static void SetNextBugIndex(string project, int index)
             {
                 string path = Path.Combine(Config.ROOT_FOLDER, project, "nextBugIndex.txt");
-                File.WriteAllText(path, (++index).ToString());
+                SafeIO.WriteAllText(path, (++index).ToString());
             }
             private static void UpdateManifest(string path, int bugIndex)
             {
-                string[] currentManifest = File.ReadAllLines(Path.Combine(path, "bugManifest.csv"));
+                string[] currentManifest = SafeIO.ReadAllLines(Path.Combine(path, "bugManifest.csv"));
                 currentManifest = currentManifest.Append(bugIndex.ToString()).ToArray();
-                File.WriteAllLines(Path.Combine(path, "bugManifest.csv"), currentManifest);
+                SafeIO.WriteAllLines(Path.Combine(path, "bugManifest.csv"), currentManifest);
             }
             public static string[] GetProjectBugManifest(string project)
             {
-                return File.ReadAllLines(Path.Combine(Config.ROOT_FOLDER, project, "bugManifest.csv"));
+                string path = Path.Combine(Config.ROOT_FOLDER, project, "bugManifest.csv");
+                return SafeIO.ReadAllLines(path);
             }
             public static string[] GetBug(string project, string reference)
             {
-                return File.ReadAllLines(Path.Combine(Config.ROOT_FOLDER, project, "bugs", reference + ".txt"));
+                string path = Path.Combine(Config.ROOT_FOLDER, project, "bugs", reference + ".txt");
+                return SafeIO.ReadAllLines(path);
             }
+
            public static void CreateBug(string project, Bug bug)
             {
                 string[] bugText = new string[0];
@@ -135,13 +130,13 @@ namespace LoginSignUp.classes
                 string path = (Path.Combine(Config.ROOT_FOLDER, project));
                 UpdateManifest(path, bugIndex);
                 path = Path.Combine(path, "bugs", bugIndex.ToString() + ".txt");
-                File.WriteAllLines(path, bugText);
+                SafeIO.WriteAllLines(path, bugText);
             }
             public static void DeleteBug(string project, string index)
             {
                 string path = Path.Combine(Config.ROOT_FOLDER, project);
                 string[] newManifest = new string[0];
-                string[] currentManifest = File.ReadAllLines(Path.Combine(path, "bugManifest.csv"));
+                string[] currentManifest = SafeIO.ReadAllLines(Path.Combine(path, "bugManifest.csv"));
                 foreach (string reference in currentManifest)
                 {
                     if (reference != index)
@@ -149,7 +144,7 @@ namespace LoginSignUp.classes
                         newManifest = newManifest.Append(reference).ToArray();
                     }
                 }
-                File.WriteAllLines(Path.Combine(path, "bugManifest.csv"), newManifest);
+                SafeIO.WriteAllLines(Path.Combine(path, "bugManifest.csv"), newManifest);
                 File.Delete(Path.Combine(path, "bugs", index + ".txt"));
             }
             public static int GetBugCount(string projectName)
