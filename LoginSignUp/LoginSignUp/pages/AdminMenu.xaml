@@ -59,12 +59,12 @@
                         >
                             <Bold>+</Bold>
                         </Button>
-                        
+
                     </Grid>
                 </Border>
             </Grid>
         </Grid>
-        
+
         <!--<Border BorderBrush="#838383" BorderThickness="0 0 0 3">
             <Grid Grid.Column="0" Grid.Row="0" Background="#262626">
                 <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
