@@ -12,16 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static LoginSignUp.UserControls.AddBug;
 
 namespace LoginSignUp.UserControls
 {
     /// <summary>
-    /// Interaction logic for AdminBugEdit.xaml
+    /// Interaction logic for Bug.xaml
     /// </summary>
-    public partial class AdminBugEdit : UserControl
+    public partial class Bug : UserControl
     {
         public string reference = "";
-        public AdminBugEdit(string _reference)
+        public Bug(string _reference)
         {
             reference = _reference;
             InitializeComponent();
@@ -54,6 +55,25 @@ namespace LoginSignUp.UserControls
                 DropDownSymbol.Text = " ▲";
                 DropDown1.Visibility = Visibility.Visible;
                 DropDown2.Visibility = Visibility.Visible;
+            }
+        }
+
+        public void SetUserType(string type)
+        {
+            if (type == "user")
+            {
+                EditBugBtn.Visibility = Visibility.Collapsed;
+                DeleteBtn.Visibility = Visibility.Collapsed;
+            }
+            else if (type == "dev")
+            {
+                EditBugBtn.Visibility = Visibility.Visible;
+                DeleteBtn.Visibility = Visibility.Visible;
+            }
+            else if (type == "admin")
+            {
+                EditBugBtn.Visibility = Visibility.Visible;
+                DeleteBtn.Visibility = Visibility.Visible;
             }
         }
     }

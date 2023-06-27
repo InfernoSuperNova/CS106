@@ -19,10 +19,10 @@ namespace LoginSignUp.UserControls
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class AdminProject : UserControl
+    public partial class Project : UserControl
     {
         private EmployeeDeletePrompt deletePrompt;
-        public AdminProject()
+        public Project()
         {
             InitializeComponent();
             deletePrompt = new EmployeeDeletePrompt();
@@ -86,5 +86,35 @@ namespace LoginSignUp.UserControls
         //    //when this happens the value is no longer null so it will execute functionality
         //    ToggleVisibilityClicked?.Invoke(this, e);
         //}
+        public void SetUserType(string type)
+        {
+            if (type == "user")
+            {
+                AddBugBtn.Visibility = Visibility.Visible;
+                EditBugButton.Visibility = Visibility.Visible;
+                EditText.Text = "View Bugs";
+                Delete.Visibility = Visibility.Hidden;
+                ToggleEmployeesVisibility.Visibility = Visibility.Hidden;
+                CreateBugReport.Visibility = Visibility.Hidden;
+            }
+            else if (type == "dev")
+            {
+                AddBugBtn.Visibility = Visibility.Visible;
+                EditBugButton.Visibility = Visibility.Visible;
+                EditText.Text = "Edit Bugs";
+                Delete.Visibility = Visibility.Hidden;
+                ToggleEmployeesVisibility.Visibility = Visibility.Hidden;
+                CreateBugReport.Visibility = Visibility.Hidden;
+            }
+            else if (type == "admin")
+            {
+                AddBugBtn.Visibility = Visibility.Visible;
+                EditBugButton.Visibility = Visibility.Visible;
+                EditText.Text = "Edit Bugs";
+                Delete.Visibility = Visibility.Visible;
+                ToggleEmployeesVisibility.Visibility = Visibility.Visible;
+                CreateBugReport.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

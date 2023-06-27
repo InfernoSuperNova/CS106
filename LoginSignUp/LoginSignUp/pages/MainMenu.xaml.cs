@@ -19,31 +19,32 @@ using System.Windows.Threading;
 namespace LoginSignUp.pages
 {
     /// <summary>
-    /// Interaction logic for AdminMenu.xaml
+    /// Interaction logic for MainMenu.xaml
     /// </summary>
-    public partial class AdminMenu : Page
+    public partial class MainMenu : Page
     {
 
+        public string userType = "";
         private string currentProject = "";
         private string[] lines;
-        private List<AdminProject> adminProjects;
-        private List<AdminBugEdit> openBugs;
+        private List<Project> projects;
+        private List<Bug> openBugs;
         NewProject newProject;
-        public AdminMenu()
+        public MainMenu()
         {
 
             InitializeComponent();
 
 
-            adminProjects = new List<AdminProject>();
-            openBugs = new List<AdminBugEdit>();
+            projects = new List<Project>();
+            openBugs = new List<Bug>();
             AddBugMenu._AddBugBtn += AddBug;
             header._NewProject += NewProject;
             header._SignOut += SignOut;
             lines = ProjectDataBase.ReadNoHeader();
             foreach (string name in lines)
             {
-                var project = new AdminProject();
+                var project = new Project();
 
                 // Add the dynamic object to the stack panel
                 ProjectField.Children.Add(project);
@@ -54,7 +55,7 @@ namespace LoginSignUp.pages
                 project._AddBugProject += OpenNewBugMenu;
                 project._ToggleEmployees += Testing_ToggleVisibility;
                 //Store the project in array
-                adminProjects.Add(project);
+                projects.Add(project);
 
             }
 
@@ -96,13 +97,13 @@ namespace LoginSignUp.pages
             newProject = null;
 
             //Define new project
-            AdminProject newAdminProject = new AdminProject();
+            Project newAdminProject = new Project();
             newAdminProject.ProjectTitle.Text = projectName;
             newAdminProject._DeleteProject += DeleteProject;
             newAdminProject._EditBugMenu += OpenEditBugMenu;
             newAdminProject._AddBugProject += OpenNewBugMenu;
             //Add the project to the list, and the UI
-            adminProjects.Add(newAdminProject);
+            projects.Add(newAdminProject);
             ProjectField.Children.Add(newAdminProject);
             //Add the project to the database
             lines = lines.Append(projectName).ToArray();
@@ -115,9 +116,9 @@ namespace LoginSignUp.pages
         {
             ProjectDataBase.DeleteProject(name);
             //Gets a pointer to the admin project element
-            AdminProject projectToRemove = adminProjects.Find(project => project.ProjectTitle.Text == name);
+            Project projectToRemove = projects.Find(project => project.ProjectTitle.Text == name);
             //Remove that from memory
-            adminProjects.Remove(projectToRemove);
+            projects.Remove(projectToRemove);
             ProjectField.Children.Remove(projectToRemove);
             HideAll();
         }
@@ -134,6 +135,8 @@ namespace LoginSignUp.pages
             OptionHint.Visibility = Visibility.Hidden;
             AddBugMenu.Enable(projectName);
         }
+
+
         private void OpenEditBugMenu(object sender, RoutedEventArgs e, string projectName)
         {
             CloseEditBugMenu();
@@ -148,12 +151,13 @@ namespace LoginSignUp.pages
 
             foreach (ProjectDataBase.Bugs.Bug bug in bugs)
             {
-                AdminBugEdit bugEdit = new AdminBugEdit(bug.reference);
+                Bug bugEdit = new Bug(bug.reference);
                 bugEdit.Title.Text = bug.name;
                 bugEdit.Description.Text = bug.description;
                 bugEdit.TimeSpent.Text = "Time Spent: " + bug.timeSpent;
                 bugEdit.Priority.Text = "Priority: " + bug.priority;
                 bugEdit.StepsToReproduce.Text = "Steps to reproduce: " + bug.stepsToReproduce;
+                bugEdit.SetUserType(userType);
                 bugEdit._Delete += DeleteBug;
                 BugContainer.Children.Add(bugEdit);
                 openBugs.Add(bugEdit);
@@ -164,7 +168,7 @@ namespace LoginSignUp.pages
         {
 
             ProjectDataBase.Bugs.DeleteBug(currentProject, reference);
-            AdminBugEdit bugToRemove = openBugs.Find(project => project.reference == reference);
+            Bug bugToRemove = openBugs.Find(project => project.reference == reference);
             BugContainer.Children.Remove(bugToRemove);
             openBugs.Remove(bugToRemove);
             UpdateProjectBugCount(currentProject);
@@ -184,7 +188,7 @@ namespace LoginSignUp.pages
 
         private void UpdateProjectBugCount(string projectName)
         {
-            AdminProject projectToUpdate = adminProjects.Find(project => project.ProjectTitle.Text == projectName);
+            Project projectToUpdate = projects.Find(project => project.ProjectTitle.Text == projectName);
             int bugCount = ProjectDataBase.Bugs.GetBugCount(projectName);
             projectToUpdate.ActiveBugs.Text = "Active Bugs: " + bugCount;
         }
@@ -233,6 +237,16 @@ namespace LoginSignUp.pages
             AddEmployeeBtn,
             AddEmployee,
             ExampleToggle,
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            header.SetUserType(userType);
+            foreach (Project project in projects)
+            {
+                project.SetUserType(userType);
+            }
+            HideAll();
         }
     }
 }
