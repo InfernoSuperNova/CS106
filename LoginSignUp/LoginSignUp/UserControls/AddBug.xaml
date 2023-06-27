@@ -19,8 +19,8 @@
         </Grid.RowDefinitions>
         
         <!--Bug Name-->
-        <Grid Grid.Row="0" Grid.ColumnSpan="2">
-            <Border Background="#1E1E1E" BorderBrush="DarkGray"  VerticalAlignment="Top" Margin="35" Height="50" CornerRadius="15"
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="35" VerticalAlignment="Top" Height="50">
+            <Border Background="#1E1E1E" BorderBrush="DarkGray"  CornerRadius="15"
            BorderThickness="0" ClipToBounds="True" >
                 <Border Background="Transparent" BorderBrush="#262626" CornerRadius="20"
               BorderThickness="10" Margin="-10">
@@ -30,15 +30,15 @@
                     
                 </Border>
             </Border>
-            <Grid Margin="35" VerticalAlignment="Top" Height="50">
+            <Grid >
                 <TextBlock x:Name="BugNameWatermark" Margin="20,3,20,3" FontSize="30" Foreground="#757575">Bug Name...</TextBlock>
-                <TextBox TextWrapping="Wrap" Name="BugName" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" TextChanged="BugName_TextChanged" Panel.ZIndex="100"></TextBox>
+                <TextBox TextWrapping="Wrap" Name="BugName" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" CaretBrush="#D4D4D4" TextChanged="BugName_TextChanged" Cursor="IBeam" ></TextBox>
             </Grid>
         </Grid>
 
         <!--Priority-->
-        <Grid Grid.Row="1" Background="Transparent">
-            <Border Background="#1E1E1E" BorderBrush="DarkGray"  VerticalAlignment="Top" Margin="35 105 20 35" Height="50" CornerRadius="15"
+        <Grid Grid.Row="1" Background="Transparent" VerticalAlignment="Top" Margin="35 105 20 35" Height="50">
+            <Border Background="#1E1E1E" BorderBrush="DarkGray" CornerRadius="15"
            BorderThickness="0" ClipToBounds="True" >
                 <Border Background="Transparent" BorderBrush="#262626" CornerRadius="20"
               BorderThickness="10" Margin="-10">
@@ -47,15 +47,15 @@
                     </Border.Effect>
                 </Border>
             </Border>
-            <Grid Margin="35,105,20,35" VerticalAlignment="Top" Height="50">
+            <Grid>
                 <TextBlock x:Name="BugPriorityWatermark" Margin="20,3,20,3" FontSize="30" Foreground="#757575">Priority...</TextBlock>
-                <TextBox TextWrapping="Wrap" Name="BugPriority" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" TextChanged="BugPriority_TextChanged" Panel.ZIndex="1"></TextBox>
+                <TextBox TextWrapping="Wrap" Name="BugPriority" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" CaretBrush="#D4D4D4" TextChanged="BugPriority_TextChanged" Cursor="IBeam" ></TextBox>
             </Grid>
         </Grid>
         
         <!--Time Spent-->
-        <Grid Grid.Row="1" Grid.Column="1" Background="Transparent">
-            <Border Background="#1E1E1E" BorderBrush="DarkGray"  VerticalAlignment="Top" Margin="20 105 35 35" Height="50" CornerRadius="15"
+        <Grid Grid.Row="1" Grid.Column="1" Background="Transparent" VerticalAlignment="Top" Margin="20 105 35 35" Height="50">
+            <Border Background="#1E1E1E" BorderBrush="DarkGray" CornerRadius="15"
            BorderThickness="0" ClipToBounds="True" >
                 <Border Background="Transparent" BorderBrush="#262626" CornerRadius="20"
               BorderThickness="10" Margin="-10">
@@ -64,15 +64,15 @@
                     </Border.Effect>
                 </Border>
             </Border>
-            <Grid Margin="20,105,35,35" VerticalAlignment="Top" Height="50">
+            <Grid >
                 <TextBlock x:Name="BugTimeSpentWatermark" Margin="20,3,20,3" FontSize="30" Foreground="#757575">Time Spent...</TextBlock>
-                <TextBox TextWrapping="Wrap" Name="BugTimeSpent" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" TextChanged="BugTimeSpent_TextChanged" Panel.ZIndex="1"></TextBox>
+                <TextBox TextWrapping="Wrap" Name="BugTimeSpent" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" CaretBrush="#D4D4D4" TextChanged="BugTimeSpent_TextChanged" Cursor="IBeam" ></TextBox>
             </Grid>
         </Grid>
         
         <!--Description-->
-        <Grid Grid.Row="1" Grid.ColumnSpan="2" Background="Transparent">
-            <Border Background="#1E1E1E" BorderBrush="DarkGray" Margin="33,65,37,235" Height="175" CornerRadius="15"
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Background="Transparent" Margin="33,65,37,235" Height="175">
+            <Border Background="#1E1E1E" BorderBrush="DarkGray"  CornerRadius="15"
            BorderThickness="0" ClipToBounds="True" >
                 <Border Background="Transparent" BorderBrush="#262626" CornerRadius="20"
               BorderThickness="10" Margin="-10">
@@ -81,16 +81,16 @@
                     </Border.Effect>
                 </Border>
             </Border>
-            <Grid Margin="33,65,37,235" Height="175">
+            <Grid>
                 <TextBlock x:Name="BugDescriptionWatermark" Margin="20,3,20,3" FontSize="30" Foreground="#757575">Description...</TextBlock>
-                <TextBox TextWrapping="Wrap" Name="BugDescription" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" TextChanged="BugDescription_TextChanged" Panel.ZIndex="1"></TextBox>
+                <TextBox TextWrapping="Wrap" Name="BugDescription" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" CaretBrush="#D4D4D4" TextChanged="BugDescription_TextChanged" Cursor="IBeam" ></TextBox>
             </Grid>
         </Grid>
             
 
         <!--Steps to reproduce-->
-        <Grid Grid.Row="1" Grid.ColumnSpan="2" Background="Transparent">
-            <Border Background="#1E1E1E" BorderBrush="DarkGray" Margin="33,370,37,154" Height="175" CornerRadius="15"
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Background="Transparent" Margin="33,370,37,154" Height="175">
+            <Border Background="#1E1E1E" BorderBrush="DarkGray"  CornerRadius="15"
            BorderThickness="0" ClipToBounds="True" >
                 <Border Background="Transparent" BorderBrush="#262626" CornerRadius="20"
               BorderThickness="10" Margin="-10">
@@ -99,17 +99,17 @@
                     </Border.Effect>
                 </Border>
             </Border>
-            <Grid Margin="33,378,37,154" Height="175">
+            <Grid>
                 <TextBlock x:Name="BugStepsToReproduceWatermark" Margin="20,3,20,3" FontSize="30" Foreground="#757575">Steps to reproduce...</TextBlock>
-                <TextBox TextWrapping="Wrap" Name="BugStepsToReproduce" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" TextChanged="BugStepsToReproduce_TextChanged" Panel.ZIndex="1"></TextBox>
+                <TextBox TextWrapping="Wrap" Name="BugStepsToReproduce" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" CaretBrush="#D4D4D4" TextChanged="BugStepsToReproduce_TextChanged" Cursor="IBeam" ></TextBox>
             </Grid>
         </Grid>
 
-        <Border Grid.ColumnSpan="2" Margin="0,10,0,0" CornerRadius="10" Grid.Row="1">
+        <Border Grid.ColumnSpan="2" Margin="350,570,350,54" Height="70" CornerRadius="10" Grid.Row="1">
 
-            <Button Name ="AddBtn" Click="AddBtn_Click" Grid.Column="0" BorderThickness="0"  Margin="350,570,350,54" Background="#407D3F" Foreground="White" Padding="20 5 20 10" FontSize="20" Height="70" Width="100"
+            <Button Name ="AddBtn" Click="AddBtn_Click" Grid.Column="0" BorderThickness="0" Background="#407D3F" Foreground="White" Padding="20 5 20 10" FontSize="20"  Width="100"
                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-
+    
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="20"/>
