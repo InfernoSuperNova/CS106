@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LoginSignUp.pages" xmlns:local1="clr-namespace:LoginSignUp.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="174" d:DesignWidth="842"  Margin="0 40 0 0">
+             d:DesignHeight="500" d:DesignWidth="842"  Margin="0 40 0 0">
 
-    <UserControl.Template>
+    <!--<UserControl.Template>
         <ControlTemplate TargetType="UserControl">
             <Border Background="#262626"
                     BorderBrush="Black"
@@ -16,87 +16,103 @@
                 <ContentPresenter/>
             </Border>
         </ControlTemplate> 
-    </UserControl.Template>
+    </UserControl.Template>-->
     <StackPanel>
-        <Grid Height="175" VerticalAlignment="Top">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+        <Border Background="#262626"
+                    BorderBrush="#838383"
+                    BorderThickness="1.5"
+                    CornerRadius="20">
+            <Grid Height="Auto" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
 
-            </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="0" Background="Transparent"  Padding="8 3 0 0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <!-- TextBlock -->
-                        <RowDefinition Height="Auto"/>
-                        <!-- Button and Image -->
-                    </Grid.RowDefinitions>
+                <Border Grid.Row ="0" Grid.Column="0" Background="Transparent"  Padding="8 3 0 0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <!-- TextBlock -->
+                            <RowDefinition Height="Auto"/>
+                            <!-- Button and Image -->
+                        </Grid.RowDefinitions>
 
-                    <TextBlock Name="Title" Grid.Row="0" FontSize="28.5" Foreground="#D4D4D4" Padding="6 6 0 0" Margin="10,10,-10,33" Grid.RowSpan="2">
-                    Glitch in the controls 
+                        <TextBlock Name="Title" Grid.Row="0" FontSize="30" Foreground="#D4D4D4" Padding="6 6 0 0" Margin="10,10,-10,33" Grid.RowSpan="2">
+                    #Title
                     <LineBreak/>
-                    </TextBlock>
+                        </TextBlock>
 
-                    <Grid Margin="10,77,-10,5" Grid.RowSpan="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <!-- Button -->
-                            <ColumnDefinition Width="Auto"/>
-                            <!-- Image -->
-                        </Grid.ColumnDefinitions>
+                        <Grid Margin="10,77,-10,5" Grid.RowSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <!-- Button -->
+                                <ColumnDefinition Width="Auto"/>
+                                <!-- Image -->
+                            </Grid.ColumnDefinitions>
 
-                        <Border Grid.Column="0" CornerRadius="10" BorderBrush="#407D3F" BorderThickness="2" HorizontalAlignment="Left" Margin="11,10,0,10" Background="#407D3F" Padding="20 5 20 10">
-                            <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" BorderBrush="#407D3F" BorderThickness="2"  Height="35" Background="#407D3F" Foreground="#D4D4D4">
-                                <Button.Content>
-                                    <TextBlock Text="Edit" Height="42" FontWeight="SemiBold"/>
-                                </Button.Content>
-                            </Button>
-                        </Border>
+                            <Border Grid.Column="0" CornerRadius="10" BorderBrush="#407D3F" BorderThickness="2" HorizontalAlignment="Left" Margin="11,10,0,10" Background="#407D3F" Padding="20 5 20 10">
+                                <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" BorderBrush="#407D3F" BorderThickness="2"  Height="35" Background="#407D3F" Foreground="#D4D4D4">
+                                    <Button.Content>
+                                        <TextBlock Text="Edit" Height="42" FontWeight="SemiBold"/>
+                                    </Button.Content>
+                                </Button>
+                            </Border>
 
-                        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="15,9,0,6">
-                            <Button Name="DeleteBtn" Click="DeleteBtn_Click" Background="#00000000" BorderThickness="0">
-                                <Image Source="/Icons/bin.png" Width="60" Height="65" Margin="5 0 0 5"/>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="15,9,0,6">
+                                <Button Name="DeleteBtn" Click="DeleteBtn_Click" Background="#00000000" BorderThickness="0">
+                                    <Image Source="/Icons/bin.png" Width="60" Height="65" Margin="5 0 0 5"/>
+                                </Button>
+
+                                <TextBlock Text="Needs Fixing ▼" FontSize="25" FontWeight="SemiBold" Margin="25 15 0 10" Foreground="#838383" Height="44" Width="185"/>
+                            </StackPanel>
+                        </Grid>
+
+                    </Grid>
+                </Border>
+                <Border Grid.Row ="0" Grid.Column="1" Background="Transparent">
+                    <Grid>
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Name="Description" Padding="10" FontSize="22" Foreground="#D4D4D4" Margin="0,10,0,-10" TextWrapping="Wrap">#Description</TextBlock>
+
+
+                         
+                        <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
+                            <!--Set the background colour on mouse enter-->
+
+                            <Button Name="DropDownBtn" Click="DropDownBtn_Click" Foreground="#00000000" Background="#00000000" Height="Auto" HorizontalAlignment="Right" Margin="0,-5,30,10"  BorderThickness="0" >
+                                <TextBlock FontSize="22" Foreground="#D4D4D4" FontWeight="SemiBold"><Underline><Run Name ="DropDownText" Text="More"/> </Underline><Run Name ="DropDownSymbol" Text=" ▼"/></TextBlock>
                             </Button>
                             
-                            <TextBlock Text="Needs Fixing ▼" FontSize="25" FontWeight="SemiBold" Margin="25 15 0 10" Foreground="#838383" Height="44" Width="185"/>
                         </StackPanel>
+
                     </Grid>
-                    <!-- Gray line -->
-                    <Border Grid.RowSpan="2" Grid.Column="0" Background="Gray" Width="2" VerticalAlignment="Stretch" Margin="400 10 0 5"/>
-                </Grid>
-            </Border>
-            <Border Grid.Column="1" Background="Transparent">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
 
-                    <Border Grid.Row="0" Background="Transparent">
-                        <TextBlock Name="Description" Padding="10" FontSize="22" Foreground="#D4D4D4" Margin="0,10,0,-10">Help, My controller keeps disconnecting.</TextBlock>
-                    </Border>
+                </Border>
+                <!--Set Visibility to Collapsed to hide the dropdowm menu-->
 
-                    <Border Grid.Row="1" Background="Transparent" Margin="-10,0,10,0">
-                        <StackPanel>
+                <StackPanel Name="DropDown1" Grid.Row="1" Grid.Column="0" Height="Auto" Visibility="Collapsed">
+                    <TextBlock Name="TimeSpent" Padding="0" FontSize="26" Foreground="#D4D4D4" TextWrapping="Wrap" Margin="30,10,0,10">Time Spent: </TextBlock>
+                    <TextBlock Name="Priority" Padding="0" FontSize="26" Foreground="#D4D4D4" TextWrapping="Wrap" Margin="30,10,0,30" >Priority: </TextBlock>
+                </StackPanel>
+                <StackPanel Name="DropDown2" Grid.Row="1" Grid.Column="1" Height="Auto" Visibility="Collapsed">
+                    <TextBlock Name="StepsToReproduce" FontSize="26" Foreground="#D4D4D4" TextWrapping="Wrap" Margin="30,10,30,30">Steps to reproduce: </TextBlock>
+                </StackPanel>
+                <!--Move grey line down here-->
+                <Border Grid.RowSpan="2" Grid.Column="0" Background="#838383" Width="1.5" VerticalAlignment="Stretch" Margin="410 10 0 10"/>
 
-                            <TextBlock x:Name="DropDownMenu" PreviewMouseDown="DropDownMenu_PreviewMouseDown" Padding="5 75 10 0" FontSize="22" Foreground="#D4D4D4" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,0,-7,0" Width="110"><Underline><Run Text="More"/></Underline><Run Text=" ▼"/></TextBlock>
 
-                            <Popup x:Name="popup" StaysOpen="True" PlacementTarget="{Binding ElementName=DropDownMenu}" IsOpen="False">
-                                <Border Background="#262626">
-                                    <StackPanel>
-                                        <TextBlock Padding="12 12 0 0" FontSize="22" Foreground="#D4D4D4"><Run Name ="TimeSpent" Text="Time Spent: "/><Bold><Underline><Run Text="5 Hours"/></Underline></Bold></TextBlock>
-                                        <TextBlock Padding="12 10 0 0" FontSize="22" Foreground="#D4D4D4"><Run Name ="Priority" Text="Bug Priority: "/><Bold><Underline><Run Text="High"/></Underline></Bold></TextBlock>
-                                    </StackPanel>
-                                </Border>
-                            </Popup>
-                        </StackPanel>
-                    </Border>
-                </Grid>
-
-            </Border>
-
-        </Grid>
+            </Grid>
+        </Border>
     </StackPanel>
+
 </UserControl>

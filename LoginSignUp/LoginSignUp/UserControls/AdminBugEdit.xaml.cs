@@ -32,24 +32,29 @@ namespace LoginSignUp.UserControls
        
         }
 
-        private void DropDownMenu_PreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            // Show or hide the dropdown when the "More" option is clicked
-            if (popup.IsOpen)
-            {
-                popup.IsOpen = false;
-            }
-            else
-            {
-                popup.IsOpen = true;
-            }
-        }
-
         public delegate void Delete (object sender, RoutedEventArgs e, string reference);
         public event Delete _Delete;
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
             _Delete(sender, e, reference);
+        }
+
+        private void DropDownBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (DropDown1.Visibility == Visibility.Visible)
+            {
+                DropDownText.Text= "More";
+                DropDownSymbol.Text = " ▼";
+                DropDown1.Visibility = Visibility.Collapsed;
+                DropDown2.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                DropDownText.Text = "Less";
+                DropDownSymbol.Text = " ▲";
+                DropDown1.Visibility = Visibility.Visible;
+                DropDown2.Visibility = Visibility.Visible;
+            }
         }
     }
 }
