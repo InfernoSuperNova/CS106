@@ -28,8 +28,15 @@
                     <!--<local1:UserProject Width="850" Height="250" Margin="0 40 0 0"></local1:UserProject>-->
                 </StackPanel>
             </ScrollViewer>
-
+            
             <Grid Grid.Column="1">
+                <Border Name ="BugList" Visibility="Hidden" Margin ="30">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" >
+                        <StackPanel Name="BugContainer">
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
                 <Border BorderBrush="#838383" BorderThickness="3" Margin="30" CornerRadius="20" 
                         Background="#262626">
                     <StackPanel HorizontalAlignment="Center">
