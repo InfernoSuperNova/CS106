@@ -88,6 +88,7 @@ namespace LoginSignUp.pages
                 ProjectScrollField.ScrollToVerticalOffset(ProjectScrollField.ScrollableHeight);
             });
         }
+
         //Adds a new project to the database, array, and UI, and creates the necessary file structure
         private void AddNewProjectToList(object sender, RoutedEventArgs e, string projectName)
         {
@@ -169,12 +170,14 @@ namespace LoginSignUp.pages
             openBugs.Remove(bugToRemove);
             UpdateProjectBugCount(currentProject);
         }
+
         private void CloseEditBugMenu()
         {
             currentProject = "";
             BugContainer.Children.Clear();
             openBugs.Clear();
         }
+
         private void AddBug(object sender, RoutedEventArgs e, ProjectDataBase.Bugs.Bug bug, string projectName)
         {
             ProjectDataBase.Bugs.CreateBug(projectName, bug);
@@ -188,6 +191,7 @@ namespace LoginSignUp.pages
             int bugCount = ProjectDataBase.Bugs.GetBugCount(projectName);
             projectToUpdate.ActiveBugs.Text = "Active Bugs: " + bugCount;
         }
+
         private void HideAll()
         {
             CloseEditBugMenu();
@@ -199,6 +203,7 @@ namespace LoginSignUp.pages
             OptionHint.Visibility = Visibility.Visible;
             PrimaryDropdown.Visibility = Visibility.Visible;
         }
+
         private void SetVisible(Fields field)
         {
             HideAll();
