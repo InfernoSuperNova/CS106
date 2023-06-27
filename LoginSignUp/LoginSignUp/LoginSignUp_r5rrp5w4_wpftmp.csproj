@@ -35,41 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.Toolkit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
     <Compile Include="classes\Config.cs" />
     <Compile Include="classes\Helpers.cs" />
     <Compile Include="classes\ProjectDataBase.cs" />
@@ -104,10 +71,6 @@
     <Compile Include="UserControls\Header.xaml.cs">
       <DependentUpon>Header.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -116,66 +79,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="pages\AccountLogin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages\AccountSignUp.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="resources\Styles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\Bug.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages\MainMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\AddEmployee.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\AddEmployeeField.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\AddBug.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\NewProject.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Project.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\EditAddedBugAdmin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\Employee.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\EmployeeDeletePrompt.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\Header.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="pages\AccountLogin.xaml.cs">
@@ -221,10 +124,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\bin.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\Projects\TestProject1\" />
@@ -232,7 +133,44 @@
     <Folder Include="Objects\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Database\Projects\GunGame\bugs\bug1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.CSharp.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.Http.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xaml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\WindowsBase.dll" />
+    <ReferencePath Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.dll" />
+    <ReferencePath Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll" />
+    <ReferencePath Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll" />
+    <ReferencePath Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll" />
+    <ReferencePath Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.Toolkit.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\MainWindow.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountLogin.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\pages\AccountSignUp.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\Bug.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\pages\MainMenu.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\AddEmployee.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\AddEmployeeField.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\AddBug.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\NewProject.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\Project.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\EditAddedBugAdmin.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\Employee.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\EmployeeDeletePrompt.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\UserControls\Header.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\App.g.cs" />
+    <Compile Include="C:\Users\willi\OneDrive\Desktop\cs106\CS106\LoginSignUp\LoginSignUp\obj\Debug\GeneratedInternalTypeHelper.g.cs" />
+  </ItemGroup>
 </Project>
