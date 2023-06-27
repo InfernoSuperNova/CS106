@@ -112,7 +112,7 @@
                     <TextBlock Name="TimeSpent" Padding="0" FontSize="26" Foreground="#D4D4D4" TextWrapping="Wrap" Margin="30,10,0,10">Time Spent: #TimeSpent</TextBlock>
                     <TextBlock Name="Priority" Padding="0" FontSize="26" Foreground="#D4D4D4" TextWrapping="Wrap" Margin="30,10,0,30" >Priority: #Priority</TextBlock>
                 </StackPanel>
-                <StackPanel Name="DropDown2" Grid.Row="1" Grid.Column="1" Height="Auto" Visibility="Visible">
+                <StackPanel Name="DropDown2" Grid.Row="1" Grid.Column="1" Height="Auto" Visibility="Collapsed">
                     <TextBlock Name="StepsToReproduce" FontSize="26" Foreground="#D4D4D4" TextWrapping="Wrap" Margin="10,10,30,30">Steps to reproduce: #StepsToReproduce</TextBlock>
                 </StackPanel>
                 <!--Move grey line down here-->
