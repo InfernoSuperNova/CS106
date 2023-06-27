@@ -4,17 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LoginSignUp.UserControls"
+             xmlns:effects="clr-namespace:System.Windows.Media.Effects;assembly=PresentationCore"
+
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="1920">
     <Grid>
         
-        <Border BorderBrush="#838383" BorderThickness="0 0 0 3">
+        <Border BorderBrush="#838383" BorderThickness="0 0 0 1.5">
             <Grid Grid.Column="0" Grid.Row="0" Background="#262626">
                 <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <TextBlock FontSize="60" Foreground="White" Margin="0 0 60 0" Name ="UserText">
+                    <TextBlock FontSize="50" Foreground="#D4D4D4" Margin="0 0 60 0" Name ="UserText" FontFamily="Kumbh Sans">
                         <Bold>Admin</Bold>
+                        <TextBlock.Effect>
+                            <effects:DropShadowEffect Color="Black" Direction="-45" ShadowDepth="5.65" Opacity="0.8" BlurRadius="0"/>
+                        </TextBlock.Effect>
                     </TextBlock>
-                    <Button Background="Transparent" BorderBrush="Transparent" Foreground="Red" Width="150" FontSize="30" Name ="SignOutBtn" Click="SignOutBtn_Click" 
+                    <Button Background="Transparent" BorderBrush="Transparent" Foreground="#DB0000" Width="150" FontSize="30" Name ="SignOutBtn" Click="SignOutBtn_Click" 
                             Margin="0 0 60 0" FontFamily="Montserrat">
                         <Underline>Sign Out</Underline>
                     </Button>
@@ -24,15 +29,18 @@
         </Border>
 
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button x:Name="AddNewProjectBtn" Click="AddNewProjectBtn_Click"  Padding="5" Margin="0,5,5,5" Background="#407d3f" Foreground="#FFFFFF" FontSize="20" FontFamily="Montserrat" FontStyle="Normal" HorizontalAlignment="Center" Width="200" Height="75">
+            <Button x:Name="AddNewProjectBtn" Click="AddNewProjectBtn_Click"  Padding="5" Margin="0,5,5,5" Background="#407d3f" Foreground="#FFFFFF" FontSize="30" FontFamily="Kumbh Sans" FontStyle="Normal" HorizontalAlignment="Center" Width="200" Height="75">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="#407d3f" BorderBrush="Black" BorderThickness="2" CornerRadius="8">
+                        <Border Background="#407d3f" BorderBrush="Black" BorderThickness="0" CornerRadius="8">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
-                <Run Text="New Project"/>
+                <Button.Effect>
+                    <effects:DropShadowEffect Color="Black" Direction="-45" ShadowDepth="5.65" Opacity="0.8" BlurRadius="10"/>
+                </Button.Effect>
+                New Project
             </Button>
         </Grid>
     </Grid>

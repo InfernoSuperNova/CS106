@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LoginSignUp.pages" xmlns:local1="clr-namespace:LoginSignUp.UserControls"
+             xmlns:effects="clr-namespace:System.Windows.Media.Effects;assembly=PresentationCore"
+
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="842"  Margin="0 40 0 0">
 
@@ -55,14 +57,20 @@
                                 <!-- Image -->
                             </Grid.ColumnDefinitions>
 
-                            <Border Grid.Column="0" CornerRadius="10" BorderBrush="#407D3F" BorderThickness="2" HorizontalAlignment="Left" Margin="11,10,0,10" Background="#407D3F" Padding="20 5 20 10">
-                                <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" BorderBrush="#407D3F" BorderThickness="2"  Height="35" Background="#407D3F" Foreground="#D4D4D4">
-                                    <Button.Content>
-                                        <TextBlock Text="Edit" Height="42" FontWeight="SemiBold"/>
-                                    </Button.Content>
-                                </Button>
-                            </Border>
+                            <Button Grid.Column="0" BorderThickness="0" HorizontalAlignment="Left" Margin="11,10,0,10" Background="#407D3F" Foreground="White" Padding="20 5 20 10" FontSize="20">
 
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="20"/>
+                                    </Style>
+                                </Button.Resources>
+                                <Button.Effect>
+                                    <effects:DropShadowEffect Color="Black" Direction="-45" ShadowDepth="5.65" Opacity="0.8" BlurRadius="10" />
+                                </Button.Effect>
+
+                                <Bold>Edit</Bold>
+
+                            </Button>
                             <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="15,9,0,6">
                                 <Button Name="DeleteBtn" Click="DeleteBtn_Click" Background="#00000000" BorderThickness="0">
                                     <Image Source="/Icons/bin.png" Width="60" Height="65" Margin="5 0 0 5"/>
@@ -82,7 +90,7 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
-                        <TextBlock Name="Description" Padding="10" FontSize="22" Foreground="#D4D4D4" Margin="0,10,0,-10" TextWrapping="Wrap">#Description</TextBlock>
+                        <TextBlock Name="Description" Padding="10" FontSize="26" Foreground="#D4D4D4" Margin="0,10,0,-10" TextWrapping="Wrap">#Description</TextBlock>
 
 
                          
@@ -101,11 +109,11 @@
                 <!--Set Visibility to Collapsed to hide the dropdowm menu-->
 
                 <StackPanel Name="DropDown1" Grid.Row="1" Grid.Column="0" Height="Auto" Visibility="Collapsed">
-                    <TextBlock Name="TimeSpent" Padding="0" FontSize="26" Foreground="#D4D4D4" TextWrapping="Wrap" Margin="30,10,0,10">Time Spent: </TextBlock>
-                    <TextBlock Name="Priority" Padding="0" FontSize="26" Foreground="#D4D4D4" TextWrapping="Wrap" Margin="30,10,0,30" >Priority: </TextBlock>
+                    <TextBlock Name="TimeSpent" Padding="0" FontSize="26" Foreground="#D4D4D4" TextWrapping="Wrap" Margin="30,10,0,10">Time Spent: #TimeSpent</TextBlock>
+                    <TextBlock Name="Priority" Padding="0" FontSize="26" Foreground="#D4D4D4" TextWrapping="Wrap" Margin="30,10,0,30" >Priority: #Priority</TextBlock>
                 </StackPanel>
-                <StackPanel Name="DropDown2" Grid.Row="1" Grid.Column="1" Height="Auto" Visibility="Collapsed">
-                    <TextBlock Name="StepsToReproduce" FontSize="26" Foreground="#D4D4D4" TextWrapping="Wrap" Margin="30,10,30,30">Steps to reproduce: </TextBlock>
+                <StackPanel Name="DropDown2" Grid.Row="1" Grid.Column="1" Height="Auto" Visibility="Visible">
+                    <TextBlock Name="StepsToReproduce" FontSize="26" Foreground="#D4D4D4" TextWrapping="Wrap" Margin="10,10,30,30">Steps to reproduce: #StepsToReproduce</TextBlock>
                 </StackPanel>
                 <!--Move grey line down here-->
                 <Border Grid.RowSpan="2" Grid.Column="0" Background="#838383" Width="1.5" VerticalAlignment="Stretch" Margin="410 10 0 10"/>

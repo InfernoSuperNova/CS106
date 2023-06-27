@@ -8,7 +8,7 @@
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="AdminMenu">
 
-    <Grid>
+    <Grid Background="#1C1C1C">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
@@ -33,14 +33,14 @@
             </ScrollViewer>
 
             <Grid Grid.Column="1" >
-                <Border Name ="BugList" Visibility="Hidden" Margin ="30">
+                <Border Name ="BugList" Visibility="Hidden" Margin ="0">
                     <ScrollViewer VerticalScrollBarVisibility="Auto" >
                         <StackPanel Name="BugContainer">
 
                         </StackPanel>
                     </ScrollViewer>
                 </Border>
-                <Border Name ="PrimaryDropdown"  BorderBrush="#838383" BorderThickness="3" Margin="30" CornerRadius="20" 
+                <Border Name ="PrimaryDropdown"  BorderBrush="#838383" BorderThickness="1.5" Margin="40" CornerRadius="20" 
                         Background="#262626">
                     <Grid HorizontalAlignment="Center">
                         <TextBlock HorizontalAlignment="Center" x:Name="OptionHint" FontSize="30" Foreground="White" Margin="50"
@@ -55,7 +55,7 @@
                                                  Height="150"></local1:AddEmployeeField>
 
                         <Button Name="ExampleToggle" Click="ExampleToggle_Click" VerticalAlignment="Bottom"  Visibility="Hidden"
-                                 BorderThickness="3" BorderBrush="White" FontSize="40" Foreground="white" Background="#262626"
+                                 BorderThickness="1.5" BorderBrush="White" FontSize="40" Foreground="white" Background="#262626"
                         >
                             <Bold>+</Bold>
                         </Button>
@@ -65,24 +65,7 @@
             </Grid>
         </Grid>
 
-        <!--<Border BorderBrush="#838383" BorderThickness="0 0 0 3">
-            <Grid Grid.Column="0" Grid.Row="0" Background="#262626">
-                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <TextBlock FontSize="40" Foreground="White" Margin="0 0 60 0">
-                        <Bold>Admin</Bold>
-                    </TextBlock>
-                    <Button Background="Transparent" BorderBrush="Transparent" Foreground="Red" Width="150" FontSize="30" 
-                            Margin="0 0 60 0" FontFamily="Montserrat">
-                        <Underline>Sign Out</Underline>
-                    </Button>
-                </StackPanel>
-                <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Width="200" Height="75" Background="#407D3F" Foreground="White" Name ="NewProjectBtn" Click="NewProjectBtn_Click">
-                        New Project
-                    </Button>
-                </Grid>
-            </Grid>
-        </Border>-->
+
 
     </Grid>
 </Page>
