@@ -139,7 +139,7 @@ namespace LoginSignUp.pages
 
             foreach (ProjectDataBase.Bugs.Bug bug in bugs)
             {
-                AdminBugEdit bugEdit = new AdminBugEdit(bug.reference);
+                UserBugEdit bugEdit = new UserBugEdit(bug.reference);
                 bugEdit.Title.Text = bug.name;
                 bugEdit.Description.Text = bug.description;
                 bugEdit.TimeSpent.Text = "Time Spent: " + bug.timeSpent;
@@ -160,7 +160,7 @@ namespace LoginSignUp.pages
 
         private void UpdateProjectBugCount(string projectName)
         {
-            AdminProject projectToUpdate = adminProjects.Find(project => project.ProjectTitle.Text == projectName);
+            UserProject projectToUpdate = userProjects.Find(project => project.ProjectTitle.Text == projectName);
             int bugCount = ProjectDataBase.Bugs.GetBugCount(projectName);
             projectToUpdate.ActiveBugs.Text = "Active Bugs: " + bugCount;
         }
