@@ -119,6 +119,7 @@ namespace LoginSignUp.pages
             //Remove that from memory
             adminProjects.Remove(projectToRemove);
             ProjectField.Children.Remove(projectToRemove);
+            HideAll();
         }
 
         public delegate void SignOutMain(object sender, RoutedEventArgs e);
@@ -150,8 +151,9 @@ namespace LoginSignUp.pages
                 AdminBugEdit bugEdit = new AdminBugEdit(bug.reference);
                 bugEdit.Title.Text = bug.name;
                 bugEdit.Description.Text = bug.description;
-                bugEdit.TimeSpent.Text = bug.timeSpent;
-                bugEdit.Priority.Text = bug.priority;
+                bugEdit.TimeSpent.Text = "Time Spent: " + bug.timeSpent;
+                bugEdit.Priority.Text = "Priority: " + bug.priority;
+                bugEdit.StepsToReproduce.Text = "Steps to reproduce: " + bug.stepsToReproduce;
                 bugEdit._Delete += DeleteBug;
                 BugContainer.Children.Add(bugEdit);
                 openBugs.Add(bugEdit);
