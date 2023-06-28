@@ -105,16 +105,56 @@ namespace LoginSignUp.classes
             List<string> Users = EnumerateUserType(DataBase);
             return Users.ElementAt(index);
         }
-    }
-    public static class ProjectList
-    {
-        public static string[] Read()
+        public static void UpdateUserResponsibilities(string userName, string projectName, bool add)
         {
-            return File.ReadAllLines(@".\Database\Projects.csv");
+
+            string[] Database = Read();
+            List<String> userNames = EnumerateUserNames(Database);
+            int index = GetUserIndexByUserName(userNames, userName) + 1;
+            if (add == true)
+            {
+                // Add the project
+                Database[index] = Database[index] + "," + projectName;
+            }
+            else
+            {
+                // Remove the project
+                string[] projects = Database[index].Split(',');
+                projects = projects.Skip(3).ToArray();
+                int projectIndex = Array.IndexOf(projects, projectName);
+
+                if (projectIndex >= 0)
+                {
+                    // Remove the project if found
+                    List<string> updatedProjects = new List<string>(projects);
+                    updatedProjects.RemoveAt(projectIndex);
+
+                    // Join the updated projects back into a string
+                    Database[index] = string.Join(",", updatedProjects);
+                }
+            }
+            File.WriteAllLines(@".\Database\UserAccountData.csv", Database);
         }
-        public static void Write(string[] lines)
+        public static string[] GetAssignedUsers(string projectName)
         {
-            File.WriteAllLines(@".\Database\Projects.csv", lines);
+            string[] userDataBase = Read();
+            string[] outputUsers = new string[0];
+            foreach (string user in userDataBase)
+            {
+                string[] entries = user.Split(',');
+                string userName = entries[0];
+                entries = entries.Skip(3).ToArray();
+                foreach (string entry in entries)
+                {
+                    if (entry == projectName)
+                    {
+                        outputUsers.Append(user);
+                        continue;
+                    }
+                    
+                }
+            }
+            return outputUsers;
         }
     }
     public static class UserInput
