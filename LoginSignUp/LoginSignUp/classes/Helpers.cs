@@ -148,7 +148,8 @@ namespace LoginSignUp.classes
                 {
                     if (entry == projectName)
                     {
-                        outputUsers.Append(user);
+
+                        outputUsers = outputUsers.Append(userName).ToArray();
                         continue;
                     }
                     

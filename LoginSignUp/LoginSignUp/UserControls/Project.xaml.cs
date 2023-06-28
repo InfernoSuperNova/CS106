@@ -32,7 +32,7 @@ namespace LoginSignUp.UserControls
         
 
         
-        
+      
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             DeleteField.Children.Add(deletePrompt);

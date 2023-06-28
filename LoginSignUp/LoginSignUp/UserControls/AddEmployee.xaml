@@ -8,7 +8,7 @@
              d:DesignHeight="150" d:DesignWidth="850">
 
 
-    <Grid Width="850" Height="150" Background="#262626">
+    <Grid Width="850" Height="150" Background="#262626" >
         
         <Border BorderThickness="3" BorderBrush="White" CornerRadius="20">
             <TextBlock Foreground="White" FontSize="150" HorizontalAlignment="Center" 
