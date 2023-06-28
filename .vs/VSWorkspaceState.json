@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LoginSignUp",
+    "\\LoginSignUp\\LoginSignUp",
+    "\\LoginSignUp\\LoginSignUp\\Database",
+    "\\LoginSignUp\\LoginSignUp\\pages"
   ],
-  "SelectedNode": "\\LoginSignUp\\LoginSignUp.sln",
+  "SelectedNode": "\\LoginSignUp\\LoginSignUp\\pages\\UserMenu.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -29,7 +29,7 @@
         </Border>
 
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button x:Name="AddNewProjectBtn" Click="AddNewProjectBtn_Click"  Padding="5" Margin="0,5,5,5" Background="#407d3f" Foreground="#FFFFFF" FontSize="30" FontFamily="Kumbh Sans" FontStyle="Normal" HorizontalAlignment="Center" Width="200" Height="75">
+            <Button Name="AddNewProjectBtn" Click="AddNewProjectBtn_Click"  Padding="5" Margin="0,5,5,5" Background="#407d3f" Foreground="#FFFFFF" FontSize="30" FontFamily="Kumbh Sans" FontStyle="Normal" HorizontalAlignment="Center" Width="200" Height="75">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="#407d3f" BorderBrush="Black" BorderThickness="0" CornerRadius="8">

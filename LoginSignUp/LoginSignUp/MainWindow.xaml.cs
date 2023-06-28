@@ -25,14 +25,16 @@ namespace LoginSignUp
     {
         public AccountLogin AccountLogin;
         public AccountSignUp AccountSignUp;
-        public UserMenu UserMenu;
-        public AdminMenu AdminMenu;
+
+        public MainMenu MainMenu;
+
         public MainWindow()
         {
             AccountLogin = new AccountLogin();
             AccountSignUp = new AccountSignUp();
-            UserMenu = new UserMenu();
-            AdminMenu = new AdminMenu();
+
+            MainMenu = new MainMenu();
+
             InitializeComponent();
 
             MainWindowFrame.Content = AccountLogin;
@@ -40,9 +42,10 @@ namespace LoginSignUp
             AccountLogin._NavigateToSignUpPageBtnClick += PageSignUp;
             AccountLogin._SuccessfulLogin += GetUserAccountType;
             AccountSignUp._NavigateToLoginPageBtnClick += PageLogin;
-            AccountSignUp._SuccessfulSignup += PageUserMenu;
-            AdminMenu._SignOut += PageLogin;
-            UserMenu._SignOut += PageLogin;
+
+            AccountSignUp._SuccessfulSignup += SetUserDetails;
+            MainMenu._SignOut += PageLogin;
+
 
             ProjectDataBase.InitializeDatabase();
         }
@@ -50,19 +53,25 @@ namespace LoginSignUp
         {
             int index = UserDatabase.GetUserIndexByUserName(UserNames, UserName);
             string userType = UserDatabase.GetUserTypeByIndex(index);
+            SetUserDetails(sender, e, userType, UserName);
+            PageMenu(sender, e);
+        }
+        private void SetUserDetails(object sender, RoutedEventArgs e, string userType, string UserName)
+        {
             switch (userType)
             {
                 case "user":
-                    PageUserMenu(sender, e);
-                    UserMenu.header.UserText.Text = UserName + " : User";
+                    MainMenu.userType = "user";
+                    MainMenu.header.UserText.Text = UserName + " : User";
                     break;
                 case "admin":
-                    PageAdminMenu(sender, e);
-                    AdminMenu.header.UserText.Text = UserName + " : Admin";
+                    MainMenu.userType = "admin";
+                    MainMenu.header.UserText.Text = UserName + " : Admin";
                     break;
                 case "dev":
-                    PageUserMenu(sender, e);
-                    UserMenu.header.UserText.Text = UserName + " : Dev";
+                    MainMenu.userType = "dev";
+                    MainMenu.header.UserText.Text = UserName + " : Dev";
+
                     break;
             }
         }
@@ -74,13 +83,11 @@ namespace LoginSignUp
         {
             MainWindowFrame.Content = AccountLogin;
         }
-        public void PageUserMenu(object sender, RoutedEventArgs e)
+
+        public void PageMenu(object sender, RoutedEventArgs e)
         {
-            MainWindowFrame.Content = UserMenu;
-        }
-        public void PageAdminMenu(object sender, RoutedEventArgs e)
-        {
-            MainWindowFrame.Content = AdminMenu;
+            MainWindowFrame.Content = MainMenu;
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -73,6 +73,7 @@
     <Compile Include="classes\Config.cs" />
     <Compile Include="classes\Helpers.cs" />
     <Compile Include="classes\ProjectDataBase.cs" />
+
     <Compile Include="pages\Test Page.xaml.cs">
       <DependentUpon>Test Page.xaml</DependentUpon>
     </Compile>
@@ -84,6 +85,14 @@
     </Compile>
     <Compile Include="UserControls\AdminBugEditLess.xaml.cs">
       <DependentUpon>AdminBugEditLess.xaml</DependentUpon>
+
+    <Compile Include="classes\SafeIO.cs" />
+    <Compile Include="UserControls\EditBug.xaml.cs">
+      <DependentUpon>EditBug.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Bug.xaml.cs">
+      <DependentUpon>Bug.xaml</DependentUpon>
+
     </Compile>
     <Compile Include="UserControls\AddEmployee.xaml.cs">
       <DependentUpon>AddEmployee.xaml</DependentUpon>
@@ -97,8 +106,13 @@
     <Compile Include="UserControls\NewProject.xaml.cs">
       <DependentUpon>NewProject.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="UserControls\AdminProject.xaml.cs">
       <DependentUpon>AdminProject.xaml</DependentUpon>
+
+    <Compile Include="UserControls\Project.xaml.cs">
+      <DependentUpon>Project.xaml</DependentUpon>
+
     </Compile>
     <Compile Include="UserControls\EditAddedBugAdmin.xaml.cs">
       <DependentUpon>EditAddedBugAdmin.xaml</DependentUpon>
@@ -112,9 +126,11 @@
     <Compile Include="UserControls\Header.xaml.cs">
       <DependentUpon>Header.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="UserControls\UserProject.xaml.cs">
       <DependentUpon>UserProject.xaml</DependentUpon>
     </Compile>
+
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -135,6 +151,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+
     <Page Include="UserControls\AdminBugEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -148,6 +165,21 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\UserMenu.xaml">
+
+    <Page Include="resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EditBug.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Bug.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\MainMenu.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,10 +187,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+
     <Page Include="UserControls\AdminBugEditLess.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+
+
     <Page Include="UserControls\AddEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,7 +210,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+
     <Page Include="UserControls\AdminProject.xaml">
+
+    <Page Include="UserControls\Project.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -195,10 +234,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+
     <Page Include="UserControls\UserProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+
   </ItemGroup>
   <ItemGroup>
     <Compile Include="pages\AccountLogin.xaml.cs">
@@ -207,8 +248,13 @@
     <Compile Include="pages\AccountSignUp.xaml.cs">
       <DependentUpon>AccountSignUp.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="pages\AdminMenu.xaml.cs">
       <DependentUpon>AdminMenu.xaml</DependentUpon>
+
+    <Compile Include="pages\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
