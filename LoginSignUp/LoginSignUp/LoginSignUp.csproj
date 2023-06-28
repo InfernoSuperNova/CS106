@@ -74,6 +74,9 @@
     <Compile Include="classes\Helpers.cs" />
     <Compile Include="classes\ProjectDataBase.cs" />
     <Compile Include="classes\SafeIO.cs" />
+    <Compile Include="UserControls\EditBug.xaml.cs">
+      <DependentUpon>EditBug.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Bug.xaml.cs">
       <DependentUpon>Bug.xaml</DependentUpon>
     </Compile>
@@ -127,6 +130,10 @@
     <Page Include="resources\Styles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EditBug.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\Bug.xaml">
       <SubType>Designer</SubType>

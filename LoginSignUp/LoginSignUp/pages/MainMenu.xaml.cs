@@ -151,12 +151,7 @@ namespace LoginSignUp.pages
 
             foreach (ProjectDataBase.Bugs.Bug bug in bugs)
             {
-                Bug bugEdit = new Bug(bug.reference);
-                bugEdit.Title.Text = bug.name;
-                bugEdit.Description.Text = bug.description;
-                bugEdit.TimeSpent.Text = "Time Spent: " + bug.timeSpent;
-                bugEdit.Priority.Text = "Priority: " + bug.priority;
-                bugEdit.StepsToReproduce.Text = "Steps to reproduce: " + bug.stepsToReproduce;
+                Bug bugEdit = new Bug(bug, projectName);
                 bugEdit.SetUserType(userType);
                 bugEdit._Delete += DeleteBug;
                 BugContainer.Children.Add(bugEdit);
@@ -168,7 +163,7 @@ namespace LoginSignUp.pages
         {
 
             ProjectDataBase.Bugs.DeleteBug(currentProject, reference);
-            Bug bugToRemove = openBugs.Find(project => project.reference == reference);
+            Bug bugToRemove = openBugs.Find(project => project.bugDetails.reference == reference);
             BugContainer.Children.Remove(bugToRemove);
             openBugs.Remove(bugToRemove);
             UpdateProjectBugCount(currentProject);

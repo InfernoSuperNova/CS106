@@ -1,0 +1,133 @@
+﻿<UserControl x:Class="LoginSignUp.UserControls.EditBug"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LoginSignUp.UserControls"
+             xmlns:effects="clr-namespace:System.Windows.Media.Effects;assembly=PresentationCore"
+             mc:Ignorable="d" 
+             >
+    <Border Background="#262626"
+                    BorderBrush="#838383"
+                    BorderThickness="1.5"
+                    CornerRadius="20">
+        <Grid Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="352*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--Bug Name-->
+            <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="35" VerticalAlignment="Top" Height="50">
+                <Border Background="#1E1E1E" BorderBrush="DarkGray"  CornerRadius="15"
+           BorderThickness="0" ClipToBounds="True" >
+                    <Border Background="Transparent" BorderBrush="#262626" CornerRadius="20"
+              BorderThickness="10" Margin="-10">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="16" Opacity="1" Color="Black"/>
+                        </Border.Effect>
+
+                    </Border>
+                </Border>
+                <Grid >
+                    <TextBlock x:Name="BugNameWatermark" Margin="20,3,20,3" FontSize="30" Foreground="#757575">Bug Name...</TextBlock>
+                    <TextBox TextWrapping="Wrap" Name="BugName" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" CaretBrush="#D4D4D4" TextChanged="BugName_TextChanged" Cursor="IBeam" ></TextBox>
+                </Grid>
+            </Grid>
+
+            <!--Priority-->
+            <Grid Grid.Row="1" Background="Transparent" VerticalAlignment="Top" Margin="35 105 20 35" Height="50">
+                <Border Background="#1E1E1E" BorderBrush="DarkGray" CornerRadius="15"
+           BorderThickness="0" ClipToBounds="True" >
+                    <Border Background="Transparent" BorderBrush="#262626" CornerRadius="20"
+              BorderThickness="10" Margin="-10">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="16" Opacity="1" Color="Black"/>
+                        </Border.Effect>
+                    </Border>
+                </Border>
+                <Grid>
+                    <TextBlock x:Name="BugPriorityWatermark" Margin="20,3,20,3" FontSize="30" Foreground="#757575">Priority...</TextBlock>
+                    <TextBox TextWrapping="Wrap" Name="BugPriority" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" CaretBrush="#D4D4D4" TextChanged="BugPriority_TextChanged" Cursor="IBeam" ></TextBox>
+                </Grid>
+            </Grid>
+
+            <!--Time Spent-->
+            <Grid Grid.Row="1" Grid.Column="1" Background="Transparent" VerticalAlignment="Top" Margin="20 105 35 35" Height="50">
+                <Border Background="#1E1E1E" BorderBrush="DarkGray" CornerRadius="15"
+           BorderThickness="0" ClipToBounds="True" >
+                    <Border Background="Transparent" BorderBrush="#262626" CornerRadius="20"
+              BorderThickness="10" Margin="-10">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="16" Opacity="1" Color="Black"/>
+                        </Border.Effect>
+                    </Border>
+                </Border>
+                <Grid >
+                    <TextBlock x:Name="BugTimeSpentWatermark" Margin="20,3,20,3" FontSize="30" Foreground="#757575">Time Spent...</TextBlock>
+                    <TextBox TextWrapping="Wrap" Name="BugTimeSpent" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" CaretBrush="#D4D4D4" TextChanged="BugTimeSpent_TextChanged" Cursor="IBeam" ></TextBox>
+                </Grid>
+            </Grid>
+
+            <!--Description-->
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" Background="Transparent" Margin="33,65,37,235" Height="175">
+                <Border Background="#1E1E1E" BorderBrush="DarkGray"  CornerRadius="15"
+           BorderThickness="0" ClipToBounds="True" >
+                    <Border Background="Transparent" BorderBrush="#262626" CornerRadius="20"
+              BorderThickness="10" Margin="-10">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="16" Opacity="1" Color="Black"/>
+                        </Border.Effect>
+                    </Border>
+                </Border>
+                <Grid>
+                    <TextBlock x:Name="BugDescriptionWatermark" Margin="20,3,20,3" FontSize="30" Foreground="#757575">Description...</TextBlock>
+                    <TextBox TextWrapping="Wrap" Name="BugDescription" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" CaretBrush="#D4D4D4" TextChanged="BugDescription_TextChanged" Cursor="IBeam" ></TextBox>
+                </Grid>
+            </Grid>
+
+
+            <!--Steps to reproduce-->
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" Background="Transparent" Margin="33,370,37,154" Height="175">
+                <Border Background="#1E1E1E" BorderBrush="DarkGray"  CornerRadius="15"
+           BorderThickness="0" ClipToBounds="True" >
+                    <Border Background="Transparent" BorderBrush="#262626" CornerRadius="20"
+              BorderThickness="10" Margin="-10">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="16" Opacity="1" Color="Black"/>
+                        </Border.Effect>
+                    </Border>
+                </Border>
+                <Grid>
+                    <TextBlock x:Name="BugStepsToReproduceWatermark" Margin="20,3,20,3" FontSize="30" Foreground="#757575">Steps to reproduce...</TextBlock>
+                    <TextBox TextWrapping="Wrap" Name="BugStepsToReproduce" Background="Transparent" BorderThickness="0" Margin="20,3,20,3" FontSize="30" Foreground="#D4D4D4" CaretBrush="#D4D4D4" TextChanged="BugStepsToReproduce_TextChanged" Cursor="IBeam" ></TextBox>
+                </Grid>
+            </Grid>
+
+            <Border Grid.ColumnSpan="2" Margin="350,570,350,54" Height="70" CornerRadius="10" Grid.Row="1">
+
+                <Button Name ="AddBtn" Click="AddBtn_Click" Grid.Column="0" BorderThickness="0" Background="#407D3F" Foreground="White" Padding="20 5 20 10" FontSize="20"  Width="100"
+                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Effect>
+                        <effects:DropShadowEffect Color="Black" Direction="-45" ShadowDepth="5.65" Opacity="0.8" BlurRadius="10" />
+                    </Button.Effect>
+
+                    <Bold>Save</Bold>
+
+                </Button>
+            </Border>
+
+        </Grid>
+    </Border>
+</UserControl>

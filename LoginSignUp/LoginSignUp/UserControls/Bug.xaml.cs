@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginSignUp.classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,11 +22,18 @@ namespace LoginSignUp.UserControls
     /// </summary>
     public partial class Bug : UserControl
     {
-        public string reference = "";
-        public Bug(string _reference)
+        public string currentProject = "";
+        public ProjectDataBase.Bugs.Bug bugDetails;
+        public Bug(ProjectDataBase.Bugs.Bug bug, string _currentProject)
         {
-            reference = _reference;
             InitializeComponent();
+            currentProject = _currentProject;
+            Title.Text = bug.name;
+            Description.Text = bug.description;
+            TimeSpent.Text = "Time Spent: " + bug.timeSpent;
+            Priority.Text = "Priority: " + bug.priority;
+            StepsToReproduce.Text = "Steps to reproduce: " + bug.stepsToReproduce;
+            bugDetails = bug;
         }
 
         private void AdminProject_Loaded(object sender, RoutedEventArgs e)
@@ -37,7 +45,7 @@ namespace LoginSignUp.UserControls
         public event Delete _Delete;
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            _Delete(sender, e, reference);
+            _Delete(sender, e, bugDetails.reference);
         }
 
         private void DropDownBtn_Click(object sender, RoutedEventArgs e)
@@ -75,6 +83,46 @@ namespace LoginSignUp.UserControls
                 EditBugBtn.Visibility = Visibility.Visible;
                 DeleteBtn.Visibility = Visibility.Visible;
             }
+        }
+
+        private void Bug_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+        public void InitializeBug(ProjectDataBase.Bugs.Bug bug)
+        {
+            bugDetails = bug;
+            Title.Text = bug.name;
+            Description.Text = bug.description;
+            TimeSpent.Text = "Time Spent: " + bug.timeSpent;
+            Priority.Text = "Priority: " + bug.priority;
+            StepsToReproduce.Text = "Steps to reproduce: " + bug.stepsToReproduce;
+
+        }
+        public void SetBugData(ProjectDataBase.Bugs.Bug bug)
+        {
+
+        }
+
+        private void EditBugBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Edit.Visibility = Visibility.Visible;
+            EditBug.currentProject = currentProject;
+            EditBug.Reference = bugDetails.reference;
+            EditBug.BugName.Text = bugDetails.name;
+            EditBug.BugDescription.Text = bugDetails.description;
+            EditBug.BugPriority.Text = bugDetails.priority;
+            EditBug.BugTimeSpent.Text = bugDetails.timeSpent;
+            EditBug.BugStepsToReproduce.Text = bugDetails.stepsToReproduce;
+            MainPanel.Visibility = Visibility.Collapsed;
+        }
+
+        private void EditBug__SaveBugBtn(object sender, RoutedEventArgs e, ProjectDataBase.Bugs.Bug bug, string projectName)
+        {
+            Edit.Visibility = Visibility.Collapsed;
+            MainPanel.Visibility = Visibility.Visible;
+            ProjectDataBase.Bugs.UpdateBug(projectName, bugDetails.reference, bug);
+            InitializeBug(bug);
         }
     }
 }
