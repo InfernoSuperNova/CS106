@@ -50,6 +50,7 @@ namespace LoginSignUp
             AccountSignUp._NavigateToLoginPageBtnClick += PageLogin;
             AccountSignUp._SuccessfulSignup += SignUpSuccess;
             MainMenu._SignOut += PageLogin;
+            MainMenu._AdminManageUsers += PageManageUsers;
 
             ProjectDataBase.InitializeDatabase();
         }
@@ -93,6 +94,10 @@ namespace LoginSignUp
         public void PageMenu(object sender, RoutedEventArgs e)
         {
             MainWindowFrame.Content = MainMenu;
+        }
+        private void PageManageUsers(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("yes!");
         }
     }
 }

@@ -47,15 +47,25 @@ namespace LoginSignUp.UserControls
             if (type == "user")
             {
                 AddNewProjectBtn.Visibility = Visibility.Collapsed;
+                AdminManageUsers.Visibility = Visibility.Collapsed;
             }
             else if (type == "dev")
             {
                 AddNewProjectBtn.Visibility = Visibility.Collapsed;
+                AdminManageUsers.Visibility = Visibility.Collapsed;
             }
             else if (type == "admin")
             {
                 AddNewProjectBtn.Visibility = Visibility.Visible;
+                AdminManageUsers.Visibility = Visibility.Visible;
             }
+        }
+
+        public delegate void ManageUsers(object sender, RoutedEventArgs e);
+        public event ManageUsers _ManageUsers;
+        private void AdminManageUsers_Click(object sender, RoutedEventArgs e)
+        {
+            _ManageUsers(sender, e);
         }
     }
 }

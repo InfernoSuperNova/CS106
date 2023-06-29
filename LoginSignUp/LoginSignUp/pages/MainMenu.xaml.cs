@@ -41,6 +41,8 @@ namespace LoginSignUp.pages
             AddBugMenu._AddBugBtn += AddBug;
             header._NewProject += NewProject;
             header._SignOut += SignOut;
+            header._ManageUsers += AdminManageUsers;
+            
             lines = ProjectDataBase.ReadNoHeader();
             foreach (string name in lines)
             {
@@ -61,7 +63,12 @@ namespace LoginSignUp.pages
 
         }
 
-
+        public delegate void AdminMainManageUsers(object sender, RoutedEventArgs e);
+        public event AdminMainManageUsers _AdminManageUsers;
+        private void AdminManageUsers(object sender, RoutedEventArgs e)
+        {
+            _AdminManageUsers(sender, e);
+        }
         //visability toggle run whatever code here
         private void Testing_ToggleVisibility(object sender, EventArgs e, string project)
         {
