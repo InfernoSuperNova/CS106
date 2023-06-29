@@ -74,6 +74,9 @@
     <Compile Include="classes\Helpers.cs" />
     <Compile Include="classes\ProjectDataBase.cs" />
     <Compile Include="classes\SafeIO.cs" />
+    <Compile Include="pages\FirstTimeSetup.xaml.cs">
+      <DependentUpon>FirstTimeSetup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\EditBug.xaml.cs">
       <DependentUpon>EditBug.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
     <Page Include="pages\AccountLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\FirstTimeSetup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="pages\AccountSignUp.xaml">
       <SubType>Designer</SubType>
