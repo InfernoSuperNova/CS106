@@ -25,5 +25,10 @@ namespace LoginSignUp.UserControls
         {
             InitializeComponent();
         }
+
+        private void AddEmployeeBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

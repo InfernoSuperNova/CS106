@@ -73,16 +73,16 @@ namespace LoginSignUp.pages
         private void OpenUserManagementMenu(object sender, EventArgs e, string project)
         {
             SetVisible(Fields.EmployeeList);
-            EmployeeList.Children.Clear();
+            EmployeeContainer.Children.Clear();
             string[] users = UserDatabase.GetAssignedUsers(project);
             foreach (string user in users)
             {
                 Employee employee = new Employee();
                 employee.EmployeeName.Text = user;
-                EmployeeList.Children.Add(employee);
+                EmployeeContainer.Children.Add(employee);
             }
             AddEmployee addEmployee = new AddEmployee();
-            EmployeeList.Children.Add(addEmployee);
+            EmployeeContainer.Children.Add(addEmployee);
         }
         private void ExampleToggle_Click(object sender, RoutedEventArgs e)
         {
@@ -209,7 +209,6 @@ namespace LoginSignUp.pages
             CloseEditBugMenu();
             EmployeeList.Visibility = Visibility.Hidden;
             AddEmployeeBtn.Visibility = Visibility.Hidden;
-            ExampleToggle.Visibility = Visibility.Hidden;
             BugList.Visibility = Visibility.Hidden;
             AddBugMenu.Disable();
             OptionHint.Visibility = Visibility.Visible;
@@ -232,10 +231,8 @@ namespace LoginSignUp.pages
                     AddEmployeeBtn.Visibility = Visibility.Visible;
                     break;
                 case Fields.EmployeeList:
+                    PrimaryDropdown.Visibility = Visibility.Hidden;
                     EmployeeList.Visibility = Visibility.Visible;
-                    break;
-                case Fields.ExampleToggle:
-                    ExampleToggle.Visibility = Visibility.Visible;
                     break;
                 default:
                     // Handle other cases or throw an exception if necessary
@@ -248,7 +245,6 @@ namespace LoginSignUp.pages
             EditBug,
             AddEmployeeBtn,
             EmployeeList,
-            ExampleToggle,
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
