@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:LoginSignUp.pages" xmlns:local1="clr-namespace:LoginSignUp.UserControls"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
-      Title="AdminMenu">
+      Title="MainMenu">
 
     <Page.Resources>
         <ResourceDictionary>
