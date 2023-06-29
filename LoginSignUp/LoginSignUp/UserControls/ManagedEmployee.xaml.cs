@@ -78,5 +78,11 @@ namespace LoginSignUp.UserControls
             UserDatabase.SetUserType(EmployeeName.Text, "user");
             UserType.Text = "user";
         }
+        public delegate void DeleteEmployee(object sender, RoutedEventArgs e, string employeeName);
+        public event DeleteEmployee _DeleteEmployee;
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _DeleteEmployee(sender, e, EmployeeName.Text);
+        }
     }
 }

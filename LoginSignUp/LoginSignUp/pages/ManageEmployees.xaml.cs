@@ -23,6 +23,7 @@ namespace LoginSignUp.pages
     /// </summary>
     public partial class ManageEmployees : Page
     {
+        List<ManagedEmployee> employees;
         public ManageEmployees()
         {
             InitializeComponent();
@@ -32,14 +33,17 @@ namespace LoginSignUp.pages
         private void PopulateEmployeeList()
         {
             UserField.Children.Clear();
+            employees = new List<ManagedEmployee>();
             List<UserDatabase.User> users = UserDatabase.GetUsers();
             foreach (UserDatabase.User user in users)
             {
                 ManagedEmployee employee = new ManagedEmployee();
+
                 employee.EmployeeName.Text = user.name;
                 employee.UserType.Text = user.type;
                 employee.PasswordField.Text = user.password;
-
+                employee._DeleteEmployee += DeleteEmployee;
+                employees.Add(employee);
                 string assignedProjects = "Assigned Projects: ";
                 foreach (string project in user.projects)
                 {
@@ -62,6 +66,13 @@ namespace LoginSignUp.pages
         private void ReturnButton_Click(object sender, RoutedEventArgs e)
         {
             _ReturnToMenu(sender, e);
+        }
+        private void DeleteEmployee(object sender, RoutedEventArgs e, string userName)
+        {
+            ManagedEmployee employeeToRemove = employees.Find(employee => employee.EmployeeName.Text == userName);
+            employees.Remove(employeeToRemove);
+            UserField.Children.Remove(employeeToRemove);
+            UserDatabase.DeleteUser(userName);
         }
     }
 }
