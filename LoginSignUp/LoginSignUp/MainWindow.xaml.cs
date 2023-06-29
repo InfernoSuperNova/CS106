@@ -23,6 +23,7 @@ namespace LoginSignUp
     /// </summary>
     public partial class MainWindow : Window
     {
+        public FirstTimeSetup FirstTimeSetup;
         public AccountLogin AccountLogin;
         public AccountSignUp AccountSignUp;
         public MainMenu MainMenu;
@@ -34,6 +35,11 @@ namespace LoginSignUp
             InitializeComponent();
 
             MainWindowFrame.Content = AccountLogin;
+            if (!UserDatabase.IsDatabaseContainData())
+            {
+                FirstTimeSetup = new FirstTimeSetup();
+                MainWindowFrame.Content = FirstTimeSetup;
+            }
 
             AccountLogin._NavigateToSignUpPageBtnClick += PageSignUp;
             AccountLogin._SuccessfulLogin += GetUserAccountType;
