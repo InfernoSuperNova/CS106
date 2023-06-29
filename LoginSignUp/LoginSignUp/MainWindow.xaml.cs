@@ -27,24 +27,28 @@ namespace LoginSignUp
         public AccountLogin AccountLogin;
         public AccountSignUp AccountSignUp;
         public MainMenu MainMenu;
+
         public MainWindow()
         {
+            InitializeComponent();
             AccountLogin = new AccountLogin();
             AccountSignUp = new AccountSignUp();
             MainMenu = new MainMenu();
-            InitializeComponent();
-
             MainWindowFrame.Content = AccountLogin;
             if (!UserDatabase.IsDatabaseContainData())
             {
                 FirstTimeSetup = new FirstTimeSetup();
+                FirstTimeSetup._SuccessfulSignup += SignUpSuccess;
                 MainWindowFrame.Content = FirstTimeSetup;
             }
+            
+
+            
 
             AccountLogin._NavigateToSignUpPageBtnClick += PageSignUp;
             AccountLogin._SuccessfulLogin += GetUserAccountType;
             AccountSignUp._NavigateToLoginPageBtnClick += PageLogin;
-            AccountSignUp._SuccessfulSignup += SetUserDetails;
+            AccountSignUp._SuccessfulSignup += SignUpSuccess;
             MainMenu._SignOut += PageLogin;
 
             ProjectDataBase.InitializeDatabase();
@@ -55,6 +59,10 @@ namespace LoginSignUp
             string userType = UserDatabase.GetUserTypeByIndex(index);
             SetUserDetails(sender, e, userType, UserName);
             PageMenu(sender, e);
+        }
+        private void SignUpSuccess(object sender, RoutedEventArgs e, string userType, string UserName)
+        {
+            PageLogin(sender, e);
         }
         private void SetUserDetails(object sender, RoutedEventArgs e, string userType, string UserName)
         {
