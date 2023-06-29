@@ -5,10 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LoginSignUp.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="850">
+             d:DesignHeight="150" Width="850">
 
 
-    <Grid Width="850" Height="150" Background="#262626" >
+    <Grid Width="780" Height="150" Background="#262626" Margin="0 0 63 0">
         
         <Border BorderThickness="3" BorderBrush="White" CornerRadius="20">
             <TextBlock Foreground="White" FontSize="150" HorizontalAlignment="Center" 
