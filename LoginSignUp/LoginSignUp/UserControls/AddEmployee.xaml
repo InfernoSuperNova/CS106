@@ -9,8 +9,8 @@
 
 
     <Grid Width="780" Height="150" Background="#262626" Margin="0 0 63 0">
-        
-        <Border BorderThickness="3" BorderBrush="White" CornerRadius="20">
+
+        <Border BorderBrush="#838383" BorderThickness="1.5" CornerRadius="20">
             <TextBlock Foreground="White" FontSize="150" HorizontalAlignment="Center" 
                        VerticalAlignment="Center" Margin="0 0 0 40">+</TextBlock>
         </Border>
