@@ -10,8 +10,11 @@
         <Border BorderBrush="#838383" BorderThickness="1.5" CornerRadius="20" 
                 Background="#262626">
             <Grid VerticalAlignment="Center">
-                <TextBlock Foreground="White" FontSize="40" Padding="40 7 0 0" Name="EmployeeName">John</TextBlock>
-                <Image Source="/Icons/bin.png" Height="75" HorizontalAlignment="Right" Margin="0 0 40 0"></Image>
+                <TextBlock Foreground="White" FontSize="40" Padding="40 7 0 0" Name="EmployeeName">#EmployeeName</TextBlock>
+                <Button Name="DeleteBtn" Click="DeleteBtn_Click" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right">
+                    <Image Source="/Icons/bin.png" Height="75" HorizontalAlignment="Right" Margin="0 0 40 0"></Image>
+                </Button>
+                
             </Grid>
         </Border>
         

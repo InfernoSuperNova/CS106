@@ -6,11 +6,17 @@
              xmlns:local="clr-namespace:LoginSignUp.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="150" MaxHeight="150" Width="850" Margin="0 0 0 50">
+    
     <Border BorderBrush="#838383" BorderThickness="1.5" CornerRadius="20" Background="#262626">
-        <Button x:Name="AddEmployeeBtn" Click="AddEmployeeBtn_Click" Background="Transparent" BorderThickness="0">
-            <TextBlock Foreground="White" FontSize="150" HorizontalAlignment="Center" 
+        <Grid>
+            
+            <Button x:Name="AddEmployeeBtn" Click="AddEmployeeBtn_Click" Background="Transparent" BorderThickness="0">
+                <TextBlock Foreground="White" FontSize="150" HorizontalAlignment="Center" 
                        VerticalAlignment="Center" Margin="0 0 0 40">+</TextBlock>
-        </Button>
+            </Button>
+            <local:AddEmployeeField x:Name ="AddEmployeeField" Visibility="Hidden"></local:AddEmployeeField>
+        </Grid>
+        
     </Border>
 </UserControl>
 

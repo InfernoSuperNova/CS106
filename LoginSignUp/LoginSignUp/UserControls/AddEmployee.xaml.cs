@@ -20,15 +20,29 @@ namespace LoginSignUp.UserControls
     /// Interaction logic for AddEmployee.xaml
     /// </summary>
     public partial class AddEmployee : UserControl
-    { 
+    {
         public AddEmployee()
         {
             InitializeComponent();
+            AddEmployeeField._ConfirmAddUser += ConfirmAddUser;
+            AddEmployeeField._CancelAddUser += CancelAddUser;
         }
 
         private void AddEmployeeBtn_Click(object sender, RoutedEventArgs e)
         {
+            AddEmployeeField.Visibility = Visibility.Visible;
+        }
+        private void CancelAddUser(object sender, RoutedEventArgs e)
+        {
+            AddEmployeeField.Visibility = Visibility.Hidden;
+        }
 
+        public delegate void ConfirmAddUserMaster(object sender, RoutedEventArgs e, string userName);
+        public event ConfirmAddUserMaster _ConfirmAddUserMaster;
+        private void ConfirmAddUser(object sender, RoutedEventArgs e, string user)
+        {
+            AddEmployeeField.Visibility = Visibility.Hidden;
+            _ConfirmAddUserMaster(sender, e, user);
         }
     }
 }

@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:LoginSignUp.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="850">
-    <Grid Background="#262626">
-        <Border BorderBrush="#838383" BorderThickness="1.5" CornerRadius="20">
+    <Grid >
+        <Border BorderBrush="#838383" Background="#262626" BorderThickness="1.5" CornerRadius="20">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*"></ColumnDefinition>
@@ -15,25 +15,19 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0">
-                    <TextBox Width="500" Height="30" Margin="0 30 0 0">
+                    <TextBox Width="500" Height="30" Margin="0 30 0 0" Name="UsernameInput">
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
                             </Style>
                         </TextBox.Resources>
                     </TextBox>
-                    <TextBox Width="500" Height="30" Margin="0 30 0 0">
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="10"/>
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
+                    
                 </StackPanel>
 
                 <StackPanel HorizontalAlignment="Right" Grid.Column="1">
                     <Button Width="150" Height="50" Background="#407D3F" Foreground="White" 
-                    Margin="0 15 30 20" FontSize="20">
+                    Margin="0 15 30 20" FontSize="20" Name="AddBtn" Click="AddBtn_Click">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>

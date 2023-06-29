@@ -24,5 +24,11 @@ namespace LoginSignUp.UserControls
         {
             InitializeComponent();
         }
+        public delegate void DeleteUser(object sender, RoutedEventArgs e, string userName);
+        public event DeleteUser _DeleteUser;
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _DeleteUser(sender, e, EmployeeName.Text);
+        }
     }
 }

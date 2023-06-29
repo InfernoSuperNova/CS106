@@ -25,11 +25,21 @@ namespace LoginSignUp.UserControls
             InitializeComponent();
         }
 
-        public event EventHandler CloseAddEmployeeField;
 
+        public delegate void CancelAddUser(object sender, RoutedEventArgs e);
+        public event CancelAddUser _CancelAddUser;
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
         {
-            CloseAddEmployeeField?.Invoke(this, e);
+            _CancelAddUser(sender, e);
+            UsernameInput.Text = null;
+        }
+
+        public delegate void ConfirmAddUser(object sender, RoutedEventArgs e, string userName);
+        public event ConfirmAddUser _ConfirmAddUser;
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _ConfirmAddUser(sender, e, UsernameInput.Text);
+            UsernameInput.Text = null;
         }
     }
 }

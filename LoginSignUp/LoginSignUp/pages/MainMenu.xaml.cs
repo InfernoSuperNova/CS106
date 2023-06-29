@@ -29,6 +29,8 @@ namespace LoginSignUp.pages
         private string[] lines;
         private List<Project> projects;
         private List<Bug> openBugs;
+        private List<Employee> employees;
+        AddEmployee addEmployee;
         NewProject newProject;
         public MainMenu()
         {
@@ -38,6 +40,7 @@ namespace LoginSignUp.pages
 
             projects = new List<Project>();
             openBugs = new List<Bug>();
+            employees = new List<Employee>();
             AddBugMenu._AddBugBtn += AddBug;
             header._NewProject += NewProject;
             header._SignOut += SignOut;
@@ -72,6 +75,7 @@ namespace LoginSignUp.pages
         //visability toggle run whatever code here
         private void OpenUserManagementMenu(object sender, EventArgs e, string project)
         {
+            
             SetVisible(Fields.EmployeeList);
             EmployeeContainer.Children.Clear();
             string[] users = UserDatabase.GetAssignedUsers(project);
@@ -79,10 +83,44 @@ namespace LoginSignUp.pages
             {
                 Employee employee = new Employee();
                 employee.EmployeeName.Text = user;
+                employee._DeleteUser += RemoveUserFromProject;
+                employees.Add(employee);
                 EmployeeContainer.Children.Add(employee);
             }
-            AddEmployee addEmployee = new AddEmployee();
+            addEmployee = new AddEmployee();
+            addEmployee._ConfirmAddUserMaster += AddUserToProject;
             EmployeeContainer.Children.Add(addEmployee);
+            currentProject = project;
+        }
+        private void AddUserToProject(object sender, RoutedEventArgs e, string userName)
+        {
+            int result = UserDatabase.UpdateUserResponsibilities(userName, currentProject, true);
+            switch(result)
+            {
+                case 0:
+                    EmployeeContainer.Children.Remove(addEmployee);
+                    Employee employee = new Employee();
+                    employee.EmployeeName.Text = userName;
+                    employee._DeleteUser += RemoveUserFromProject;
+                    employees.Add(employee);
+                    EmployeeContainer.Children.Add(employee);
+                    EmployeeContainer.Children.Add(addEmployee);
+                    break;
+                case 1:
+                    MessageBox.Show("Couldn't find a user with that name!");
+                    break;
+                case 2:
+                    MessageBox.Show("Couldn't find a project with that name for the user!");
+                    break;
+            }
+        }
+        private void RemoveUserFromProject(object sender, RoutedEventArgs e, string userName)
+        {
+            Employee employeeToRemove = employees.Find(employee => employee.EmployeeName.Text == userName);
+            //Remove that from memory
+            employees.Remove(employeeToRemove);
+            EmployeeContainer.Children.Remove(employeeToRemove);
+            UserDatabase.UpdateUserResponsibilities(userName, currentProject, false);
         }
         private void ExampleToggle_Click(object sender, RoutedEventArgs e)
         {
