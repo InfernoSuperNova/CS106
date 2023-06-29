@@ -47,23 +47,7 @@ namespace LoginSignUp.pages
             header._ManageUsers += AdminManageUsers;
             
             lines = ProjectDataBase.ReadNoHeader();
-            foreach (string name in lines)
-            {
-                var project = new Project();
-
-                // Add the dynamic object to the stack panel
-                ProjectField.Children.Add(project);
-                project.ProjectTitle.Text = name;
-                project.ActiveBugs.Text = "Active Bugs: " + ProjectDataBase.Bugs.GetBugCount(name).ToString();
-                project._DeleteProject += DeleteProject;
-                project._EditBugMenu += OpenEditBugMenu;
-                project._AddBugProject += OpenNewBugMenu;
-                project._ToggleEmployees += OpenUserManagementMenu;
-                //Store the project in array
-                projects.Add(project);
-
-            }
-
+            
         }
 
         public delegate void AdminMainManageUsers(object sender, RoutedEventArgs e);
@@ -111,6 +95,9 @@ namespace LoginSignUp.pages
                     break;
                 case 2:
                     MessageBox.Show("Couldn't find a project with that name for the user!");
+                    break;
+                case 3:
+                    MessageBox.Show("This user is already assigned to this project!");
                     break;
             }
         }

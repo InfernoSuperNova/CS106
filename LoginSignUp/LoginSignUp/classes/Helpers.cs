@@ -196,6 +196,11 @@ namespace LoginSignUp.classes
             }
             if (add == true)
             {
+                List<string> projects = Database[index].Split(',').Skip(3).ToList();
+                if (projects.Contains(projectName))
+                {
+                    return 3;
+                }
                 // Add the project
                 Database[index] = Database[index] + "," + projectName;
                 if (result != 1)
@@ -220,6 +225,7 @@ namespace LoginSignUp.classes
                     result = 0;
                     // Remove the project if found
                     List<string> updatedProjects = new List<string>(projects);
+
                     updatedProjects.RemoveAt(projectIndex);
 
                     // Join the updated projects back into a string
