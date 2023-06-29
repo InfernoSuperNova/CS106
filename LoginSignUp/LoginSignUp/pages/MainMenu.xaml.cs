@@ -55,7 +55,7 @@ namespace LoginSignUp.pages
                 project._DeleteProject += DeleteProject;
                 project._EditBugMenu += OpenEditBugMenu;
                 project._AddBugProject += OpenNewBugMenu;
-                project._ToggleEmployees += Testing_ToggleVisibility;
+                project._ToggleEmployees += OpenUserManagementMenu;
                 //Store the project in array
                 projects.Add(project);
 
@@ -70,9 +70,19 @@ namespace LoginSignUp.pages
             _AdminManageUsers(sender, e);
         }
         //visability toggle run whatever code here
-        private void Testing_ToggleVisibility(object sender, EventArgs e, string project)
+        private void OpenUserManagementMenu(object sender, EventArgs e, string project)
         {
-            SetVisible(Fields.ExampleToggle);
+            SetVisible(Fields.EmployeeList);
+            EmployeeList.Children.Clear();
+            string[] users = UserDatabase.GetAssignedUsers(project);
+            foreach (string user in users)
+            {
+                Employee employee = new Employee();
+                employee.EmployeeName.Text = user;
+                EmployeeList.Children.Add(employee);
+            }
+            AddEmployee addEmployee = new AddEmployee();
+            EmployeeList.Children.Add(addEmployee);
         }
         private void ExampleToggle_Click(object sender, RoutedEventArgs e)
         {
@@ -197,7 +207,7 @@ namespace LoginSignUp.pages
         private void HideAll()
         {
             CloseEditBugMenu();
-            AddEmployee.Visibility = Visibility.Hidden;
+            EmployeeList.Visibility = Visibility.Hidden;
             AddEmployeeBtn.Visibility = Visibility.Hidden;
             ExampleToggle.Visibility = Visibility.Hidden;
             BugList.Visibility = Visibility.Hidden;
@@ -221,8 +231,8 @@ namespace LoginSignUp.pages
                 case Fields.AddEmployeeBtn:
                     AddEmployeeBtn.Visibility = Visibility.Visible;
                     break;
-                case Fields.AddEmployee:
-                    AddEmployee.Visibility = Visibility.Visible;
+                case Fields.EmployeeList:
+                    EmployeeList.Visibility = Visibility.Visible;
                     break;
                 case Fields.ExampleToggle:
                     ExampleToggle.Visibility = Visibility.Visible;
@@ -237,7 +247,7 @@ namespace LoginSignUp.pages
             AddBug,
             EditBug,
             AddEmployeeBtn,
-            AddEmployee,
+            EmployeeList,
             ExampleToggle,
         }
 

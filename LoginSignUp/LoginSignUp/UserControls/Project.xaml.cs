@@ -29,10 +29,7 @@ namespace LoginSignUp.UserControls
             deletePrompt._CancelDelete += CancelDelete;
             deletePrompt._ConfirmDelete += ConfirmDelete;
         }
-        
 
-        
-        
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             DeleteField.Children.Add(deletePrompt);

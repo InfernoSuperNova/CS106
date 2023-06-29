@@ -5,12 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LoginSignUp.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="900">
-    <Grid>
-        <Border BorderBrush="#838383" BorderThickness="3" CornerRadius="20" 
+             d:DesignHeight="150" d:DesignWidth="900" Margin="0 1 0 40">
+    <Grid Height="115" Margin="0 0 20 0">
+        <Border BorderBrush="#838383" BorderThickness="1.5" CornerRadius="20" 
                 Background="#262626">
             <Grid VerticalAlignment="Center">
-                <TextBlock Foreground="White" FontSize="40" Padding="40 0 0 0">John</TextBlock>
+                <TextBlock Foreground="White" FontSize="40" Padding="40 7 0 0" Name="EmployeeName">John</TextBlock>
                 <Image Source="/Icons/bin.png" Height="75" HorizontalAlignment="Right" Margin="0 0 40 0"></Image>
             </Grid>
         </Border>

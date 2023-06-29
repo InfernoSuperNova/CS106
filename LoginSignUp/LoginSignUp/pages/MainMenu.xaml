@@ -73,11 +73,18 @@
                             of the projects to get started
                         </TextBlock>
                         <local1:AddEmployee x:Name="AddEmployeeBtn" Visibility="Collapsed"></local1:AddEmployee>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="40 40 20 40">
+                            <ScrollViewer.Resources>
+                                <Style TargetType="ScrollBar" BasedOn="{StaticResource CustomScrollbarStyle}">
+                                </Style>
+                            </ScrollViewer.Resources>
+                            <StackPanel Name="EmployeeList" Visibility="Collapsed">
+                                
+                            </StackPanel>
+                        </ScrollViewer>
                         <local1:AddBug x:Name="AddBugMenu" Visibility="Collapsed"></local1:AddBug>
-                        <local1:AddEmployeeField x:Name="AddEmployee" VerticalAlignment="Bottom" Visibility="Hidden" Width="850"
-                                                 Height="150"></local1:AddEmployeeField>
 
-                        <Button Name="ExampleToggle" Click="ExampleToggle_Click" VerticalAlignment="Bottom"  Visibility="Hidden"
+                        <Button Name="ExampleToggle" Click="ExampleToggle_Click" VerticalAlignment="Bottom" Visibility="Hidden"
                                  BorderThickness="1.5" BorderBrush="White" FontSize="40" Foreground="white" Background="#262626"
                         >
                             <Bold>+</Bold>
