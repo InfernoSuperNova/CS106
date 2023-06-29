@@ -27,6 +27,7 @@ namespace LoginSignUp
         public AccountLogin AccountLogin;
         public AccountSignUp AccountSignUp;
         public MainMenu MainMenu;
+        public ManageEmployees ManageEmployees;
 
         public MainWindow()
         {
@@ -34,6 +35,7 @@ namespace LoginSignUp
             AccountLogin = new AccountLogin();
             AccountSignUp = new AccountSignUp();
             MainMenu = new MainMenu();
+            ManageEmployees = new ManageEmployees();
             MainWindowFrame.Content = AccountLogin;
             if (!UserDatabase.IsDatabaseContainData())
             {
@@ -51,6 +53,7 @@ namespace LoginSignUp
             AccountSignUp._SuccessfulSignup += SignUpSuccess;
             MainMenu._SignOut += PageLogin;
             MainMenu._AdminManageUsers += PageManageUsers;
+            ManageEmployees._ReturnToMenu += PageMenu;
 
             ProjectDataBase.InitializeDatabase();
         }
@@ -97,7 +100,7 @@ namespace LoginSignUp
         }
         private void PageManageUsers(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("yes!");
+            MainWindowFrame.Content = ManageEmployees;
         }
     }
 }
