@@ -183,35 +183,52 @@ namespace LoginSignUp.classes
             List<string> Users = EnumerateUserType(DataBase);
             return Users.ElementAt(index);
         }
-        public static void UpdateUserResponsibilities(string userName, string projectName, bool add)
+        public static int UpdateUserResponsibilities(string userName, string projectName, bool add)
         {
-
+            //result of 1 means it couldn't find the username, result of 2 means it couldn't find the project of that username, result of 0 is success
+            int result = 2;
             string[] Database = Read();
             List<String> userNames = EnumerateUserNames(Database);
             int index = GetUserIndexByUserName(userNames, userName) + 1;
+            if (index == 0)
+            {
+                result = 1;
+            }
             if (add == true)
             {
                 // Add the project
                 Database[index] = Database[index] + "," + projectName;
+                if (result != 1)
+                {
+                    result = 0;
+                }
+                
             }
             else
             {
                 // Remove the project
                 string[] projects = Database[index].Split(',');
+                List<string> usernames = new List<string>();
+                for (int i = 0; i < 3; i++)
+                {
+                    usernames = usernames.Append(projects[i]).ToList();
+                }
                 projects = projects.Skip(3).ToArray();
                 int projectIndex = Array.IndexOf(projects, projectName);
-
                 if (projectIndex >= 0)
                 {
+                    result = 0;
                     // Remove the project if found
                     List<string> updatedProjects = new List<string>(projects);
                     updatedProjects.RemoveAt(projectIndex);
 
                     // Join the updated projects back into a string
-                    Database[index] = string.Join(",", updatedProjects);
+                    List<string> output = usernames.Concat(updatedProjects).ToList();
+                    Database[index] = string.Join(",", output);
                 }
             }
             File.WriteAllLines(@".\Database\UserAccountData.csv", Database);
+            return result;
         }
         public static string[] GetAssignedUsers(string projectName)
         {
