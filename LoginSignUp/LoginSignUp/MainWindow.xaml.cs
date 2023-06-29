@@ -70,6 +70,7 @@ namespace LoginSignUp
         }
         private void SetUserDetails(object sender, RoutedEventArgs e, string userType, string UserName)
         {
+            MainMenu.userName = UserName;
             switch (userType)
             {
                 case "user":

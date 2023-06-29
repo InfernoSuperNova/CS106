@@ -80,6 +80,9 @@
     <Compile Include="pages\ManageEmployees.xaml.cs">
       <DependentUpon>ManageEmployees.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\EmptyProjectListIndicator.xaml.cs">
+      <DependentUpon>EmptyProjectListIndicator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\EditBug.xaml.cs">
       <DependentUpon>EditBug.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,10 @@
     <Page Include="resources\Styles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EmptyProjectListIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\EditBug.xaml">
       <Generator>MSBuild:Compile</Generator>

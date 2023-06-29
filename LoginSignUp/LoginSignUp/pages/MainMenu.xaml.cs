@@ -23,7 +23,7 @@ namespace LoginSignUp.pages
     /// </summary>
     public partial class MainMenu : Page
     {
-
+        public string userName = "";
         public string userType = "";
         private string currentProject = "";
         private string[] lines;
@@ -287,12 +287,38 @@ namespace LoginSignUp.pages
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
+            ProjectField.Children.Clear();
+            foreach (string name in lines)
+            {
+                List<string> userResponsibility = UserDatabase.GetAssignedProjects(userName);
+                if (userType == "admin" || userResponsibility.Contains(name))
+                {
+                    var project = new Project();
+
+                    // Add the dynamic object to the stack panel
+                    ProjectField.Children.Add(project);
+                    project.ProjectTitle.Text = name;
+                    project.ActiveBugs.Text = "Active Bugs: " + ProjectDataBase.Bugs.GetBugCount(name).ToString();
+                    project._DeleteProject += DeleteProject;
+                    project._EditBugMenu += OpenEditBugMenu;
+                    project._AddBugProject += OpenNewBugMenu;
+                    project._ToggleEmployees += OpenUserManagementMenu;
+                    //Store the project in array
+                    projects.Add(project);
+                }
+                if (ProjectField.Children.Count == 0)
+                {
+                    ProjectField.Children.Add(new EmptyProjectListIndicator());
+                }
+            }
+
             header.SetUserType(userType);
             foreach (Project project in projects)
             {
                 project.SetUserType(userType);
             }
             HideAll();
+
         }
     }
 }
