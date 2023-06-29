@@ -77,6 +77,9 @@
     <Compile Include="pages\FirstTimeSetup.xaml.cs">
       <DependentUpon>FirstTimeSetup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\ManageEmployees.xaml.cs">
+      <DependentUpon>ManageEmployees.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\EditBug.xaml.cs">
       <DependentUpon>EditBug.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,9 @@
     </Compile>
     <Compile Include="UserControls\AddBug.xaml.cs">
       <DependentUpon>AddBug.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ManagedEmployee.xaml.cs">
+      <DependentUpon>ManagedEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\NewProject.xaml.cs">
       <DependentUpon>NewProject.xaml</DependentUpon>
@@ -134,6 +140,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pages\ManageEmployees.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="resources\Styles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,6 +173,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\AddBug.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ManagedEmployee.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

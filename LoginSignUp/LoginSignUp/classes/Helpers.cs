@@ -49,6 +49,38 @@ namespace LoginSignUp.classes
         {
             return EnumerateFileColumn(database, 2);
         }
+
+        public static void SetUserType(string userName, string newType)
+        {
+            string[] database = Read();
+            for (int i = 0; i < database.Length; i++)
+            {
+                string line = database[i];
+                string[] userData = line.Split(',');
+                if (userData[0] == userName)
+                {
+                    userData[2] = newType;
+                }
+                database[i] = string.Join(",", userData);
+            }
+            File.WriteAllLines(@".\Database\UserAccountData.csv", database);
+        }
+
+        public static void DeleteUser(string userName)
+        {
+            string[] database = Read();
+            string[] output = new string[0];
+            for (int i = 0; i < database.Length; i++)
+            {
+                string line = database[i];
+                string[] userData = line.Split(',');
+                if (userData[0] != userName)
+                {
+                    output = output.Append(line).ToArray();
+                }
+            }
+            File.WriteAllLines(@".\Database\UserAccountData.csv", output);
+        }
         /// <summary>
         /// Breaks the database up into an array of rows.
         /// </summary>
@@ -70,6 +102,38 @@ namespace LoginSignUp.classes
                 }
             }
             return data;
+        }
+
+        public static List<User> GetUsers()
+        {
+            string[] database = Read();
+            List<string> userNames = EnumerateUserNames(database);
+            List<string> passwords = EnumeratePasswords(database);
+            List<string> userTypes = EnumerateUserType(database);
+
+            List<User> userList = new List<User>(0);
+            for (int i = 0; i < userNames.Count(); i++)
+            {
+                User user = new User(userNames[i], passwords[i], userTypes[i], GetAssignedProjects(userNames[i]));
+                userList.Add(user);
+            }
+            return userList;
+
+        }
+        public class User
+        {
+            public string name;
+            public string password;
+            public string type;
+            public List<string> projects;
+
+            public User(string _name, string _password, string _type, List<string> _projects)
+            {
+                name = _name;
+                password = _password;
+                type = _type;
+                projects = _projects;
+            }
         }
         
         /// <summary>
@@ -162,13 +226,26 @@ namespace LoginSignUp.classes
                 {
                     if (entry == projectName)
                     {
-                        outputUsers.Append(user);
+                        outputUsers = outputUsers.Append(userName).ToArray();
                         continue;
                     }
                     
                 }
             }
             return outputUsers;
+        }
+        public static List<string> GetAssignedProjects(string userName)
+        {
+            string[] userDataBase = Read();
+            foreach (string user in userDataBase)
+            {
+                List<String> userData = user.Split(',').ToList();
+                if (userData[0] == userName)
+                {
+                    return userData.Skip(3).ToList();
+                }
+            }
+            return new List<string>(0);
         }
     }
     public static class UserInput
