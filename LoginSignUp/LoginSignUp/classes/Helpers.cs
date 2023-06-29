@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -56,6 +56,20 @@ namespace LoginSignUp.classes
         public static string[] Read()
         {
             return File.ReadAllLines(@".\Database\UserAccountData.csv");
+        }
+
+        public static bool IsDatabaseContainData()
+        {
+            string[] file = File.ReadAllLines(@".\Database\UserAccountData.csv").Skip(1).ToArray();
+            bool data = false;
+            foreach (string line in file)
+            {
+                if (!string.IsNullOrEmpty(line))
+                {
+                    data = true;
+                }
+            }
+            return data;
         }
         
         /// <summary>
