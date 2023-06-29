@@ -293,12 +293,12 @@ namespace LoginSignUp.pages
                     //Store the project in array
                     projects.Add(project);
                 }
-                if (ProjectField.Children.Count == 0)
-                {
-                    ProjectField.Children.Add(new EmptyProjectListIndicator());
-                }
-            }
 
+            }
+            if (ProjectField.Children.Count == 0)
+            {
+                ProjectField.Children.Add(new EmptyProjectListIndicator());
+            }
             header.SetUserType(userType);
             foreach (Project project in projects)
             {

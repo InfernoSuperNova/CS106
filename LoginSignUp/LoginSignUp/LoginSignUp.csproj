@@ -262,12 +262,8 @@
     <Resource Include="Icons\bin.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Database\Projects\TestProject1\" />
-    <Folder Include="Database\Projects\TestProject2\" />
+    <Folder Include="Database\Projects\" />
     <Folder Include="Objects\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Database\Projects\GunGame\bugs\bug1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
