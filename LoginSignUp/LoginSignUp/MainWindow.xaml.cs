@@ -32,6 +32,7 @@ namespace LoginSignUp
         public MainWindow()
         {
             InitializeComponent();
+            InitializeFiles.CreateStructure();
             AccountLogin = new AccountLogin();
             AccountSignUp = new AccountSignUp();
             MainMenu = new MainMenu();

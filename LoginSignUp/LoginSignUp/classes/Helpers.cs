@@ -322,4 +322,18 @@ namespace LoginSignUp.classes
             }));
         }
     }
+    public static class InitializeFiles
+    {
+        public static void CreateStructure()
+        {
+            if (!Directory.Exists(@".\Database"))
+            {
+                Directory.CreateDirectory(@".\Database");
+                File.Create(@".\Database\UserAccountData.csv").Close();
+                File.WriteAllText(@".\Database\UserAccountData.csv", "Username,Password,UserType,AssignedProject,AssignedProject,AssignedProject,...,");
+                File.Create(@".\Database\Projects.csv").Close();
+                File.WriteAllText(@".\Database\Projects.csv", "ProjectName");
+            }
+        }
+    }
 }
