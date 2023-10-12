@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static LoginSignUp.UserControls.AddBug;
+using static LoginSignUp.UserControls.Bug;
 
 namespace LoginSignUp.UserControls
 {
@@ -39,6 +41,21 @@ namespace LoginSignUp.UserControls
         private void SignOutBtn_Click(object sender, RoutedEventArgs e)
         {
             _SignOut(sender, e);
+        }
+        public void SetUserType(string type)
+        {
+            if (type == "user")
+            {
+                AddNewProjectBtn.Visibility = Visibility.Collapsed;
+            }
+            else if (type == "dev")
+            {
+                AddNewProjectBtn.Visibility = Visibility.Collapsed;
+            }
+            else if (type == "admin")
+            {
+                AddNewProjectBtn.Visibility = Visibility.Visible;
+            }
         }
     }
 }

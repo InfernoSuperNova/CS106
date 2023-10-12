@@ -132,6 +132,17 @@ namespace LoginSignUp.classes
                 path = Path.Combine(path, "bugs", bugIndex.ToString() + ".txt");
                 SafeIO.WriteAllLines(path, bugText);
             }
+            public static void UpdateBug(string project, string reference, Bug bug)
+            {
+                string[] bugText = new string[0];
+                bugText = bugText.Append(bug.name).ToArray();
+                bugText = bugText.Append(bug.priority).ToArray();
+                bugText = bugText.Append(bug.timeSpent).ToArray();
+                bugText = bugText.Append(bug.description).ToArray();
+                bugText = bugText.Append(bug.stepsToReproduce).ToArray();
+                string path = Path.Combine(Config.ROOT_FOLDER, project, "bugs", reference.ToString() + ".txt");
+                File.WriteAllLines(path, bugText);
+            }
             public static void DeleteBug(string project, string index)
             {
                 string path = Path.Combine(Config.ROOT_FOLDER, project);

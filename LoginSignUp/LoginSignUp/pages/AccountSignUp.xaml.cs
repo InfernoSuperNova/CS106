@@ -15,7 +15,7 @@ namespace LoginSignUp.pages
         public delegate void NavigateToLoginPageBtnClick(object sender, RoutedEventArgs e);
         public event NavigateToLoginPageBtnClick _NavigateToLoginPageBtnClick;
         //sign up successful
-        public delegate void SuccessfulSignup(object sender, RoutedEventArgs e);
+        public delegate void SuccessfulSignup(object sender, RoutedEventArgs e, string UserType, string UserName);
         public event SuccessfulSignup _SuccessfulSignup;
 
         public AccountSignUp()
@@ -52,7 +52,7 @@ namespace LoginSignUp.pages
 
             WriteNewLogin(inputUserName, inputPassword, lines);
 
-            _SuccessfulSignup(sender, e);
+            _SuccessfulSignup(sender, e, "user", inputUserName);
         }
         /// <summary>
         /// Checks if the UserName and Password meet a set of arbitrary conditions.

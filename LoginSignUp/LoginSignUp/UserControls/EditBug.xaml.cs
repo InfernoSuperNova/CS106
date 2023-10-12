@@ -20,15 +20,16 @@ namespace LoginSignUp.UserControls
     /// <summary>
     /// Interaction logic for EditAddedBugAdmin.xaml
     /// </summary>
-    public partial class AddBug : UserControl
+    public partial class EditBug : UserControl
     {
         public string currentProject = "";
-        public AddBug()
+        public string Reference = "";
+        public EditBug()
         {
             InitializeComponent();
         }
-        public delegate void AddBugBtn(object sender, RoutedEventArgs e, ProjectDataBase.Bugs.Bug bug, string projectName);
-        public event AddBugBtn _AddBugBtn;
+        public delegate void SaveBugBtn(object sender, RoutedEventArgs e, ProjectDataBase.Bugs.Bug bug, string projectName);
+        public event SaveBugBtn _SaveBugBtn;
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
             ProjectDataBase.Bugs.Bug bug = new ProjectDataBase.Bugs.Bug();
@@ -38,7 +39,7 @@ namespace LoginSignUp.UserControls
             bug.description = BugDescription.Text;
             bug.stepsToReproduce = BugStepsToReproduce.Text;
             ClearFields();
-            _AddBugBtn(sender, e, bug, currentProject);
+            _SaveBugBtn(sender, e, bug, currentProject);
             
         }
 
